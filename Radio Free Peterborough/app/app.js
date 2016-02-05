@@ -10,6 +10,11 @@ export class MyApp {
   constructor(platform: Platform) {
     this.rootPage = TabsPage;
 
+//	.controller( 'RFPStreamController',  function() {
+		
+//		console.log( 'RFP Stream Controller Here');
+//	})
+
     platform.ready().then(() => {
       // The platform is now ready. Note: if this callback fails to fire, follow
       // the Troubleshooting guide for a number of possible solutions:
@@ -25,6 +30,9 @@ export class MyApp {
       // For example, we might change the StatusBar color. This one below is
       // good for dark backgrounds and light text:
       // StatusBar.setStyle(StatusBar.LIGHT_CONTENT)
+
+
+
     });
   }
 }
