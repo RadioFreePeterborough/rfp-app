@@ -4,8 +4,26 @@
         "uninstalled": []
     },
     "config_munge": {
-        "files": {}
+        "files": {
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"RestrictKeyboard\"><param name=\"ios-package\" value=\"CDVRestrictKeyboard\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
     },
-    "installed_plugins": {},
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "io.ionic.starter"
+        },
+        "cordova-plugin-restrict-keyboard": {
+            "PACKAGE_NAME": "io.ionic.starter"
+        }
+    },
     "dependent_plugins": {}
 }

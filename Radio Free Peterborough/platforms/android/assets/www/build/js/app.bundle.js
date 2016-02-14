@@ -42,17 +42,23 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
+/*!******************!*\
+  !*** multi main ***!
+  \******************/
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(1);
-	__webpack_require__(2);
-	__webpack_require__(3);
-	__webpack_require__(4);
-	module.exports = __webpack_require__(5);
+	__webpack_require__(/*! es6-shim/es6-shim.min */1);
+	__webpack_require__(/*! reflect-metadata */2);
+	__webpack_require__(/*! web-animations.min */3);
+	__webpack_require__(/*! zone.js/dist/zone-microtask */4);
+	module.exports = __webpack_require__(/*! /Users/stv/Desktop/In Progress/IONIC/rfp/Radio Free Peterborough/app/app */5);
 
 
 /***/ },
 /* 1 */
+/*!************************************!*\
+  !*** ./~/es6-shim/es6-shim.min.js ***!
+  \************************************/
 /***/ function(module, exports) {
 
 	/*!
@@ -71,6 +77,9 @@
 
 /***/ },
 /* 2 */
+/*!***************************************!*\
+  !*** ./~/reflect-metadata/Reflect.js ***!
+  \***************************************/
 /***/ function(module, exports) {
 
 	/*! *****************************************************************************
@@ -1038,6 +1047,9 @@
 
 /***/ },
 /* 3 */
+/*!****************************************************!*\
+  !*** ./~/ionic-framework/js/web-animations.min.js ***!
+  \****************************************************/
 /***/ function(module, exports) {
 
 	// Copyright 2014 Google Inc. All rights reserved.
@@ -1059,6 +1071,9 @@
 
 /***/ },
 /* 4 */
+/*!******************************************!*\
+  !*** ./~/zone.js/dist/zone-microtask.js ***!
+  \******************************************/
 /***/ function(module, exports) {
 
 	(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
@@ -3202,6 +3217,9 @@
 
 /***/ },
 /* 5 */
+/*!********************!*\
+  !*** ./app/app.js ***!
+  \********************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -3213,11 +3231,14 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var ionic_1 = __webpack_require__(6);
-	var tabs_1 = __webpack_require__(350);
+	var ionic_1 = __webpack_require__(/*! ionic/ionic */ 6);
+	var tabs_1 = __webpack_require__(/*! ./pages/tabs/tabs */ 350);
 	var MyApp = (function () {
 	    function MyApp(platform) {
 	        this.rootPage = tabs_1.TabsPage;
+	        //	.controller( 'RFPStreamController',  function() {
+	        //		console.log( 'RFP Stream Controller Here');
+	        //	})
 	        platform.ready().then(function () {
 	            // The platform is now ready. Note: if this callback fails to fire, follow
 	            // the Troubleshooting guide for a number of possible solutions:
@@ -3232,12 +3253,12 @@
 	            //
 	            // For example, we might change the StatusBar color. This one below is
 	            // good for dark backgrounds and light text:
-	            // StatusBar.setStyle(StatusBar.LIGHT_CONTENT)
+	            //StatusBar.setStyle(StatusBar.LIGHT_CONTENT)
 	        });
 	    }
 	    MyApp = __decorate([
 	        ionic_1.App({
-	            template: '<ion-nav [root]="rootPage"></ion-nav>',
+	            template: '<ion-nav [root]="rootPage"><ion-overlay></ion-overlay></ion-nav>',
 	            config: {} // http://ionicframework.com/docs/v2/api/config/Config/
 	        }), 
 	        __metadata('design:paramtypes', [(typeof (_a = typeof ionic_1.Platform !== 'undefined' && ionic_1.Platform) === 'function' && _a) || Object])
@@ -3250,53 +3271,59 @@
 
 /***/ },
 /* 6 */
+/*!************************************!*\
+  !*** ./~/ionic-framework/ionic.js ***!
+  \************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	function __export(m) {
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
-	__export(__webpack_require__(7));
-	__export(__webpack_require__(265));
-	__export(__webpack_require__(281));
-	__export(__webpack_require__(334));
-	__export(__webpack_require__(335));
-	__export(__webpack_require__(336));
-	__export(__webpack_require__(266));
-	__export(__webpack_require__(340));
-	__export(__webpack_require__(269));
-	__export(__webpack_require__(273));
-	__export(__webpack_require__(271));
-	__export(__webpack_require__(280));
-	__export(__webpack_require__(275));
-	__export(__webpack_require__(344));
+	__export(__webpack_require__(/*! ./config/bootstrap */ 7));
+	__export(__webpack_require__(/*! ./config/config */ 265));
+	__export(__webpack_require__(/*! ./config/directives */ 281));
+	__export(__webpack_require__(/*! ./decorators/app */ 334));
+	__export(__webpack_require__(/*! ./decorators/page */ 335));
+	__export(__webpack_require__(/*! ./components */ 336));
+	__export(__webpack_require__(/*! ./platform/platform */ 266));
+	__export(__webpack_require__(/*! ./platform/storage */ 340));
+	__export(__webpack_require__(/*! ./util/click-block */ 269));
+	__export(__webpack_require__(/*! ./util/events */ 273));
+	__export(__webpack_require__(/*! ./util/keyboard */ 271));
+	__export(__webpack_require__(/*! ./animations/animation */ 280));
+	__export(__webpack_require__(/*! ./translation/translate */ 275));
+	__export(__webpack_require__(/*! ./translation/translate_pipe */ 344));
 	// these modules don't export anything
-	__webpack_require__(345);
-	__webpack_require__(346);
-	__webpack_require__(347);
-	__webpack_require__(348);
-	__webpack_require__(349);
+	__webpack_require__(/*! ./config/modes */ 345);
+	__webpack_require__(/*! ./platform/registry */ 346);
+	__webpack_require__(/*! ./animations/builtins */ 347);
+	__webpack_require__(/*! ./animations/ios-transition */ 348);
+	__webpack_require__(/*! ./animations/md-transition */ 349);
 
 
 /***/ },
 /* 7 */
+/*!***********************************************!*\
+  !*** ./~/ionic-framework/config/bootstrap.js ***!
+  \***********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	var core_1 = __webpack_require__(8);
-	var router_1 = __webpack_require__(119);
-	var http_1 = __webpack_require__(144);
-	var app_1 = __webpack_require__(159);
-	var config_1 = __webpack_require__(265);
-	var platform_1 = __webpack_require__(266);
-	var form_1 = __webpack_require__(270);
-	var keyboard_1 = __webpack_require__(271);
-	var scroll_to_1 = __webpack_require__(272);
-	var events_1 = __webpack_require__(273);
-	var nav_registry_1 = __webpack_require__(274);
-	var translate_1 = __webpack_require__(275);
-	var click_block_1 = __webpack_require__(269);
-	var feature_detect_1 = __webpack_require__(276);
-	var tap_click_1 = __webpack_require__(277);
-	var dom_1 = __webpack_require__(268);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var router_1 = __webpack_require__(/*! angular2/router */ 119);
+	var http_1 = __webpack_require__(/*! angular2/http */ 144);
+	var app_1 = __webpack_require__(/*! ../components/app/app */ 159);
+	var config_1 = __webpack_require__(/*! ./config */ 265);
+	var platform_1 = __webpack_require__(/*! ../platform/platform */ 266);
+	var form_1 = __webpack_require__(/*! ../util/form */ 270);
+	var keyboard_1 = __webpack_require__(/*! ../util/keyboard */ 271);
+	var scroll_to_1 = __webpack_require__(/*! ../animations/scroll-to */ 272);
+	var events_1 = __webpack_require__(/*! ../util/events */ 273);
+	var nav_registry_1 = __webpack_require__(/*! ../components/nav/nav-registry */ 274);
+	var translate_1 = __webpack_require__(/*! ../translation/translate */ 275);
+	var click_block_1 = __webpack_require__(/*! ../util/click-block */ 269);
+	var feature_detect_1 = __webpack_require__(/*! ../util/feature-detect */ 276);
+	var tap_click_1 = __webpack_require__(/*! ../components/tap-click/tap-click */ 277);
+	var dom_1 = __webpack_require__(/*! ../util/dom */ 268);
 	/**
 	 * @private
 	 */
@@ -3417,6 +3444,9 @@
 
 /***/ },
 /* 8 */
+/*!****************************!*\
+  !*** ./~/angular2/core.js ***!
+  \****************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';function __export(m) {
@@ -3427,49 +3457,52 @@
 	 * @description
 	 * Starting point to import all public core APIs.
 	 */
-	__export(__webpack_require__(9));
-	__export(__webpack_require__(83));
-	__export(__webpack_require__(84));
-	__export(__webpack_require__(12));
-	__export(__webpack_require__(85));
-	var lang_1 = __webpack_require__(11);
+	__export(__webpack_require__(/*! ./src/core/metadata */ 9));
+	__export(__webpack_require__(/*! ./src/core/util */ 83));
+	__export(__webpack_require__(/*! ./src/core/prod_mode */ 84));
+	__export(__webpack_require__(/*! ./src/core/di */ 12));
+	__export(__webpack_require__(/*! ./src/facade/facade */ 85));
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	exports.enableProdMode = lang_1.enableProdMode;
-	var application_ref_1 = __webpack_require__(86);
+	var application_ref_1 = __webpack_require__(/*! ./src/core/application_ref */ 86);
 	exports.platform = application_ref_1.platform;
 	exports.createNgZone = application_ref_1.createNgZone;
 	exports.PlatformRef = application_ref_1.PlatformRef;
 	exports.ApplicationRef = application_ref_1.ApplicationRef;
-	var application_tokens_1 = __webpack_require__(88);
+	var application_tokens_1 = __webpack_require__(/*! ./src/core/application_tokens */ 88);
 	exports.APP_ID = application_tokens_1.APP_ID;
 	exports.APP_COMPONENT = application_tokens_1.APP_COMPONENT;
 	exports.APP_INITIALIZER = application_tokens_1.APP_INITIALIZER;
 	exports.PACKAGE_ROOT_URL = application_tokens_1.PACKAGE_ROOT_URL;
 	exports.PLATFORM_INITIALIZER = application_tokens_1.PLATFORM_INITIALIZER;
-	__export(__webpack_require__(108));
-	__export(__webpack_require__(109));
-	__export(__webpack_require__(110));
-	var debug_element_1 = __webpack_require__(113);
+	__export(__webpack_require__(/*! ./src/core/zone */ 108));
+	__export(__webpack_require__(/*! ./src/core/render */ 109));
+	__export(__webpack_require__(/*! ./src/core/linker */ 110));
+	var debug_element_1 = __webpack_require__(/*! ./src/core/debug/debug_element */ 113);
 	exports.DebugElement = debug_element_1.DebugElement;
 	exports.Scope = debug_element_1.Scope;
 	exports.inspectElement = debug_element_1.inspectElement;
 	exports.asNativeElements = debug_element_1.asNativeElements;
-	__export(__webpack_require__(89));
-	__export(__webpack_require__(30));
-	__export(__webpack_require__(114));
-	__export(__webpack_require__(115));
-	__export(__webpack_require__(116));
-	__export(__webpack_require__(22));
+	__export(__webpack_require__(/*! ./src/core/testability/testability */ 89));
+	__export(__webpack_require__(/*! ./src/core/change_detection */ 30));
+	__export(__webpack_require__(/*! ./src/core/platform_directives_and_pipes */ 114));
+	__export(__webpack_require__(/*! ./src/core/platform_common_providers */ 115));
+	__export(__webpack_require__(/*! ./src/core/application_common_providers */ 116));
+	__export(__webpack_require__(/*! ./src/core/reflection/reflection */ 22));
 
 
 /***/ },
 /* 9 */
+/*!*****************************************!*\
+  !*** ./~/angular2/src/core/metadata.js ***!
+  \*****************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';/**
 	 * This indirection is needed to free up Component, etc symbols in the public API
 	 * to be used by the decorator versions of these annotations.
 	 */
-	var di_1 = __webpack_require__(10);
+	var di_1 = __webpack_require__(/*! ./metadata/di */ 10);
 	exports.QueryMetadata = di_1.QueryMetadata;
 	exports.ContentChildrenMetadata = di_1.ContentChildrenMetadata;
 	exports.ContentChildMetadata = di_1.ContentChildMetadata;
@@ -3477,7 +3510,7 @@
 	exports.ViewQueryMetadata = di_1.ViewQueryMetadata;
 	exports.ViewChildMetadata = di_1.ViewChildMetadata;
 	exports.AttributeMetadata = di_1.AttributeMetadata;
-	var directives_1 = __webpack_require__(29);
+	var directives_1 = __webpack_require__(/*! ./metadata/directives */ 29);
 	exports.ComponentMetadata = directives_1.ComponentMetadata;
 	exports.DirectiveMetadata = directives_1.DirectiveMetadata;
 	exports.PipeMetadata = directives_1.PipeMetadata;
@@ -3485,13 +3518,13 @@
 	exports.OutputMetadata = directives_1.OutputMetadata;
 	exports.HostBindingMetadata = directives_1.HostBindingMetadata;
 	exports.HostListenerMetadata = directives_1.HostListenerMetadata;
-	var view_1 = __webpack_require__(82);
+	var view_1 = __webpack_require__(/*! ./metadata/view */ 82);
 	exports.ViewMetadata = view_1.ViewMetadata;
 	exports.ViewEncapsulation = view_1.ViewEncapsulation;
-	var di_2 = __webpack_require__(10);
-	var directives_2 = __webpack_require__(29);
-	var view_2 = __webpack_require__(82);
-	var decorators_1 = __webpack_require__(15);
+	var di_2 = __webpack_require__(/*! ./metadata/di */ 10);
+	var directives_2 = __webpack_require__(/*! ./metadata/directives */ 29);
+	var view_2 = __webpack_require__(/*! ./metadata/view */ 82);
+	var decorators_1 = __webpack_require__(/*! ./util/decorators */ 15);
 	// TODO(alexeagle): remove the duplication of this doc. It is copied from ComponentMetadata.
 	/**
 	 * Declare reusable UI building blocks for an application.
@@ -4359,6 +4392,9 @@
 
 /***/ },
 /* 10 */
+/*!********************************************!*\
+  !*** ./~/angular2/src/core/metadata/di.js ***!
+  \********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -4375,9 +4411,9 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var lang_1 = __webpack_require__(11);
-	var di_1 = __webpack_require__(12);
-	var metadata_1 = __webpack_require__(13);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
+	var metadata_1 = __webpack_require__(/*! angular2/src/core/di/metadata */ 13);
 	/**
 	 * Specifies that a constant attribute value should be injected.
 	 *
@@ -4774,6 +4810,9 @@
 
 /***/ },
 /* 11 */
+/*!***************************************!*\
+  !*** ./~/angular2/src/facade/lang.js ***!
+  \***************************************/
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -5210,6 +5249,9 @@
 
 /***/ },
 /* 12 */
+/*!***********************************!*\
+  !*** ./~/angular2/src/core/di.js ***!
+  \***********************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';/**
@@ -5220,7 +5262,7 @@
 	function __export(m) {
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
-	var metadata_1 = __webpack_require__(13);
+	var metadata_1 = __webpack_require__(/*! ./di/metadata */ 13);
 	exports.InjectMetadata = metadata_1.InjectMetadata;
 	exports.OptionalMetadata = metadata_1.OptionalMetadata;
 	exports.InjectableMetadata = metadata_1.InjectableMetadata;
@@ -5229,13 +5271,13 @@
 	exports.SkipSelfMetadata = metadata_1.SkipSelfMetadata;
 	exports.DependencyMetadata = metadata_1.DependencyMetadata;
 	// we have to reexport * because Dart and TS export two different sets of types
-	__export(__webpack_require__(14));
-	var forward_ref_1 = __webpack_require__(16);
+	__export(__webpack_require__(/*! ./di/decorators */ 14));
+	var forward_ref_1 = __webpack_require__(/*! ./di/forward_ref */ 16);
 	exports.forwardRef = forward_ref_1.forwardRef;
 	exports.resolveForwardRef = forward_ref_1.resolveForwardRef;
-	var injector_1 = __webpack_require__(17);
+	var injector_1 = __webpack_require__(/*! ./di/injector */ 17);
 	exports.Injector = injector_1.Injector;
-	var provider_1 = __webpack_require__(19);
+	var provider_1 = __webpack_require__(/*! ./di/provider */ 19);
 	exports.Binding = provider_1.Binding;
 	exports.ProviderBuilder = provider_1.ProviderBuilder;
 	exports.ResolvedFactory = provider_1.ResolvedFactory;
@@ -5243,10 +5285,10 @@
 	exports.bind = provider_1.bind;
 	exports.Provider = provider_1.Provider;
 	exports.provide = provider_1.provide;
-	var key_1 = __webpack_require__(25);
+	var key_1 = __webpack_require__(/*! ./di/key */ 25);
 	exports.Key = key_1.Key;
 	exports.TypeLiteral = key_1.TypeLiteral;
-	var exceptions_1 = __webpack_require__(27);
+	var exceptions_1 = __webpack_require__(/*! ./di/exceptions */ 27);
 	exports.NoProviderError = exceptions_1.NoProviderError;
 	exports.AbstractProviderError = exceptions_1.AbstractProviderError;
 	exports.CyclicDependencyError = exceptions_1.CyclicDependencyError;
@@ -5254,12 +5296,15 @@
 	exports.InvalidProviderError = exceptions_1.InvalidProviderError;
 	exports.NoAnnotationError = exceptions_1.NoAnnotationError;
 	exports.OutOfBoundsError = exceptions_1.OutOfBoundsError;
-	var opaque_token_1 = __webpack_require__(28);
+	var opaque_token_1 = __webpack_require__(/*! ./di/opaque_token */ 28);
 	exports.OpaqueToken = opaque_token_1.OpaqueToken;
 
 
 /***/ },
 /* 13 */
+/*!********************************************!*\
+  !*** ./~/angular2/src/core/di/metadata.js ***!
+  \********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -5271,7 +5316,7 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var lang_1 = __webpack_require__(11);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	/**
 	 * A parameter metadata that specifies a dependency.
 	 *
@@ -5559,10 +5604,13 @@
 
 /***/ },
 /* 14 */
+/*!**********************************************!*\
+  !*** ./~/angular2/src/core/di/decorators.js ***!
+  \**********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var metadata_1 = __webpack_require__(13);
-	var decorators_1 = __webpack_require__(15);
+	'use strict';var metadata_1 = __webpack_require__(/*! ./metadata */ 13);
+	var decorators_1 = __webpack_require__(/*! ../util/decorators */ 15);
 	/**
 	 * Factory for creating {@link InjectMetadata}.
 	 */
@@ -5591,9 +5639,12 @@
 
 /***/ },
 /* 15 */
+/*!************************************************!*\
+  !*** ./~/angular2/src/core/util/decorators.js ***!
+  \************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	var _nextClassId = 0;
 	function extractAnnotation(annotation) {
 	    if (lang_1.isFunction(annotation) && annotation.hasOwnProperty('annotation')) {
@@ -5846,9 +5897,12 @@
 
 /***/ },
 /* 16 */
+/*!***********************************************!*\
+  !*** ./~/angular2/src/core/di/forward_ref.js ***!
+  \***********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	/**
 	 * Allows to refer to references which are not yet defined.
 	 *
@@ -5895,14 +5949,17 @@
 
 /***/ },
 /* 17 */
+/*!********************************************!*\
+  !*** ./~/angular2/src/core/di/injector.js ***!
+  \********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var collection_1 = __webpack_require__(18);
-	var provider_1 = __webpack_require__(19);
-	var exceptions_1 = __webpack_require__(27);
-	var lang_1 = __webpack_require__(11);
-	var key_1 = __webpack_require__(25);
-	var metadata_1 = __webpack_require__(13);
+	'use strict';var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var provider_1 = __webpack_require__(/*! ./provider */ 19);
+	var exceptions_1 = __webpack_require__(/*! ./exceptions */ 27);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var key_1 = __webpack_require__(/*! ./key */ 25);
+	var metadata_1 = __webpack_require__(/*! ./metadata */ 13);
 	// Threshold for the dynamic version
 	var _MAX_CONSTRUCTION_COUNTER = 10;
 	exports.UNDEFINED = lang_1.CONST_EXPR(new Object());
@@ -6824,9 +6881,12 @@
 
 /***/ },
 /* 18 */
+/*!*********************************************!*\
+  !*** ./~/angular2/src/facade/collection.js ***!
+  \*********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	exports.Map = lang_1.global.Map;
 	exports.Set = lang_1.global.Set;
 	// Safari and Internet Explorer do not support the iterable parameter to the
@@ -7151,6 +7211,9 @@
 
 /***/ },
 /* 19 */
+/*!********************************************!*\
+  !*** ./~/angular2/src/core/di/provider.js ***!
+  \********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -7167,14 +7230,14 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var collection_1 = __webpack_require__(18);
-	var reflection_1 = __webpack_require__(22);
-	var key_1 = __webpack_require__(25);
-	var metadata_1 = __webpack_require__(13);
-	var exceptions_2 = __webpack_require__(27);
-	var forward_ref_1 = __webpack_require__(16);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var reflection_1 = __webpack_require__(/*! angular2/src/core/reflection/reflection */ 22);
+	var key_1 = __webpack_require__(/*! ./key */ 25);
+	var metadata_1 = __webpack_require__(/*! ./metadata */ 13);
+	var exceptions_2 = __webpack_require__(/*! ./exceptions */ 27);
+	var forward_ref_1 = __webpack_require__(/*! ./forward_ref */ 16);
 	/**
 	 * `Dependency` is used by the framework to extend DI.
 	 * This is internal to Angular and should not be used directly.
@@ -7678,6 +7741,9 @@
 
 /***/ },
 /* 20 */
+/*!*********************************************!*\
+  !*** ./~/angular2/src/facade/exceptions.js ***!
+  \*********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -7685,8 +7751,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var exception_handler_1 = __webpack_require__(21);
-	var exception_handler_2 = __webpack_require__(21);
+	var exception_handler_1 = __webpack_require__(/*! ./exception_handler */ 21);
+	var exception_handler_2 = __webpack_require__(/*! ./exception_handler */ 21);
 	exports.ExceptionHandler = exception_handler_2.ExceptionHandler;
 	var BaseException = (function (_super) {
 	    __extends(BaseException, _super);
@@ -7759,11 +7825,14 @@
 
 /***/ },
 /* 21 */
+/*!****************************************************!*\
+  !*** ./~/angular2/src/facade/exception_handler.js ***!
+  \****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var collection_1 = __webpack_require__(18);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
 	var _ArrayLogger = (function () {
 	    function _ArrayLogger() {
 	        this.res = [];
@@ -7894,13 +7963,16 @@
 
 /***/ },
 /* 22 */
+/*!******************************************************!*\
+  !*** ./~/angular2/src/core/reflection/reflection.js ***!
+  \******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var reflector_1 = __webpack_require__(23);
-	var reflector_2 = __webpack_require__(23);
+	'use strict';var reflector_1 = __webpack_require__(/*! ./reflector */ 23);
+	var reflector_2 = __webpack_require__(/*! ./reflector */ 23);
 	exports.Reflector = reflector_2.Reflector;
 	exports.ReflectionInfo = reflector_2.ReflectionInfo;
-	var reflection_capabilities_1 = __webpack_require__(24);
+	var reflection_capabilities_1 = __webpack_require__(/*! ./reflection_capabilities */ 24);
 	/**
 	 * The {@link Reflector} used internally in Angular to access metadata
 	 * about symbols.
@@ -7910,11 +7982,14 @@
 
 /***/ },
 /* 23 */
+/*!*****************************************************!*\
+  !*** ./~/angular2/src/core/reflection/reflector.js ***!
+  \*****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var collection_1 = __webpack_require__(18);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
 	/**
 	 * Reflective information about a symbol, including annotations, interfaces, and other metadata.
 	 */
@@ -8063,10 +8138,13 @@
 
 /***/ },
 /* 24 */
+/*!*******************************************************************!*\
+  !*** ./~/angular2/src/core/reflection/reflection_capabilities.js ***!
+  \*******************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
 	var ReflectionCapabilities = (function () {
 	    function ReflectionCapabilities(reflect) {
 	        this._reflect = lang_1.isPresent(reflect) ? reflect : lang_1.global.Reflect;
@@ -8239,13 +8317,16 @@
 
 /***/ },
 /* 25 */
+/*!***************************************!*\
+  !*** ./~/angular2/src/core/di/key.js ***!
+  \***************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var type_literal_1 = __webpack_require__(26);
-	var forward_ref_1 = __webpack_require__(16);
-	var type_literal_2 = __webpack_require__(26);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var type_literal_1 = __webpack_require__(/*! ./type_literal */ 26);
+	var forward_ref_1 = __webpack_require__(/*! ./forward_ref */ 16);
+	var type_literal_2 = __webpack_require__(/*! ./type_literal */ 26);
 	exports.TypeLiteral = type_literal_2.TypeLiteral;
 	/**
 	 * A unique object used for retrieving items from the {@link Injector}.
@@ -8330,6 +8411,9 @@
 
 /***/ },
 /* 26 */
+/*!************************************************!*\
+  !*** ./~/angular2/src/core/di/type_literal.js ***!
+  \************************************************/
 /***/ function(module, exports) {
 
 	'use strict';/**
@@ -8351,6 +8435,9 @@
 
 /***/ },
 /* 27 */
+/*!**********************************************!*\
+  !*** ./~/angular2/src/core/di/exceptions.js ***!
+  \**********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -8358,9 +8445,9 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var collection_1 = __webpack_require__(18);
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
 	function findFirstClosedCycle(keys) {
 	    var res = [];
 	    for (var i = 0; i < keys.length; ++i) {
@@ -8636,6 +8723,9 @@
 
 /***/ },
 /* 28 */
+/*!************************************************!*\
+  !*** ./~/angular2/src/core/di/opaque_token.js ***!
+  \************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -8647,7 +8737,7 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var lang_1 = __webpack_require__(11);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	/**
 	 * Creates a token that can be used in a DI Provider.
 	 *
@@ -8685,6 +8775,9 @@
 
 /***/ },
 /* 29 */
+/*!****************************************************!*\
+  !*** ./~/angular2/src/core/metadata/directives.js ***!
+  \****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -8701,9 +8794,9 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var lang_1 = __webpack_require__(11);
-	var metadata_1 = __webpack_require__(13);
-	var change_detection_1 = __webpack_require__(30);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var metadata_1 = __webpack_require__(/*! angular2/src/core/di/metadata */ 13);
+	var change_detection_1 = __webpack_require__(/*! angular2/src/core/change_detection */ 30);
 	/**
 	 * Directives allow you to attach behavior to elements in the DOM.
 	 *
@@ -9613,6 +9706,9 @@
 
 /***/ },
 /* 30 */
+/*!*************************************************!*\
+  !*** ./~/angular2/src/core/change_detection.js ***!
+  \*************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';/**
@@ -9620,7 +9716,7 @@
 	 * @description
 	 * Change detection enables data binding in Angular.
 	 */
-	var change_detection_1 = __webpack_require__(31);
+	var change_detection_1 = __webpack_require__(/*! ./change_detection/change_detection */ 31);
 	exports.ChangeDetectionStrategy = change_detection_1.ChangeDetectionStrategy;
 	exports.ExpressionChangedAfterItHasBeenCheckedException = change_detection_1.ExpressionChangedAfterItHasBeenCheckedException;
 	exports.ChangeDetectionError = change_detection_1.ChangeDetectionError;
@@ -9633,56 +9729,59 @@
 
 /***/ },
 /* 31 */
+/*!******************************************************************!*\
+  !*** ./~/angular2/src/core/change_detection/change_detection.js ***!
+  \******************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var iterable_differs_1 = __webpack_require__(32);
-	var default_iterable_differ_1 = __webpack_require__(33);
-	var keyvalue_differs_1 = __webpack_require__(34);
-	var default_keyvalue_differ_1 = __webpack_require__(35);
-	var lang_1 = __webpack_require__(11);
-	var ast_1 = __webpack_require__(36);
+	'use strict';var iterable_differs_1 = __webpack_require__(/*! ./differs/iterable_differs */ 32);
+	var default_iterable_differ_1 = __webpack_require__(/*! ./differs/default_iterable_differ */ 33);
+	var keyvalue_differs_1 = __webpack_require__(/*! ./differs/keyvalue_differs */ 34);
+	var default_keyvalue_differ_1 = __webpack_require__(/*! ./differs/default_keyvalue_differ */ 35);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var ast_1 = __webpack_require__(/*! ./parser/ast */ 36);
 	exports.ASTWithSource = ast_1.ASTWithSource;
 	exports.AST = ast_1.AST;
 	exports.AstTransformer = ast_1.AstTransformer;
 	exports.PropertyRead = ast_1.PropertyRead;
 	exports.LiteralArray = ast_1.LiteralArray;
 	exports.ImplicitReceiver = ast_1.ImplicitReceiver;
-	var lexer_1 = __webpack_require__(37);
+	var lexer_1 = __webpack_require__(/*! ./parser/lexer */ 37);
 	exports.Lexer = lexer_1.Lexer;
-	var parser_1 = __webpack_require__(38);
+	var parser_1 = __webpack_require__(/*! ./parser/parser */ 38);
 	exports.Parser = parser_1.Parser;
-	var locals_1 = __webpack_require__(39);
+	var locals_1 = __webpack_require__(/*! ./parser/locals */ 39);
 	exports.Locals = locals_1.Locals;
-	var exceptions_1 = __webpack_require__(40);
+	var exceptions_1 = __webpack_require__(/*! ./exceptions */ 40);
 	exports.DehydratedException = exceptions_1.DehydratedException;
 	exports.ExpressionChangedAfterItHasBeenCheckedException = exceptions_1.ExpressionChangedAfterItHasBeenCheckedException;
 	exports.ChangeDetectionError = exceptions_1.ChangeDetectionError;
-	var interfaces_1 = __webpack_require__(41);
+	var interfaces_1 = __webpack_require__(/*! ./interfaces */ 41);
 	exports.ChangeDetectorDefinition = interfaces_1.ChangeDetectorDefinition;
 	exports.DebugContext = interfaces_1.DebugContext;
 	exports.ChangeDetectorGenConfig = interfaces_1.ChangeDetectorGenConfig;
-	var constants_1 = __webpack_require__(42);
+	var constants_1 = __webpack_require__(/*! ./constants */ 42);
 	exports.ChangeDetectionStrategy = constants_1.ChangeDetectionStrategy;
 	exports.CHANGE_DETECTION_STRATEGY_VALUES = constants_1.CHANGE_DETECTION_STRATEGY_VALUES;
-	var proto_change_detector_1 = __webpack_require__(43);
+	var proto_change_detector_1 = __webpack_require__(/*! ./proto_change_detector */ 43);
 	exports.DynamicProtoChangeDetector = proto_change_detector_1.DynamicProtoChangeDetector;
-	var jit_proto_change_detector_1 = __webpack_require__(77);
+	var jit_proto_change_detector_1 = __webpack_require__(/*! ./jit_proto_change_detector */ 77);
 	exports.JitProtoChangeDetector = jit_proto_change_detector_1.JitProtoChangeDetector;
-	var binding_record_1 = __webpack_require__(46);
+	var binding_record_1 = __webpack_require__(/*! ./binding_record */ 46);
 	exports.BindingRecord = binding_record_1.BindingRecord;
 	exports.BindingTarget = binding_record_1.BindingTarget;
-	var directive_record_1 = __webpack_require__(47);
+	var directive_record_1 = __webpack_require__(/*! ./directive_record */ 47);
 	exports.DirectiveIndex = directive_record_1.DirectiveIndex;
 	exports.DirectiveRecord = directive_record_1.DirectiveRecord;
-	var dynamic_change_detector_1 = __webpack_require__(48);
+	var dynamic_change_detector_1 = __webpack_require__(/*! ./dynamic_change_detector */ 48);
 	exports.DynamicChangeDetector = dynamic_change_detector_1.DynamicChangeDetector;
-	var change_detector_ref_1 = __webpack_require__(50);
+	var change_detector_ref_1 = __webpack_require__(/*! ./change_detector_ref */ 50);
 	exports.ChangeDetectorRef = change_detector_ref_1.ChangeDetectorRef;
-	var iterable_differs_2 = __webpack_require__(32);
+	var iterable_differs_2 = __webpack_require__(/*! ./differs/iterable_differs */ 32);
 	exports.IterableDiffers = iterable_differs_2.IterableDiffers;
-	var keyvalue_differs_2 = __webpack_require__(34);
+	var keyvalue_differs_2 = __webpack_require__(/*! ./differs/keyvalue_differs */ 34);
 	exports.KeyValueDiffers = keyvalue_differs_2.KeyValueDiffers;
-	var change_detection_util_1 = __webpack_require__(44);
+	var change_detection_util_1 = __webpack_require__(/*! ./change_detection_util */ 44);
 	exports.WrappedValue = change_detection_util_1.WrappedValue;
 	exports.SimpleChange = change_detection_util_1.SimpleChange;
 	/**
@@ -9699,6 +9798,9 @@
 
 /***/ },
 /* 32 */
+/*!**************************************************************************!*\
+  !*** ./~/angular2/src/core/change_detection/differs/iterable_differs.js ***!
+  \**************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -9710,10 +9812,10 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var collection_1 = __webpack_require__(18);
-	var di_1 = __webpack_require__(12);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
 	/**
 	 * A repository of different iterable diffing strategies used by NgFor, NgClass, and others.
 	 */
@@ -9786,6 +9888,9 @@
 
 /***/ },
 /* 33 */
+/*!*********************************************************************************!*\
+  !*** ./~/angular2/src/core/change_detection/differs/default_iterable_differ.js ***!
+  \*********************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -9797,10 +9902,10 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var collection_1 = __webpack_require__(18);
-	var lang_2 = __webpack_require__(11);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var lang_2 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	var DefaultIterableDifferFactory = (function () {
 	    function DefaultIterableDifferFactory() {
 	    }
@@ -10411,6 +10516,9 @@
 
 /***/ },
 /* 34 */
+/*!**************************************************************************!*\
+  !*** ./~/angular2/src/core/change_detection/differs/keyvalue_differs.js ***!
+  \**************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10422,10 +10530,10 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var collection_1 = __webpack_require__(18);
-	var di_1 = __webpack_require__(12);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
 	/**
 	 * A repository of different Map diffing strategies used by NgClass, NgStyle, and others.
 	 */
@@ -10498,6 +10606,9 @@
 
 /***/ },
 /* 35 */
+/*!*********************************************************************************!*\
+  !*** ./~/angular2/src/core/change_detection/differs/default_keyvalue_differ.js ***!
+  \*********************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10509,9 +10620,9 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var collection_1 = __webpack_require__(18);
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
 	var DefaultKeyValueDifferFactory = (function () {
 	    function DefaultKeyValueDifferFactory() {
 	    }
@@ -10869,6 +10980,9 @@
 
 /***/ },
 /* 36 */
+/*!************************************************************!*\
+  !*** ./~/angular2/src/core/change_detection/parser/ast.js ***!
+  \************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -10876,7 +10990,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var collection_1 = __webpack_require__(18);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
 	var AST = (function () {
 	    function AST() {
 	    }
@@ -11293,6 +11407,9 @@
 
 /***/ },
 /* 37 */
+/*!**************************************************************!*\
+  !*** ./~/angular2/src/core/change_detection/parser/lexer.js ***!
+  \**************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -11309,10 +11426,10 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var decorators_1 = __webpack_require__(14);
-	var collection_1 = __webpack_require__(18);
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
+	var decorators_1 = __webpack_require__(/*! angular2/src/core/di/decorators */ 14);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
 	(function (TokenType) {
 	    TokenType[TokenType["Character"] = 0] = "Character";
 	    TokenType[TokenType["Identifier"] = 1] = "Identifier";
@@ -11754,6 +11871,9 @@
 
 /***/ },
 /* 38 */
+/*!***************************************************************!*\
+  !*** ./~/angular2/src/core/change_detection/parser/parser.js ***!
+  \***************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -11770,13 +11890,13 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var decorators_1 = __webpack_require__(14);
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var collection_1 = __webpack_require__(18);
-	var lexer_1 = __webpack_require__(37);
-	var reflection_1 = __webpack_require__(22);
-	var ast_1 = __webpack_require__(36);
+	var decorators_1 = __webpack_require__(/*! angular2/src/core/di/decorators */ 14);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var lexer_1 = __webpack_require__(/*! ./lexer */ 37);
+	var reflection_1 = __webpack_require__(/*! angular2/src/core/reflection/reflection */ 22);
+	var ast_1 = __webpack_require__(/*! ./ast */ 36);
 	var _implicitReceiver = new ast_1.ImplicitReceiver();
 	// TODO(tbosch): Cannot make this const/final right now because of the transpiler...
 	var INTERPOLATION_REGEXP = /\{\{(.*?)\}\}/g;
@@ -12395,11 +12515,14 @@
 
 /***/ },
 /* 39 */
+/*!***************************************************************!*\
+  !*** ./~/angular2/src/core/change_detection/parser/locals.js ***!
+  \***************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var collection_1 = __webpack_require__(18);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
 	var Locals = (function () {
 	    function Locals(parent, current) {
 	        this.parent = parent;
@@ -12442,6 +12565,9 @@
 
 /***/ },
 /* 40 */
+/*!************************************************************!*\
+  !*** ./~/angular2/src/core/change_detection/exceptions.js ***!
+  \************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -12449,7 +12575,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var exceptions_1 = __webpack_require__(20);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
 	/**
 	 * An error thrown if application changes model breaking the top-down data flow.
 	 *
@@ -12576,6 +12702,9 @@
 
 /***/ },
 /* 41 */
+/*!************************************************************!*\
+  !*** ./~/angular2/src/core/change_detection/interfaces.js ***!
+  \************************************************************/
 /***/ function(module, exports) {
 
 	'use strict';var DebugContext = (function () {
@@ -12616,9 +12745,12 @@
 
 /***/ },
 /* 42 */
+/*!***********************************************************!*\
+  !*** ./~/angular2/src/core/change_detection/constants.js ***!
+  \***********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	/**
 	 * Describes the current state of the change detector.
 	 */
@@ -12709,18 +12841,21 @@
 
 /***/ },
 /* 43 */
+/*!***********************************************************************!*\
+  !*** ./~/angular2/src/core/change_detection/proto_change_detector.js ***!
+  \***********************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var collection_1 = __webpack_require__(18);
-	var ast_1 = __webpack_require__(36);
-	var change_detection_util_1 = __webpack_require__(44);
-	var dynamic_change_detector_1 = __webpack_require__(48);
-	var directive_record_1 = __webpack_require__(47);
-	var event_binding_1 = __webpack_require__(75);
-	var coalesce_1 = __webpack_require__(76);
-	var proto_record_1 = __webpack_require__(54);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var ast_1 = __webpack_require__(/*! ./parser/ast */ 36);
+	var change_detection_util_1 = __webpack_require__(/*! ./change_detection_util */ 44);
+	var dynamic_change_detector_1 = __webpack_require__(/*! ./dynamic_change_detector */ 48);
+	var directive_record_1 = __webpack_require__(/*! ./directive_record */ 47);
+	var event_binding_1 = __webpack_require__(/*! ./event_binding */ 75);
+	var coalesce_1 = __webpack_require__(/*! ./coalesce */ 76);
+	var proto_record_1 = __webpack_require__(/*! ./proto_record */ 54);
 	var DynamicProtoChangeDetector = (function () {
 	    function DynamicProtoChangeDetector(_definition) {
 	        this._definition = _definition;
@@ -13103,15 +13238,18 @@
 
 /***/ },
 /* 44 */
+/*!***********************************************************************!*\
+  !*** ./~/angular2/src/core/change_detection/change_detection_util.js ***!
+  \***********************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var collection_1 = __webpack_require__(18);
-	var constants_1 = __webpack_require__(42);
-	var pipe_lifecycle_reflector_1 = __webpack_require__(45);
-	var binding_record_1 = __webpack_require__(46);
-	var directive_record_1 = __webpack_require__(47);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var constants_1 = __webpack_require__(/*! ./constants */ 42);
+	var pipe_lifecycle_reflector_1 = __webpack_require__(/*! ./pipe_lifecycle_reflector */ 45);
+	var binding_record_1 = __webpack_require__(/*! ./binding_record */ 46);
+	var directive_record_1 = __webpack_require__(/*! ./directive_record */ 47);
 	/**
 	 * Indicates that the result of a {@link PipeMetadata} transformation has changed even though the
 	 * reference
@@ -13306,6 +13444,9 @@
 
 /***/ },
 /* 45 */
+/*!**************************************************************************!*\
+  !*** ./~/angular2/src/core/change_detection/pipe_lifecycle_reflector.js ***!
+  \**************************************************************************/
 /***/ function(module, exports) {
 
 	'use strict';function implementsOnDestroy(pipe) {
@@ -13316,9 +13457,12 @@
 
 /***/ },
 /* 46 */
+/*!****************************************************************!*\
+  !*** ./~/angular2/src/core/change_detection/binding_record.js ***!
+  \****************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	var DIRECTIVE_LIFECYCLE = "directiveLifecycle";
 	var BINDING = "native";
 	var DIRECTIVE = "directive";
@@ -13429,10 +13573,13 @@
 
 /***/ },
 /* 47 */
+/*!******************************************************************!*\
+  !*** ./~/angular2/src/core/change_detection/directive_record.js ***!
+  \******************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var constants_1 = __webpack_require__(42);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var constants_1 = __webpack_require__(/*! ./constants */ 42);
 	var DirectiveIndex = (function () {
 	    function DirectiveIndex(elementIndex, directiveIndex) {
 	        this.elementIndex = elementIndex;
@@ -13471,6 +13618,9 @@
 
 /***/ },
 /* 48 */
+/*!*************************************************************************!*\
+  !*** ./~/angular2/src/core/change_detection/dynamic_change_detector.js ***!
+  \*************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -13478,15 +13628,15 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var collection_1 = __webpack_require__(18);
-	var abstract_change_detector_1 = __webpack_require__(49);
-	var change_detection_util_1 = __webpack_require__(44);
-	var constants_1 = __webpack_require__(42);
-	var proto_record_1 = __webpack_require__(54);
-	var reflection_1 = __webpack_require__(22);
-	var async_1 = __webpack_require__(55);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var abstract_change_detector_1 = __webpack_require__(/*! ./abstract_change_detector */ 49);
+	var change_detection_util_1 = __webpack_require__(/*! ./change_detection_util */ 44);
+	var constants_1 = __webpack_require__(/*! ./constants */ 42);
+	var proto_record_1 = __webpack_require__(/*! ./proto_record */ 54);
+	var reflection_1 = __webpack_require__(/*! angular2/src/core/reflection/reflection */ 22);
+	var async_1 = __webpack_require__(/*! angular2/src/facade/async */ 55);
 	var DynamicChangeDetector = (function (_super) {
 	    __extends(DynamicChangeDetector, _super);
 	    function DynamicChangeDetector(id, numberOfPropertyProtoRecords, propertyBindingTargets, directiveIndices, strategy, _records, _eventBindings, _directiveRecords, _genConfig) {
@@ -13905,17 +14055,20 @@
 
 /***/ },
 /* 49 */
+/*!**************************************************************************!*\
+  !*** ./~/angular2/src/core/change_detection/abstract_change_detector.js ***!
+  \**************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var collection_1 = __webpack_require__(18);
-	var change_detection_util_1 = __webpack_require__(44);
-	var change_detector_ref_1 = __webpack_require__(50);
-	var exceptions_1 = __webpack_require__(40);
-	var locals_1 = __webpack_require__(39);
-	var constants_1 = __webpack_require__(42);
-	var profile_1 = __webpack_require__(51);
-	var observable_facade_1 = __webpack_require__(53);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var change_detection_util_1 = __webpack_require__(/*! ./change_detection_util */ 44);
+	var change_detector_ref_1 = __webpack_require__(/*! ./change_detector_ref */ 50);
+	var exceptions_1 = __webpack_require__(/*! ./exceptions */ 40);
+	var locals_1 = __webpack_require__(/*! ./parser/locals */ 39);
+	var constants_1 = __webpack_require__(/*! ./constants */ 42);
+	var profile_1 = __webpack_require__(/*! ../profile/profile */ 51);
+	var observable_facade_1 = __webpack_require__(/*! ./observable_facade */ 53);
 	var _scope_check = profile_1.wtfCreateScope("ChangeDetector#check(ascii id, bool throwOnChange)");
 	var _Context = (function () {
 	    function _Context(element, componentElement, context, locals, injector, expression) {
@@ -14212,6 +14365,9 @@
 
 /***/ },
 /* 50 */
+/*!*********************************************************************!*\
+  !*** ./~/angular2/src/core/change_detection/change_detector_ref.js ***!
+  \*********************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -14219,7 +14375,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var constants_1 = __webpack_require__(42);
+	var constants_1 = __webpack_require__(/*! ./constants */ 42);
 	var ChangeDetectorRef = (function () {
 	    function ChangeDetectorRef() {
 	    }
@@ -14247,9 +14403,12 @@
 
 /***/ },
 /* 51 */
+/*!************************************************!*\
+  !*** ./~/angular2/src/core/profile/profile.js ***!
+  \************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var impl = __webpack_require__(52);
+	'use strict';var impl = __webpack_require__(/*! ./wtf_impl */ 52);
 	// Change exports to const once https://github.com/angular/ts2dart/issues/150
 	/**
 	 * True if WTF is enabled.
@@ -14322,9 +14481,12 @@
 
 /***/ },
 /* 52 */
+/*!*************************************************!*\
+  !*** ./~/angular2/src/core/profile/wtf_impl.js ***!
+  \*************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	var trace;
 	var events;
 	function detectWTF() {
@@ -14361,6 +14523,9 @@
 
 /***/ },
 /* 53 */
+/*!*******************************************************************!*\
+  !*** ./~/angular2/src/core/change_detection/observable_facade.js ***!
+  \*******************************************************************/
 /***/ function(module, exports) {
 
 	'use strict';function isObservable(value) {
@@ -14371,6 +14536,9 @@
 
 /***/ },
 /* 54 */
+/*!**************************************************************!*\
+  !*** ./~/angular2/src/core/change_detection/proto_record.js ***!
+  \**************************************************************/
 /***/ function(module, exports) {
 
 	'use strict';(function (RecordType) {
@@ -14437,6 +14605,9 @@
 
 /***/ },
 /* 55 */
+/*!****************************************!*\
+  !*** ./~/angular2/src/facade/async.js ***!
+  \****************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -14444,16 +14615,16 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var lang_1 = __webpack_require__(11);
-	var promise_1 = __webpack_require__(56);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var promise_1 = __webpack_require__(/*! angular2/src/facade/promise */ 56);
 	exports.PromiseWrapper = promise_1.PromiseWrapper;
 	exports.Promise = promise_1.Promise;
-	var Subject_1 = __webpack_require__(57);
-	var fromPromise_1 = __webpack_require__(69);
-	var toPromise_1 = __webpack_require__(74);
-	var Observable_1 = __webpack_require__(58);
+	var Subject_1 = __webpack_require__(/*! rxjs/Subject */ 57);
+	var fromPromise_1 = __webpack_require__(/*! rxjs/observable/fromPromise */ 69);
+	var toPromise_1 = __webpack_require__(/*! rxjs/operator/toPromise */ 74);
+	var Observable_1 = __webpack_require__(/*! rxjs/Observable */ 58);
 	exports.Observable = Observable_1.Observable;
-	var Subject_2 = __webpack_require__(57);
+	var Subject_2 = __webpack_require__(/*! rxjs/Subject */ 57);
 	exports.Subject = Subject_2.Subject;
 	var TimerWrapper = (function () {
 	    function TimerWrapper() {
@@ -14591,6 +14762,9 @@
 
 /***/ },
 /* 56 */
+/*!******************************************!*\
+  !*** ./~/angular2/src/facade/promise.js ***!
+  \******************************************/
 /***/ function(module, exports) {
 
 	'use strict';// Promises are put into their own facade file so that they can be used without
@@ -14643,6 +14817,9 @@
 
 /***/ },
 /* 57 */
+/*!***************************!*\
+  !*** ./~/rxjs/Subject.js ***!
+  \***************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -14650,11 +14827,11 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Observable_1 = __webpack_require__(58);
-	var Subscriber_1 = __webpack_require__(59);
-	var Subscription_1 = __webpack_require__(63);
-	var SubjectSubscription_1 = __webpack_require__(68);
-	var rxSubscriber_1 = __webpack_require__(64);
+	var Observable_1 = __webpack_require__(/*! ./Observable */ 58);
+	var Subscriber_1 = __webpack_require__(/*! ./Subscriber */ 59);
+	var Subscription_1 = __webpack_require__(/*! ./Subscription */ 63);
+	var SubjectSubscription_1 = __webpack_require__(/*! ./subject/SubjectSubscription */ 68);
+	var rxSubscriber_1 = __webpack_require__(/*! ./symbol/rxSubscriber */ 64);
 	var subscriptionAdd = Subscription_1.Subscription.prototype.add;
 	var subscriptionRemove = Subscription_1.Subscription.prototype.remove;
 	var subscriptionUnsubscribe = Subscription_1.Subscription.prototype.unsubscribe;
@@ -14820,12 +14997,15 @@
 
 /***/ },
 /* 58 */
+/*!******************************!*\
+  !*** ./~/rxjs/Observable.js ***!
+  \******************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	var Subscriber_1 = __webpack_require__(59);
-	var root_1 = __webpack_require__(66);
-	var SymbolShim_1 = __webpack_require__(65);
-	var rxSubscriber_1 = __webpack_require__(64);
+	var Subscriber_1 = __webpack_require__(/*! ./Subscriber */ 59);
+	var root_1 = __webpack_require__(/*! ./util/root */ 66);
+	var SymbolShim_1 = __webpack_require__(/*! ./util/SymbolShim */ 65);
+	var rxSubscriber_1 = __webpack_require__(/*! ./symbol/rxSubscriber */ 64);
 	/**
 	 * A representation of any set of values over any amount of time. This the most basic building block
 	 * of RxJS.
@@ -14960,6 +15140,9 @@
 
 /***/ },
 /* 59 */
+/*!******************************!*\
+  !*** ./~/rxjs/Subscriber.js ***!
+  \******************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -14967,11 +15150,11 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var noop_1 = __webpack_require__(60);
-	var throwError_1 = __webpack_require__(61);
-	var tryOrOnError_1 = __webpack_require__(62);
-	var Subscription_1 = __webpack_require__(63);
-	var rxSubscriber_1 = __webpack_require__(64);
+	var noop_1 = __webpack_require__(/*! ./util/noop */ 60);
+	var throwError_1 = __webpack_require__(/*! ./util/throwError */ 61);
+	var tryOrOnError_1 = __webpack_require__(/*! ./util/tryOrOnError */ 62);
+	var Subscription_1 = __webpack_require__(/*! ./Subscription */ 63);
+	var rxSubscriber_1 = __webpack_require__(/*! ./symbol/rxSubscriber */ 64);
 	var Subscriber = (function (_super) {
 	    __extends(Subscriber, _super);
 	    function Subscriber(destination) {
@@ -15095,6 +15278,9 @@
 
 /***/ },
 /* 60 */
+/*!*****************************!*\
+  !*** ./~/rxjs/util/noop.js ***!
+  \*****************************/
 /***/ function(module, exports) {
 
 	/* tslint:disable:no-empty */
@@ -15104,6 +15290,9 @@
 
 /***/ },
 /* 61 */
+/*!***********************************!*\
+  !*** ./~/rxjs/util/throwError.js ***!
+  \***********************************/
 /***/ function(module, exports) {
 
 	function throwError(e) { throw e; }
@@ -15112,6 +15301,9 @@
 
 /***/ },
 /* 62 */
+/*!*************************************!*\
+  !*** ./~/rxjs/util/tryOrOnError.js ***!
+  \*************************************/
 /***/ function(module, exports) {
 
 	function tryOrOnError(target) {
@@ -15131,9 +15323,12 @@
 
 /***/ },
 /* 63 */
+/*!********************************!*\
+  !*** ./~/rxjs/Subscription.js ***!
+  \********************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	var noop_1 = __webpack_require__(60);
+	var noop_1 = __webpack_require__(/*! ./util/noop */ 60);
 	var Subscription = (function () {
 	    function Subscription(_unsubscribe) {
 	        this.isUnsubscribed = false;
@@ -15218,9 +15413,12 @@
 
 /***/ },
 /* 64 */
+/*!***************************************!*\
+  !*** ./~/rxjs/symbol/rxSubscriber.js ***!
+  \***************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	var SymbolShim_1 = __webpack_require__(65);
+	var SymbolShim_1 = __webpack_require__(/*! ../util/SymbolShim */ 65);
 	/**
 	 * rxSubscriber symbol is a symbol for retreiving an "Rx safe" Observer from an object
 	 * "Rx safety" can be defined as an object that has all of the traits of an Rx Subscriber,
@@ -15232,9 +15430,12 @@
 
 /***/ },
 /* 65 */
+/*!***********************************!*\
+  !*** ./~/rxjs/util/SymbolShim.js ***!
+  \***********************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	var root_1 = __webpack_require__(66);
+	var root_1 = __webpack_require__(/*! ./root */ 66);
 	function polyfillSymbol(root) {
 	    var Symbol = ensureSymbol(root);
 	    ensureIterator(Symbol, root);
@@ -15305,6 +15506,9 @@
 
 /***/ },
 /* 66 */
+/*!*****************************!*\
+  !*** ./~/rxjs/util/root.js ***!
+  \*****************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module, global) {var objectTypes = {
@@ -15324,10 +15528,13 @@
 	    exports.root = freeGlobal;
 	}
 	//# sourceMappingURL=root.js.map
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(67)(module), (function() { return this; }())))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../../../../../../../../../usr/local/lib/~/ionic/~/ionic-app-lib/~/webpack/buildin/module.js */ 67)(module), (function() { return this; }())))
 
 /***/ },
 /* 67 */
+/*!***********************************!*\
+  !*** (webpack)/buildin/module.js ***!
+  \***********************************/
 /***/ function(module, exports) {
 
 	module.exports = function(module) {
@@ -15344,6 +15551,9 @@
 
 /***/ },
 /* 68 */
+/*!***********************************************!*\
+  !*** ./~/rxjs/subject/SubjectSubscription.js ***!
+  \***********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -15351,8 +15561,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscription_1 = __webpack_require__(63);
-	var Subscriber_1 = __webpack_require__(59);
+	var Subscription_1 = __webpack_require__(/*! ../Subscription */ 63);
+	var Subscriber_1 = __webpack_require__(/*! ../Subscriber */ 59);
 	var SubjectSubscription = (function (_super) {
 	    __extends(SubjectSubscription, _super);
 	    function SubjectSubscription(subject, observer) {
@@ -15387,6 +15597,9 @@
 
 /***/ },
 /* 69 */
+/*!******************************************!*\
+  !*** ./~/rxjs/observable/fromPromise.js ***!
+  \******************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -15394,9 +15607,9 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Observable_1 = __webpack_require__(58);
-	var Subscription_1 = __webpack_require__(63);
-	var queue_1 = __webpack_require__(70);
+	var Observable_1 = __webpack_require__(/*! ../Observable */ 58);
+	var Subscription_1 = __webpack_require__(/*! ../Subscription */ 63);
+	var queue_1 = __webpack_require__(/*! ../scheduler/queue */ 70);
 	var PromiseObservable = (function (_super) {
 	    __extends(PromiseObservable, _super);
 	    function PromiseObservable(promise, scheduler) {
@@ -15468,18 +15681,24 @@
 
 /***/ },
 /* 70 */
+/*!***********************************!*\
+  !*** ./~/rxjs/scheduler/queue.js ***!
+  \***********************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	var QueueScheduler_1 = __webpack_require__(71);
+	var QueueScheduler_1 = __webpack_require__(/*! ./QueueScheduler */ 71);
 	exports.queue = new QueueScheduler_1.QueueScheduler();
 	//# sourceMappingURL=queue.js.map
 
 /***/ },
 /* 71 */
+/*!********************************************!*\
+  !*** ./~/rxjs/scheduler/QueueScheduler.js ***!
+  \********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	var QueueAction_1 = __webpack_require__(72);
-	var FutureAction_1 = __webpack_require__(73);
+	var QueueAction_1 = __webpack_require__(/*! ./QueueAction */ 72);
+	var FutureAction_1 = __webpack_require__(/*! ./FutureAction */ 73);
 	var QueueScheduler = (function () {
 	    function QueueScheduler() {
 	        this.actions = [];
@@ -15519,6 +15738,9 @@
 
 /***/ },
 /* 72 */
+/*!*****************************************!*\
+  !*** ./~/rxjs/scheduler/QueueAction.js ***!
+  \*****************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -15526,7 +15748,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscription_1 = __webpack_require__(63);
+	var Subscription_1 = __webpack_require__(/*! ../Subscription */ 63);
 	var QueueAction = (function (_super) {
 	    __extends(QueueAction, _super);
 	    function QueueAction(scheduler, work) {
@@ -15569,6 +15791,9 @@
 
 /***/ },
 /* 73 */
+/*!******************************************!*\
+  !*** ./~/rxjs/scheduler/FutureAction.js ***!
+  \******************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -15576,7 +15801,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var QueueAction_1 = __webpack_require__(72);
+	var QueueAction_1 = __webpack_require__(/*! ./QueueAction */ 72);
 	var FutureAction = (function (_super) {
 	    __extends(FutureAction, _super);
 	    function FutureAction(scheduler, work) {
@@ -15620,9 +15845,12 @@
 
 /***/ },
 /* 74 */
+/*!**************************************!*\
+  !*** ./~/rxjs/operator/toPromise.js ***!
+  \**************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	var root_1 = __webpack_require__(66);
+	var root_1 = __webpack_require__(/*! ../util/root */ 66);
 	function toPromise(PromiseCtor) {
 	    var _this = this;
 	    if (!PromiseCtor) {
@@ -15646,6 +15874,9 @@
 
 /***/ },
 /* 75 */
+/*!***************************************************************!*\
+  !*** ./~/angular2/src/core/change_detection/event_binding.js ***!
+  \***************************************************************/
 /***/ function(module, exports) {
 
 	'use strict';var EventBinding = (function () {
@@ -15662,11 +15893,14 @@
 
 /***/ },
 /* 76 */
+/*!**********************************************************!*\
+  !*** ./~/angular2/src/core/change_detection/coalesce.js ***!
+  \**********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var collection_1 = __webpack_require__(18);
-	var proto_record_1 = __webpack_require__(54);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var proto_record_1 = __webpack_require__(/*! ./proto_record */ 54);
 	/**
 	 * Removes "duplicate" records. It assumes that record evaluation does not have side-effects.
 	 *
@@ -15812,9 +16046,12 @@
 
 /***/ },
 /* 77 */
+/*!***************************************************************************!*\
+  !*** ./~/angular2/src/core/change_detection/jit_proto_change_detector.js ***!
+  \***************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var change_detection_jit_generator_1 = __webpack_require__(78);
+	'use strict';var change_detection_jit_generator_1 = __webpack_require__(/*! ./change_detection_jit_generator */ 78);
 	var JitProtoChangeDetector = (function () {
 	    function JitProtoChangeDetector(definition) {
 	        this.definition = definition;
@@ -15834,19 +16071,22 @@
 
 /***/ },
 /* 78 */
+/*!********************************************************************************!*\
+  !*** ./~/angular2/src/core/change_detection/change_detection_jit_generator.js ***!
+  \********************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var collection_1 = __webpack_require__(18);
-	var abstract_change_detector_1 = __webpack_require__(49);
-	var change_detection_util_1 = __webpack_require__(44);
-	var proto_record_1 = __webpack_require__(54);
-	var codegen_name_util_1 = __webpack_require__(79);
-	var codegen_logic_util_1 = __webpack_require__(80);
-	var codegen_facade_1 = __webpack_require__(81);
-	var constants_1 = __webpack_require__(42);
-	var proto_change_detector_1 = __webpack_require__(43);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var abstract_change_detector_1 = __webpack_require__(/*! ./abstract_change_detector */ 49);
+	var change_detection_util_1 = __webpack_require__(/*! ./change_detection_util */ 44);
+	var proto_record_1 = __webpack_require__(/*! ./proto_record */ 54);
+	var codegen_name_util_1 = __webpack_require__(/*! ./codegen_name_util */ 79);
+	var codegen_logic_util_1 = __webpack_require__(/*! ./codegen_logic_util */ 80);
+	var codegen_facade_1 = __webpack_require__(/*! ./codegen_facade */ 81);
+	var constants_1 = __webpack_require__(/*! ./constants */ 42);
+	var proto_change_detector_1 = __webpack_require__(/*! ./proto_change_detector */ 43);
 	/**
 	 * The code generator takes a list of proto records and creates a function/class
 	 * that "emulates" what the developer would write by hand to implement the same
@@ -16183,10 +16423,13 @@
 
 /***/ },
 /* 79 */
+/*!*******************************************************************!*\
+  !*** ./~/angular2/src/core/change_detection/codegen_name_util.js ***!
+  \*******************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var collection_1 = __webpack_require__(18);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
 	// The names of these fields must be kept in sync with abstract_change_detector.ts or change
 	// detection will fail.
 	var _STATE_ACCESSOR = "state";
@@ -16352,13 +16595,16 @@
 
 /***/ },
 /* 80 */
+/*!********************************************************************!*\
+  !*** ./~/angular2/src/core/change_detection/codegen_logic_util.js ***!
+  \********************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var codegen_facade_1 = __webpack_require__(81);
-	var proto_record_1 = __webpack_require__(54);
-	var constants_1 = __webpack_require__(42);
-	var exceptions_1 = __webpack_require__(20);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var codegen_facade_1 = __webpack_require__(/*! ./codegen_facade */ 81);
+	var proto_record_1 = __webpack_require__(/*! ./proto_record */ 54);
+	var constants_1 = __webpack_require__(/*! ./constants */ 42);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
 	/**
 	 * Class responsible for providing change detection logic for change detector classes.
 	 */
@@ -16580,6 +16826,9 @@
 
 /***/ },
 /* 81 */
+/*!****************************************************************!*\
+  !*** ./~/angular2/src/core/change_detection/codegen_facade.js ***!
+  \****************************************************************/
 /***/ function(module, exports) {
 
 	'use strict';/**
@@ -16606,6 +16855,9 @@
 
 /***/ },
 /* 82 */
+/*!**********************************************!*\
+  !*** ./~/angular2/src/core/metadata/view.js ***!
+  \**********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -16617,7 +16869,7 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var lang_1 = __webpack_require__(11);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	/**
 	 * Defines template and style encapsulation options available for Component's {@link View}.
 	 *
@@ -16698,38 +16950,50 @@
 
 /***/ },
 /* 83 */
+/*!*************************************!*\
+  !*** ./~/angular2/src/core/util.js ***!
+  \*************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';// Public API for util
-	var decorators_1 = __webpack_require__(15);
+	var decorators_1 = __webpack_require__(/*! ./util/decorators */ 15);
 	exports.Class = decorators_1.Class;
 
 
 /***/ },
 /* 84 */
+/*!******************************************!*\
+  !*** ./~/angular2/src/core/prod_mode.js ***!
+  \******************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	exports.enableProdMode = lang_1.enableProdMode;
 
 
 /***/ },
 /* 85 */
+/*!*****************************************!*\
+  !*** ./~/angular2/src/facade/facade.js ***!
+  \*****************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';// Public API for Facade
-	var lang_1 = __webpack_require__(11);
+	var lang_1 = __webpack_require__(/*! ./lang */ 11);
 	exports.Type = lang_1.Type;
-	var async_1 = __webpack_require__(55);
+	var async_1 = __webpack_require__(/*! ./async */ 55);
 	exports.EventEmitter = async_1.EventEmitter;
-	var exceptions_1 = __webpack_require__(20);
+	var exceptions_1 = __webpack_require__(/*! ./exceptions */ 20);
 	exports.WrappedException = exceptions_1.WrappedException;
-	var exception_handler_1 = __webpack_require__(21);
+	var exception_handler_1 = __webpack_require__(/*! ./exception_handler */ 21);
 	exports.ExceptionHandler = exception_handler_1.ExceptionHandler;
 
 
 /***/ },
 /* 86 */
+/*!************************************************!*\
+  !*** ./~/angular2/src/core/application_ref.js ***!
+  \************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -16737,18 +17001,18 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var ng_zone_1 = __webpack_require__(87);
-	var lang_1 = __webpack_require__(11);
-	var di_1 = __webpack_require__(12);
-	var application_tokens_1 = __webpack_require__(88);
-	var async_1 = __webpack_require__(55);
-	var collection_1 = __webpack_require__(18);
-	var testability_1 = __webpack_require__(89);
-	var dynamic_component_loader_1 = __webpack_require__(90);
-	var exceptions_1 = __webpack_require__(20);
-	var console_1 = __webpack_require__(107);
-	var profile_1 = __webpack_require__(51);
-	var lang_2 = __webpack_require__(11);
+	var ng_zone_1 = __webpack_require__(/*! angular2/src/core/zone/ng_zone */ 87);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
+	var application_tokens_1 = __webpack_require__(/*! ./application_tokens */ 88);
+	var async_1 = __webpack_require__(/*! angular2/src/facade/async */ 55);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var testability_1 = __webpack_require__(/*! angular2/src/core/testability/testability */ 89);
+	var dynamic_component_loader_1 = __webpack_require__(/*! angular2/src/core/linker/dynamic_component_loader */ 90);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var console_1 = __webpack_require__(/*! angular2/src/core/console */ 107);
+	var profile_1 = __webpack_require__(/*! ./profile/profile */ 51);
+	var lang_2 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	/**
 	 * Construct providers specific to an individual root component.
 	 */
@@ -17124,12 +17388,15 @@
 
 /***/ },
 /* 87 */
+/*!*********************************************!*\
+  !*** ./~/angular2/src/core/zone/ng_zone.js ***!
+  \*********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var collection_1 = __webpack_require__(18);
-	var lang_1 = __webpack_require__(11);
-	var async_1 = __webpack_require__(55);
-	var profile_1 = __webpack_require__(51);
+	'use strict';var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var async_1 = __webpack_require__(/*! angular2/src/facade/async */ 55);
+	var profile_1 = __webpack_require__(/*! ../profile/profile */ 51);
 	/**
 	 * Stores error information; delivered via [NgZone.onError] stream.
 	 */
@@ -17571,10 +17838,13 @@
 
 /***/ },
 /* 88 */
+/*!***************************************************!*\
+  !*** ./~/angular2/src/core/application_tokens.js ***!
+  \***************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var di_1 = __webpack_require__(12);
-	var lang_1 = __webpack_require__(11);
+	'use strict';var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	/**
 	 *  @internal
 	 */
@@ -17632,6 +17902,9 @@
 
 /***/ },
 /* 89 */
+/*!********************************************************!*\
+  !*** ./~/angular2/src/core/testability/testability.js ***!
+  \********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -17643,12 +17916,12 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var di_1 = __webpack_require__(12);
-	var collection_1 = __webpack_require__(18);
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var ng_zone_1 = __webpack_require__(87);
-	var async_1 = __webpack_require__(55);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var ng_zone_1 = __webpack_require__(/*! ../zone/ng_zone */ 87);
+	var async_1 = __webpack_require__(/*! angular2/src/facade/async */ 55);
 	/**
 	 * The Testability service provides testing hooks that can be accessed from
 	 * the browser and by services such as Protractor. Each bootstrapped Angular
@@ -17776,6 +18049,9 @@
 
 /***/ },
 /* 90 */
+/*!****************************************************************!*\
+  !*** ./~/angular2/src/core/linker/dynamic_component_loader.js ***!
+  \****************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -17792,10 +18068,10 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var di_1 = __webpack_require__(12);
-	var compiler_1 = __webpack_require__(91);
-	var lang_1 = __webpack_require__(11);
-	var view_manager_1 = __webpack_require__(105);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
+	var compiler_1 = __webpack_require__(/*! ./compiler */ 91);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var view_manager_1 = __webpack_require__(/*! angular2/src/core/linker/view_manager */ 105);
 	/**
 	 * Represents an instance of a Component created via {@link DynamicComponentLoader}.
 	 *
@@ -17925,6 +18201,9 @@
 
 /***/ },
 /* 91 */
+/*!************************************************!*\
+  !*** ./~/angular2/src/core/linker/compiler.js ***!
+  \************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -17941,13 +18220,13 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var di_1 = __webpack_require__(12);
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var async_1 = __webpack_require__(55);
-	var reflection_1 = __webpack_require__(22);
-	var view_1 = __webpack_require__(92);
-	var view_ref_1 = __webpack_require__(101);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var async_1 = __webpack_require__(/*! angular2/src/facade/async */ 55);
+	var reflection_1 = __webpack_require__(/*! angular2/src/core/reflection/reflection */ 22);
+	var view_1 = __webpack_require__(/*! angular2/src/core/linker/view */ 92);
+	var view_ref_1 = __webpack_require__(/*! angular2/src/core/linker/view_ref */ 101);
 	/**
 	 * Low-level service for compiling {@link Component}s into {@link ProtoViewRef ProtoViews}s, which
 	 * can later be used to create and render a Component instance.
@@ -17989,6 +18268,9 @@
 
 /***/ },
 /* 92 */
+/*!********************************************!*\
+  !*** ./~/angular2/src/core/linker/view.js ***!
+  \********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -18000,19 +18282,19 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var collection_1 = __webpack_require__(18);
-	var change_detection_1 = __webpack_require__(31);
-	var interfaces_1 = __webpack_require__(41);
-	var element_1 = __webpack_require__(93);
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var view_ref_1 = __webpack_require__(101);
-	var pipes_1 = __webpack_require__(102);
-	var util_1 = __webpack_require__(104);
-	var interfaces_2 = __webpack_require__(41);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var change_detection_1 = __webpack_require__(/*! angular2/src/core/change_detection/change_detection */ 31);
+	var interfaces_1 = __webpack_require__(/*! angular2/src/core/change_detection/interfaces */ 41);
+	var element_1 = __webpack_require__(/*! ./element */ 93);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var view_ref_1 = __webpack_require__(/*! ./view_ref */ 101);
+	var pipes_1 = __webpack_require__(/*! angular2/src/core/pipes/pipes */ 102);
+	var util_1 = __webpack_require__(/*! angular2/src/core/render/util */ 104);
+	var interfaces_2 = __webpack_require__(/*! angular2/src/core/change_detection/interfaces */ 41);
 	exports.DebugContext = interfaces_2.DebugContext;
-	var pipes_2 = __webpack_require__(102);
-	var view_type_1 = __webpack_require__(94);
+	var pipes_2 = __webpack_require__(/*! angular2/src/core/pipes/pipes */ 102);
+	var view_type_1 = __webpack_require__(/*! ./view_type */ 94);
 	var REFLECT_PREFIX = 'ng-reflect-';
 	var EMPTY_CONTEXT = lang_1.CONST_EXPR(new Object());
 	/**
@@ -18286,6 +18568,9 @@
 
 /***/ },
 /* 93 */
+/*!***********************************************!*\
+  !*** ./~/angular2/src/core/linker/element.js ***!
+  \***********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -18293,26 +18578,26 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var collection_1 = __webpack_require__(18);
-	var di_1 = __webpack_require__(12);
-	var provider_1 = __webpack_require__(19);
-	var injector_1 = __webpack_require__(17);
-	var provider_2 = __webpack_require__(19);
-	var di_2 = __webpack_require__(10);
-	var view_type_1 = __webpack_require__(94);
-	var element_ref_1 = __webpack_require__(95);
-	var view_container_ref_1 = __webpack_require__(96);
-	var element_ref_2 = __webpack_require__(95);
-	var api_1 = __webpack_require__(97);
-	var template_ref_1 = __webpack_require__(98);
-	var directives_1 = __webpack_require__(29);
-	var change_detection_1 = __webpack_require__(31);
-	var query_list_1 = __webpack_require__(99);
-	var reflection_1 = __webpack_require__(22);
-	var pipe_provider_1 = __webpack_require__(100);
-	var view_container_ref_2 = __webpack_require__(96);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
+	var provider_1 = __webpack_require__(/*! angular2/src/core/di/provider */ 19);
+	var injector_1 = __webpack_require__(/*! angular2/src/core/di/injector */ 17);
+	var provider_2 = __webpack_require__(/*! angular2/src/core/di/provider */ 19);
+	var di_2 = __webpack_require__(/*! ../metadata/di */ 10);
+	var view_type_1 = __webpack_require__(/*! ./view_type */ 94);
+	var element_ref_1 = __webpack_require__(/*! ./element_ref */ 95);
+	var view_container_ref_1 = __webpack_require__(/*! ./view_container_ref */ 96);
+	var element_ref_2 = __webpack_require__(/*! ./element_ref */ 95);
+	var api_1 = __webpack_require__(/*! angular2/src/core/render/api */ 97);
+	var template_ref_1 = __webpack_require__(/*! ./template_ref */ 98);
+	var directives_1 = __webpack_require__(/*! ../metadata/directives */ 29);
+	var change_detection_1 = __webpack_require__(/*! angular2/src/core/change_detection/change_detection */ 31);
+	var query_list_1 = __webpack_require__(/*! ./query_list */ 99);
+	var reflection_1 = __webpack_require__(/*! angular2/src/core/reflection/reflection */ 22);
+	var pipe_provider_1 = __webpack_require__(/*! angular2/src/core/pipes/pipe_provider */ 100);
+	var view_container_ref_2 = __webpack_require__(/*! ./view_container_ref */ 96);
 	var _staticKeys;
 	var StaticKeys = (function () {
 	    function StaticKeys() {
@@ -19091,6 +19376,9 @@
 
 /***/ },
 /* 94 */
+/*!*************************************************!*\
+  !*** ./~/angular2/src/core/linker/view_type.js ***!
+  \*************************************************/
 /***/ function(module, exports) {
 
 	'use strict';(function (ViewType) {
@@ -19109,9 +19397,12 @@
 
 /***/ },
 /* 95 */
+/*!***************************************************!*\
+  !*** ./~/angular2/src/core/linker/element_ref.js ***!
+  \***************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var exceptions_1 = __webpack_require__(20);
+	'use strict';var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
 	/**
 	 * Represents a location in a View that has an injection, change-detection and render context
 	 * associated with it.
@@ -19173,6 +19464,9 @@
 
 /***/ },
 /* 96 */
+/*!**********************************************************!*\
+  !*** ./~/angular2/src/core/linker/view_container_ref.js ***!
+  \**********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -19180,9 +19474,9 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var collection_1 = __webpack_require__(18);
-	var exceptions_1 = __webpack_require__(20);
-	var lang_1 = __webpack_require__(11);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	/**
 	 * Represents a container where one or more Views can be attached.
 	 *
@@ -19308,6 +19602,9 @@
 
 /***/ },
 /* 97 */
+/*!*******************************************!*\
+  !*** ./~/angular2/src/core/render/api.js ***!
+  \*******************************************/
 /***/ function(module, exports) {
 
 	'use strict';var RenderComponentType = (function () {
@@ -19347,6 +19644,9 @@
 
 /***/ },
 /* 98 */
+/*!****************************************************!*\
+  !*** ./~/angular2/src/core/linker/template_ref.js ***!
+  \****************************************************/
 /***/ function(module, exports) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -19390,11 +19690,14 @@
 
 /***/ },
 /* 99 */
+/*!**************************************************!*\
+  !*** ./~/angular2/src/core/linker/query_list.js ***!
+  \**************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var collection_1 = __webpack_require__(18);
-	var lang_1 = __webpack_require__(11);
-	var async_1 = __webpack_require__(55);
+	'use strict';var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var async_1 = __webpack_require__(/*! angular2/src/facade/async */ 55);
 	/**
 	 * An unmodifiable list of items that Angular keeps up to date when the state
 	 * of the application changes.
@@ -19475,6 +19778,9 @@
 
 /***/ },
 /* 100 */
+/*!****************************************************!*\
+  !*** ./~/angular2/src/core/pipes/pipe_provider.js ***!
+  \****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -19482,8 +19788,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var provider_1 = __webpack_require__(19);
-	var di_1 = __webpack_require__(12);
+	var provider_1 = __webpack_require__(/*! angular2/src/core/di/provider */ 19);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
 	var PipeProvider = (function (_super) {
 	    __extends(PipeProvider, _super);
 	    function PipeProvider(name, pure, key, resolvedFactories, multiBinding) {
@@ -19503,6 +19809,9 @@
 
 /***/ },
 /* 101 */
+/*!************************************************!*\
+  !*** ./~/angular2/src/core/linker/view_ref.js ***!
+  \************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -19510,7 +19819,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var exceptions_1 = __webpack_require__(20);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
 	var ViewRef = (function () {
 	    function ViewRef() {
 	    }
@@ -19676,12 +19985,15 @@
 
 /***/ },
 /* 102 */
+/*!********************************************!*\
+  !*** ./~/angular2/src/core/pipes/pipes.js ***!
+  \********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var collection_1 = __webpack_require__(18);
-	var cd = __webpack_require__(103);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var cd = __webpack_require__(/*! angular2/src/core/change_detection/pipes */ 103);
 	var ProtoPipes = (function () {
 	    function ProtoPipes(
 	        /**
@@ -19731,6 +20043,9 @@
 
 /***/ },
 /* 103 */
+/*!*******************************************************!*\
+  !*** ./~/angular2/src/core/change_detection/pipes.js ***!
+  \*******************************************************/
 /***/ function(module, exports) {
 
 	'use strict';var SelectedPipe = (function () {
@@ -19745,9 +20060,12 @@
 
 /***/ },
 /* 104 */
+/*!********************************************!*\
+  !*** ./~/angular2/src/core/render/util.js ***!
+  \********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	var CAMEL_CASE_REGEXP = /([A-Z])/g;
 	var DASH_CASE_REGEXP = /-([a-z])/g;
 	function camelCaseToDashCase(input) {
@@ -19762,6 +20080,9 @@
 
 /***/ },
 /* 105 */
+/*!****************************************************!*\
+  !*** ./~/angular2/src/core/linker/view_manager.js ***!
+  \****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -19781,17 +20102,17 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var di_1 = __webpack_require__(12);
-	var lang_1 = __webpack_require__(11);
-	var collection_1 = __webpack_require__(18);
-	var exceptions_1 = __webpack_require__(20);
-	var view_1 = __webpack_require__(92);
-	var element_1 = __webpack_require__(93);
-	var view_listener_1 = __webpack_require__(106);
-	var api_1 = __webpack_require__(97);
-	var profile_1 = __webpack_require__(51);
-	var application_tokens_1 = __webpack_require__(88);
-	var view_type_1 = __webpack_require__(94);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var view_1 = __webpack_require__(/*! ./view */ 92);
+	var element_1 = __webpack_require__(/*! ./element */ 93);
+	var view_listener_1 = __webpack_require__(/*! ./view_listener */ 106);
+	var api_1 = __webpack_require__(/*! angular2/src/core/render/api */ 97);
+	var profile_1 = __webpack_require__(/*! ../profile/profile */ 51);
+	var application_tokens_1 = __webpack_require__(/*! angular2/src/core/application_tokens */ 88);
+	var view_type_1 = __webpack_require__(/*! ./view_type */ 94);
 	/**
 	 * Service exposing low level API for creating, moving and destroying Views.
 	 *
@@ -19970,6 +20291,9 @@
 
 /***/ },
 /* 106 */
+/*!*****************************************************!*\
+  !*** ./~/angular2/src/core/linker/view_listener.js ***!
+  \*****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -19981,7 +20305,7 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var di_1 = __webpack_require__(12);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
 	/**
 	 * Listener for view creation / destruction.
 	 */
@@ -20001,6 +20325,9 @@
 
 /***/ },
 /* 107 */
+/*!****************************************!*\
+  !*** ./~/angular2/src/core/console.js ***!
+  \****************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -20012,8 +20339,8 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var di_1 = __webpack_require__(12);
-	var lang_1 = __webpack_require__(11);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	var Console = (function () {
 	    function Console() {
 	    }
@@ -20029,20 +20356,26 @@
 
 /***/ },
 /* 108 */
+/*!*************************************!*\
+  !*** ./~/angular2/src/core/zone.js ***!
+  \*************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';// Public API for Zone
-	var ng_zone_1 = __webpack_require__(87);
+	var ng_zone_1 = __webpack_require__(/*! ./zone/ng_zone */ 87);
 	exports.NgZone = ng_zone_1.NgZone;
 	exports.NgZoneError = ng_zone_1.NgZoneError;
 
 
 /***/ },
 /* 109 */
+/*!***************************************!*\
+  !*** ./~/angular2/src/core/render.js ***!
+  \***************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';// Public API for render
-	var api_1 = __webpack_require__(97);
+	var api_1 = __webpack_require__(/*! ./render/api */ 97);
 	exports.RootRenderer = api_1.RootRenderer;
 	exports.Renderer = api_1.Renderer;
 	exports.RenderComponentType = api_1.RenderComponentType;
@@ -20050,38 +20383,44 @@
 
 /***/ },
 /* 110 */
+/*!***************************************!*\
+  !*** ./~/angular2/src/core/linker.js ***!
+  \***************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';// Public API for compiler
-	var directive_resolver_1 = __webpack_require__(111);
+	var directive_resolver_1 = __webpack_require__(/*! ./linker/directive_resolver */ 111);
 	exports.DirectiveResolver = directive_resolver_1.DirectiveResolver;
-	var view_resolver_1 = __webpack_require__(112);
+	var view_resolver_1 = __webpack_require__(/*! ./linker/view_resolver */ 112);
 	exports.ViewResolver = view_resolver_1.ViewResolver;
-	var compiler_1 = __webpack_require__(91);
+	var compiler_1 = __webpack_require__(/*! ./linker/compiler */ 91);
 	exports.Compiler = compiler_1.Compiler;
-	var view_manager_1 = __webpack_require__(105);
+	var view_manager_1 = __webpack_require__(/*! ./linker/view_manager */ 105);
 	exports.AppViewManager = view_manager_1.AppViewManager;
-	var query_list_1 = __webpack_require__(99);
+	var query_list_1 = __webpack_require__(/*! ./linker/query_list */ 99);
 	exports.QueryList = query_list_1.QueryList;
-	var dynamic_component_loader_1 = __webpack_require__(90);
+	var dynamic_component_loader_1 = __webpack_require__(/*! ./linker/dynamic_component_loader */ 90);
 	exports.DynamicComponentLoader = dynamic_component_loader_1.DynamicComponentLoader;
-	var element_ref_1 = __webpack_require__(95);
+	var element_ref_1 = __webpack_require__(/*! ./linker/element_ref */ 95);
 	exports.ElementRef = element_ref_1.ElementRef;
-	var template_ref_1 = __webpack_require__(98);
+	var template_ref_1 = __webpack_require__(/*! ./linker/template_ref */ 98);
 	exports.TemplateRef = template_ref_1.TemplateRef;
-	var view_ref_1 = __webpack_require__(101);
+	var view_ref_1 = __webpack_require__(/*! ./linker/view_ref */ 101);
 	exports.EmbeddedViewRef = view_ref_1.EmbeddedViewRef;
 	exports.HostViewRef = view_ref_1.HostViewRef;
 	exports.ViewRef = view_ref_1.ViewRef;
 	exports.HostViewFactoryRef = view_ref_1.HostViewFactoryRef;
-	var view_container_ref_1 = __webpack_require__(96);
+	var view_container_ref_1 = __webpack_require__(/*! ./linker/view_container_ref */ 96);
 	exports.ViewContainerRef = view_container_ref_1.ViewContainerRef;
-	var dynamic_component_loader_2 = __webpack_require__(90);
+	var dynamic_component_loader_2 = __webpack_require__(/*! ./linker/dynamic_component_loader */ 90);
 	exports.ComponentRef = dynamic_component_loader_2.ComponentRef;
 
 
 /***/ },
 /* 111 */
+/*!**********************************************************!*\
+  !*** ./~/angular2/src/core/linker/directive_resolver.js ***!
+  \**********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -20093,12 +20432,12 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var di_1 = __webpack_require__(12);
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var collection_1 = __webpack_require__(18);
-	var metadata_1 = __webpack_require__(9);
-	var reflection_1 = __webpack_require__(22);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var metadata_1 = __webpack_require__(/*! angular2/src/core/metadata */ 9);
+	var reflection_1 = __webpack_require__(/*! angular2/src/core/reflection/reflection */ 22);
 	function _isDirectiveMetadata(type) {
 	    return type instanceof metadata_1.DirectiveMetadata;
 	}
@@ -20220,6 +20559,9 @@
 
 /***/ },
 /* 112 */
+/*!*****************************************************!*\
+  !*** ./~/angular2/src/core/linker/view_resolver.js ***!
+  \*****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -20231,13 +20573,13 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var di_1 = __webpack_require__(12);
-	var view_1 = __webpack_require__(82);
-	var directives_1 = __webpack_require__(29);
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var collection_1 = __webpack_require__(18);
-	var reflection_1 = __webpack_require__(22);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
+	var view_1 = __webpack_require__(/*! ../metadata/view */ 82);
+	var directives_1 = __webpack_require__(/*! ../metadata/directives */ 29);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var reflection_1 = __webpack_require__(/*! angular2/src/core/reflection/reflection */ 22);
 	/**
 	 * Resolves types to {@link ViewMetadata}.
 	 */
@@ -20331,6 +20673,9 @@
 
 /***/ },
 /* 113 */
+/*!****************************************************!*\
+  !*** ./~/angular2/src/core/debug/debug_element.js ***!
+  \****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -20338,8 +20683,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
 	/**
 	 * A DebugElement contains information from the Angular compiler about an
 	 * element and provides access to the corresponding ElementInjector and
@@ -20589,10 +20934,13 @@
 
 /***/ },
 /* 114 */
+/*!**************************************************************!*\
+  !*** ./~/angular2/src/core/platform_directives_and_pipes.js ***!
+  \**************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var di_1 = __webpack_require__(12);
-	var lang_1 = __webpack_require__(11);
+	'use strict';var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	/**
 	 * A token that can be provided when bootstraping an application to make an array of directives
 	 * available in every component of the application.
@@ -20646,13 +20994,16 @@
 
 /***/ },
 /* 115 */
+/*!**********************************************************!*\
+  !*** ./~/angular2/src/core/platform_common_providers.js ***!
+  \**********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var di_1 = __webpack_require__(12);
-	var console_1 = __webpack_require__(107);
-	var reflection_1 = __webpack_require__(22);
-	var testability_1 = __webpack_require__(89);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
+	var console_1 = __webpack_require__(/*! angular2/src/core/console */ 107);
+	var reflection_1 = __webpack_require__(/*! ./reflection/reflection */ 22);
+	var testability_1 = __webpack_require__(/*! angular2/src/core/testability/testability */ 89);
 	function _reflector() {
 	    return reflection_1.reflector;
 	}
@@ -20664,23 +21015,26 @@
 
 /***/ },
 /* 116 */
+/*!*************************************************************!*\
+  !*** ./~/angular2/src/core/application_common_providers.js ***!
+  \*************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var di_1 = __webpack_require__(12);
-	var application_tokens_1 = __webpack_require__(88);
-	var change_detection_1 = __webpack_require__(31);
-	var resolved_metadata_cache_1 = __webpack_require__(117);
-	var view_manager_1 = __webpack_require__(105);
-	var view_manager_2 = __webpack_require__(105);
-	var view_resolver_1 = __webpack_require__(112);
-	var view_listener_1 = __webpack_require__(106);
-	var directive_resolver_1 = __webpack_require__(111);
-	var pipe_resolver_1 = __webpack_require__(118);
-	var compiler_1 = __webpack_require__(91);
-	var compiler_2 = __webpack_require__(91);
-	var dynamic_component_loader_1 = __webpack_require__(90);
-	var dynamic_component_loader_2 = __webpack_require__(90);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
+	var application_tokens_1 = __webpack_require__(/*! ./application_tokens */ 88);
+	var change_detection_1 = __webpack_require__(/*! ./change_detection/change_detection */ 31);
+	var resolved_metadata_cache_1 = __webpack_require__(/*! angular2/src/core/linker/resolved_metadata_cache */ 117);
+	var view_manager_1 = __webpack_require__(/*! ./linker/view_manager */ 105);
+	var view_manager_2 = __webpack_require__(/*! ./linker/view_manager */ 105);
+	var view_resolver_1 = __webpack_require__(/*! ./linker/view_resolver */ 112);
+	var view_listener_1 = __webpack_require__(/*! ./linker/view_listener */ 106);
+	var directive_resolver_1 = __webpack_require__(/*! ./linker/directive_resolver */ 111);
+	var pipe_resolver_1 = __webpack_require__(/*! ./linker/pipe_resolver */ 118);
+	var compiler_1 = __webpack_require__(/*! ./linker/compiler */ 91);
+	var compiler_2 = __webpack_require__(/*! ./linker/compiler */ 91);
+	var dynamic_component_loader_1 = __webpack_require__(/*! ./linker/dynamic_component_loader */ 90);
+	var dynamic_component_loader_2 = __webpack_require__(/*! ./linker/dynamic_component_loader */ 90);
 	/**
 	 * A default set of providers which should be included in any Angular
 	 * application, regardless of the platform it runs onto.
@@ -20702,6 +21056,9 @@
 
 /***/ },
 /* 117 */
+/*!***************************************************************!*\
+  !*** ./~/angular2/src/core/linker/resolved_metadata_cache.js ***!
+  \***************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -20713,12 +21070,12 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var di_1 = __webpack_require__(12);
-	var lang_1 = __webpack_require__(11);
-	var element_1 = __webpack_require__(93);
-	var directive_resolver_1 = __webpack_require__(111);
-	var pipe_provider_1 = __webpack_require__(100);
-	var pipe_resolver_1 = __webpack_require__(118);
+	var di_1 = __webpack_require__(/*! ../di */ 12);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var element_1 = __webpack_require__(/*! ./element */ 93);
+	var directive_resolver_1 = __webpack_require__(/*! ./directive_resolver */ 111);
+	var pipe_provider_1 = __webpack_require__(/*! ../pipes/pipe_provider */ 100);
+	var pipe_resolver_1 = __webpack_require__(/*! ./pipe_resolver */ 118);
 	var ResolvedMetadataCache = (function () {
 	    function ResolvedMetadataCache(_directiveResolver, _pipeResolver) {
 	        this._directiveResolver = _directiveResolver;
@@ -20754,6 +21111,9 @@
 
 /***/ },
 /* 118 */
+/*!*****************************************************!*\
+  !*** ./~/angular2/src/core/linker/pipe_resolver.js ***!
+  \*****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -20765,11 +21125,11 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var di_1 = __webpack_require__(12);
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var metadata_1 = __webpack_require__(9);
-	var reflection_1 = __webpack_require__(22);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var metadata_1 = __webpack_require__(/*! angular2/src/core/metadata */ 9);
+	var reflection_1 = __webpack_require__(/*! angular2/src/core/reflection/reflection */ 22);
 	function _isPipeMetadata(type) {
 	    return type instanceof metadata_1.PipeMetadata;
 	}
@@ -20808,6 +21168,9 @@
 
 /***/ },
 /* 119 */
+/*!******************************!*\
+  !*** ./~/angular2/router.js ***!
+  \******************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';/**
@@ -20818,49 +21181,49 @@
 	function __export(m) {
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
-	var router_1 = __webpack_require__(120);
+	var router_1 = __webpack_require__(/*! ./src/router/router */ 120);
 	exports.Router = router_1.Router;
-	var router_outlet_1 = __webpack_require__(136);
+	var router_outlet_1 = __webpack_require__(/*! ./src/router/router_outlet */ 136);
 	exports.RouterOutlet = router_outlet_1.RouterOutlet;
-	var router_link_1 = __webpack_require__(138);
+	var router_link_1 = __webpack_require__(/*! ./src/router/router_link */ 138);
 	exports.RouterLink = router_link_1.RouterLink;
-	var instruction_1 = __webpack_require__(124);
+	var instruction_1 = __webpack_require__(/*! ./src/router/instruction */ 124);
 	exports.RouteParams = instruction_1.RouteParams;
 	exports.RouteData = instruction_1.RouteData;
-	var platform_location_1 = __webpack_require__(139);
+	var platform_location_1 = __webpack_require__(/*! ./src/router/platform_location */ 139);
 	exports.PlatformLocation = platform_location_1.PlatformLocation;
-	var route_registry_1 = __webpack_require__(121);
+	var route_registry_1 = __webpack_require__(/*! ./src/router/route_registry */ 121);
 	exports.RouteRegistry = route_registry_1.RouteRegistry;
 	exports.ROUTER_PRIMARY_COMPONENT = route_registry_1.ROUTER_PRIMARY_COMPONENT;
-	var location_strategy_1 = __webpack_require__(133);
+	var location_strategy_1 = __webpack_require__(/*! ./src/router/location_strategy */ 133);
 	exports.LocationStrategy = location_strategy_1.LocationStrategy;
 	exports.APP_BASE_HREF = location_strategy_1.APP_BASE_HREF;
-	var hash_location_strategy_1 = __webpack_require__(141);
+	var hash_location_strategy_1 = __webpack_require__(/*! ./src/router/hash_location_strategy */ 141);
 	exports.HashLocationStrategy = hash_location_strategy_1.HashLocationStrategy;
-	var path_location_strategy_1 = __webpack_require__(142);
+	var path_location_strategy_1 = __webpack_require__(/*! ./src/router/path_location_strategy */ 142);
 	exports.PathLocationStrategy = path_location_strategy_1.PathLocationStrategy;
-	var location_1 = __webpack_require__(132);
+	var location_1 = __webpack_require__(/*! ./src/router/location */ 132);
 	exports.Location = location_1.Location;
-	__export(__webpack_require__(131));
-	__export(__webpack_require__(143));
-	var lifecycle_annotations_1 = __webpack_require__(137);
+	__export(__webpack_require__(/*! ./src/router/route_config_decorator */ 131));
+	__export(__webpack_require__(/*! ./src/router/route_definition */ 143));
+	var lifecycle_annotations_1 = __webpack_require__(/*! ./src/router/lifecycle_annotations */ 137);
 	exports.CanActivate = lifecycle_annotations_1.CanActivate;
-	var instruction_2 = __webpack_require__(124);
+	var instruction_2 = __webpack_require__(/*! ./src/router/instruction */ 124);
 	exports.Instruction = instruction_2.Instruction;
 	exports.ComponentInstruction = instruction_2.ComponentInstruction;
-	var core_1 = __webpack_require__(8);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
 	exports.OpaqueToken = core_1.OpaqueToken;
-	var platform_location_2 = __webpack_require__(139);
-	var location_strategy_2 = __webpack_require__(133);
-	var path_location_strategy_2 = __webpack_require__(142);
-	var router_2 = __webpack_require__(120);
-	var router_outlet_2 = __webpack_require__(136);
-	var router_link_2 = __webpack_require__(138);
-	var route_registry_2 = __webpack_require__(121);
-	var location_2 = __webpack_require__(132);
-	var core_2 = __webpack_require__(8);
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
+	var platform_location_2 = __webpack_require__(/*! ./src/router/platform_location */ 139);
+	var location_strategy_2 = __webpack_require__(/*! ./src/router/location_strategy */ 133);
+	var path_location_strategy_2 = __webpack_require__(/*! ./src/router/path_location_strategy */ 142);
+	var router_2 = __webpack_require__(/*! ./src/router/router */ 120);
+	var router_outlet_2 = __webpack_require__(/*! ./src/router/router_outlet */ 136);
+	var router_link_2 = __webpack_require__(/*! ./src/router/router_link */ 138);
+	var route_registry_2 = __webpack_require__(/*! ./src/router/route_registry */ 121);
+	var location_2 = __webpack_require__(/*! ./src/router/location */ 132);
+	var core_2 = __webpack_require__(/*! angular2/core */ 8);
+	var lang_1 = __webpack_require__(/*! ./src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
 	/**
 	 * A list of directives. To use the router directives like {@link RouterOutlet} and
 	 * {@link RouterLink}, add this to your `directives` array in the {@link View} decorator of your
@@ -20940,6 +21303,9 @@
 
 /***/ },
 /* 120 */
+/*!*****************************************!*\
+  !*** ./~/angular2/src/router/router.js ***!
+  \*****************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -20959,14 +21325,14 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var async_1 = __webpack_require__(55);
-	var collection_1 = __webpack_require__(18);
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var core_1 = __webpack_require__(8);
-	var route_registry_1 = __webpack_require__(121);
-	var location_1 = __webpack_require__(132);
-	var route_lifecycle_reflector_1 = __webpack_require__(134);
+	var async_1 = __webpack_require__(/*! angular2/src/facade/async */ 55);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var route_registry_1 = __webpack_require__(/*! ./route_registry */ 121);
+	var location_1 = __webpack_require__(/*! ./location */ 132);
+	var route_lifecycle_reflector_1 = __webpack_require__(/*! ./route_lifecycle_reflector */ 134);
 	var _resolveToTrue = async_1.PromiseWrapper.resolve(true);
 	var _resolveToFalse = async_1.PromiseWrapper.resolve(false);
 	/**
@@ -21439,6 +21805,9 @@
 
 /***/ },
 /* 121 */
+/*!*************************************************!*\
+  !*** ./~/angular2/src/router/route_registry.js ***!
+  \*************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -21453,18 +21822,18 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var collection_1 = __webpack_require__(18);
-	var async_1 = __webpack_require__(55);
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var reflection_1 = __webpack_require__(22);
-	var core_1 = __webpack_require__(8);
-	var route_config_impl_1 = __webpack_require__(122);
-	var route_recognizer_1 = __webpack_require__(123);
-	var component_recognizer_1 = __webpack_require__(127);
-	var instruction_1 = __webpack_require__(124);
-	var route_config_nomalizer_1 = __webpack_require__(130);
-	var url_parser_1 = __webpack_require__(126);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var async_1 = __webpack_require__(/*! angular2/src/facade/async */ 55);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var reflection_1 = __webpack_require__(/*! angular2/src/core/reflection/reflection */ 22);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var route_config_impl_1 = __webpack_require__(/*! ./route_config_impl */ 122);
+	var route_recognizer_1 = __webpack_require__(/*! ./route_recognizer */ 123);
+	var component_recognizer_1 = __webpack_require__(/*! ./component_recognizer */ 127);
+	var instruction_1 = __webpack_require__(/*! ./instruction */ 124);
+	var route_config_nomalizer_1 = __webpack_require__(/*! ./route_config_nomalizer */ 130);
+	var url_parser_1 = __webpack_require__(/*! ./url_parser */ 126);
 	var _resolveToNull = async_1.PromiseWrapper.resolve(null);
 	/**
 	 * Token used to bind the component with the top-level {@link RouteConfig}s for the
@@ -21898,6 +22267,9 @@
 
 /***/ },
 /* 122 */
+/*!****************************************************!*\
+  !*** ./~/angular2/src/router/route_config_impl.js ***!
+  \****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -21909,7 +22281,7 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var lang_1 = __webpack_require__(11);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	/**
 	 * The `RouteConfig` decorator defines routes for a given component.
 	 *
@@ -22092,6 +22464,9 @@
 
 /***/ },
 /* 123 */
+/*!***************************************************!*\
+  !*** ./~/angular2/src/router/route_recognizer.js ***!
+  \***************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -22099,12 +22474,12 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var promise_1 = __webpack_require__(56);
-	var collection_1 = __webpack_require__(18);
-	var instruction_1 = __webpack_require__(124);
-	var path_recognizer_1 = __webpack_require__(125);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var promise_1 = __webpack_require__(/*! angular2/src/facade/promise */ 56);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var instruction_1 = __webpack_require__(/*! ./instruction */ 124);
+	var path_recognizer_1 = __webpack_require__(/*! ./path_recognizer */ 125);
 	var RouteMatch = (function () {
 	    function RouteMatch() {
 	    }
@@ -22207,6 +22582,9 @@
 
 /***/ },
 /* 124 */
+/*!**********************************************!*\
+  !*** ./~/angular2/src/router/instruction.js ***!
+  \**********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -22214,9 +22592,9 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var collection_1 = __webpack_require__(18);
-	var lang_1 = __webpack_require__(11);
-	var async_1 = __webpack_require__(55);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var async_1 = __webpack_require__(/*! angular2/src/facade/async */ 55);
 	/**
 	 * `RouteParams` is an immutable map of parameters for the given route
 	 * based on the url matcher and optional parameters for that route.
@@ -22554,12 +22932,15 @@
 
 /***/ },
 /* 125 */
+/*!**************************************************!*\
+  !*** ./~/angular2/src/router/path_recognizer.js ***!
+  \**************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var collection_1 = __webpack_require__(18);
-	var url_parser_1 = __webpack_require__(126);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var url_parser_1 = __webpack_require__(/*! ./url_parser */ 126);
 	var TouchMap = (function () {
 	    function TouchMap(map) {
 	        var _this = this;
@@ -22800,6 +23181,9 @@
 
 /***/ },
 /* 126 */
+/*!*********************************************!*\
+  !*** ./~/angular2/src/router/url_parser.js ***!
+  \*********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -22807,9 +23191,9 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var collection_1 = __webpack_require__(18);
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
 	/**
 	 * This class represents a parsed URL
 	 */
@@ -23016,16 +23400,19 @@
 
 /***/ },
 /* 127 */
+/*!*******************************************************!*\
+  !*** ./~/angular2/src/router/component_recognizer.js ***!
+  \*******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var collection_1 = __webpack_require__(18);
-	var async_1 = __webpack_require__(55);
-	var route_recognizer_1 = __webpack_require__(123);
-	var route_config_impl_1 = __webpack_require__(122);
-	var async_route_handler_1 = __webpack_require__(128);
-	var sync_route_handler_1 = __webpack_require__(129);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var async_1 = __webpack_require__(/*! angular2/src/facade/async */ 55);
+	var route_recognizer_1 = __webpack_require__(/*! ./route_recognizer */ 123);
+	var route_config_impl_1 = __webpack_require__(/*! ./route_config_impl */ 122);
+	var async_route_handler_1 = __webpack_require__(/*! ./async_route_handler */ 128);
+	var sync_route_handler_1 = __webpack_require__(/*! ./sync_route_handler */ 129);
 	/**
 	 * `ComponentRecognizer` is responsible for recognizing routes for a single component.
 	 * It is consumed by `RouteRegistry`, which knows how to recognize an entire hierarchy of
@@ -23149,10 +23536,13 @@
 
 /***/ },
 /* 128 */
+/*!******************************************************!*\
+  !*** ./~/angular2/src/router/async_route_handler.js ***!
+  \******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var instruction_1 = __webpack_require__(124);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var instruction_1 = __webpack_require__(/*! ./instruction */ 124);
 	var AsyncRouteHandler = (function () {
 	    function AsyncRouteHandler(_loader, data) {
 	        if (data === void 0) { data = null; }
@@ -23178,11 +23568,14 @@
 
 /***/ },
 /* 129 */
+/*!*****************************************************!*\
+  !*** ./~/angular2/src/router/sync_route_handler.js ***!
+  \*****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var async_1 = __webpack_require__(55);
-	var lang_1 = __webpack_require__(11);
-	var instruction_1 = __webpack_require__(124);
+	'use strict';var async_1 = __webpack_require__(/*! angular2/src/facade/async */ 55);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var instruction_1 = __webpack_require__(/*! ./instruction */ 124);
 	var SyncRouteHandler = (function () {
 	    function SyncRouteHandler(componentType, data) {
 	        this.componentType = componentType;
@@ -23199,11 +23592,14 @@
 
 /***/ },
 /* 130 */
+/*!*********************************************************!*\
+  !*** ./~/angular2/src/router/route_config_nomalizer.js ***!
+  \*********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var route_config_decorator_1 = __webpack_require__(131);
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
+	'use strict';var route_config_decorator_1 = __webpack_require__(/*! ./route_config_decorator */ 131);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
 	/**
 	 * Given a JS Object that represents a route config, returns a corresponding Route, AsyncRoute,
 	 * AuxRoute or Redirect object.
@@ -23296,11 +23692,14 @@
 
 /***/ },
 /* 131 */
+/*!*********************************************************!*\
+  !*** ./~/angular2/src/router/route_config_decorator.js ***!
+  \*********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var route_config_impl_1 = __webpack_require__(122);
-	var decorators_1 = __webpack_require__(15);
-	var route_config_impl_2 = __webpack_require__(122);
+	'use strict';var route_config_impl_1 = __webpack_require__(/*! ./route_config_impl */ 122);
+	var decorators_1 = __webpack_require__(/*! angular2/src/core/util/decorators */ 15);
+	var route_config_impl_2 = __webpack_require__(/*! ./route_config_impl */ 122);
 	exports.Route = route_config_impl_2.Route;
 	exports.Redirect = route_config_impl_2.Redirect;
 	exports.AuxRoute = route_config_impl_2.AuxRoute;
@@ -23316,6 +23715,9 @@
 
 /***/ },
 /* 132 */
+/*!*******************************************!*\
+  !*** ./~/angular2/src/router/location.js ***!
+  \*******************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -23327,9 +23729,9 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var location_strategy_1 = __webpack_require__(133);
-	var async_1 = __webpack_require__(55);
-	var core_1 = __webpack_require__(8);
+	var location_strategy_1 = __webpack_require__(/*! ./location_strategy */ 133);
+	var async_1 = __webpack_require__(/*! angular2/src/facade/async */ 55);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
 	/**
 	 * `Location` is a service that applications can use to interact with a browser's URL.
 	 * Depending on which {@link LocationStrategy} is used, `Location` will either persist
@@ -23468,10 +23870,13 @@
 
 /***/ },
 /* 133 */
+/*!****************************************************!*\
+  !*** ./~/angular2/src/router/location_strategy.js ***!
+  \****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var core_1 = __webpack_require__(8);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
 	/**
 	 * `LocationStrategy` is responsible for representing and reading route state
 	 * from the browser's URL. Angular provides two strategies:
@@ -23555,11 +23960,14 @@
 
 /***/ },
 /* 134 */
+/*!************************************************************!*\
+  !*** ./~/angular2/src/router/route_lifecycle_reflector.js ***!
+  \************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var lifecycle_annotations_impl_1 = __webpack_require__(135);
-	var reflection_1 = __webpack_require__(22);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var lifecycle_annotations_impl_1 = __webpack_require__(/*! ./lifecycle_annotations_impl */ 135);
+	var reflection_1 = __webpack_require__(/*! angular2/src/core/reflection/reflection */ 22);
 	function hasLifecycleHook(e, type) {
 	    if (!(type instanceof lang_1.Type))
 	        return false;
@@ -23581,6 +23989,9 @@
 
 /***/ },
 /* 135 */
+/*!*************************************************************!*\
+  !*** ./~/angular2/src/router/lifecycle_annotations_impl.js ***!
+  \*************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -23592,7 +24003,7 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var lang_1 = __webpack_require__(11);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	var RouteLifecycleHook = (function () {
 	    function RouteLifecycleHook(name) {
 	        this.name = name;
@@ -23624,6 +24035,9 @@
 
 /***/ },
 /* 136 */
+/*!************************************************!*\
+  !*** ./~/angular2/src/router/router_outlet.js ***!
+  \************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -23638,15 +24052,15 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var async_1 = __webpack_require__(55);
-	var collection_1 = __webpack_require__(18);
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var core_1 = __webpack_require__(8);
-	var routerMod = __webpack_require__(120);
-	var instruction_1 = __webpack_require__(124);
-	var hookMod = __webpack_require__(137);
-	var route_lifecycle_reflector_1 = __webpack_require__(134);
+	var async_1 = __webpack_require__(/*! angular2/src/facade/async */ 55);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var routerMod = __webpack_require__(/*! ./router */ 120);
+	var instruction_1 = __webpack_require__(/*! ./instruction */ 124);
+	var hookMod = __webpack_require__(/*! ./lifecycle_annotations */ 137);
+	var route_lifecycle_reflector_1 = __webpack_require__(/*! ./route_lifecycle_reflector */ 134);
 	var _resolveToTrue = async_1.PromiseWrapper.resolve(true);
 	/**
 	 * A router outlet is a placeholder that Angular dynamically fills based on the application's route.
@@ -23789,15 +24203,18 @@
 
 /***/ },
 /* 137 */
+/*!********************************************************!*\
+  !*** ./~/angular2/src/router/lifecycle_annotations.js ***!
+  \********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';/**
 	 * This indirection is needed to free up Component, etc symbols in the public API
 	 * to be used by the decorator versions of these annotations.
 	 */
-	var decorators_1 = __webpack_require__(15);
-	var lifecycle_annotations_impl_1 = __webpack_require__(135);
-	var lifecycle_annotations_impl_2 = __webpack_require__(135);
+	var decorators_1 = __webpack_require__(/*! angular2/src/core/util/decorators */ 15);
+	var lifecycle_annotations_impl_1 = __webpack_require__(/*! ./lifecycle_annotations_impl */ 135);
+	var lifecycle_annotations_impl_2 = __webpack_require__(/*! ./lifecycle_annotations_impl */ 135);
 	exports.routerCanReuse = lifecycle_annotations_impl_2.routerCanReuse;
 	exports.routerCanDeactivate = lifecycle_annotations_impl_2.routerCanDeactivate;
 	exports.routerOnActivate = lifecycle_annotations_impl_2.routerOnActivate;
@@ -23834,6 +24251,9 @@
 
 /***/ },
 /* 138 */
+/*!**********************************************!*\
+  !*** ./~/angular2/src/router/router_link.js ***!
+  \**********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -23845,10 +24265,10 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(8);
-	var lang_1 = __webpack_require__(11);
-	var router_1 = __webpack_require__(120);
-	var location_1 = __webpack_require__(132);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var router_1 = __webpack_require__(/*! ./router */ 120);
+	var location_1 = __webpack_require__(/*! ./location */ 132);
 	/**
 	 * The RouterLink directive lets you link to specific parts of your app.
 	 *
@@ -23933,6 +24353,9 @@
 
 /***/ },
 /* 139 */
+/*!****************************************************!*\
+  !*** ./~/angular2/src/router/platform_location.js ***!
+  \****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -23944,8 +24367,8 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var dom_adapter_1 = __webpack_require__(140);
-	var core_1 = __webpack_require__(8);
+	var dom_adapter_1 = __webpack_require__(/*! angular2/src/platform/dom/dom_adapter */ 140);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
 	/**
 	 * `PlatformLocation` encapsulates all of the direct calls to platform APIs.
 	 * This class should not be used directly by an application developer. Instead, use
@@ -24003,9 +24426,12 @@
 
 /***/ },
 /* 140 */
+/*!****************************************************!*\
+  !*** ./~/angular2/src/platform/dom/dom_adapter.js ***!
+  \****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	exports.DOM = null;
 	function setRootDomAdapter(adapter) {
 	    if (lang_1.isBlank(exports.DOM)) {
@@ -24027,6 +24453,9 @@
 
 /***/ },
 /* 141 */
+/*!*********************************************************!*\
+  !*** ./~/angular2/src/router/hash_location_strategy.js ***!
+  \*********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -24046,10 +24475,10 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var core_1 = __webpack_require__(8);
-	var location_strategy_1 = __webpack_require__(133);
-	var lang_1 = __webpack_require__(11);
-	var platform_location_1 = __webpack_require__(139);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var location_strategy_1 = __webpack_require__(/*! ./location_strategy */ 133);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var platform_location_1 = __webpack_require__(/*! ./platform_location */ 139);
 	/**
 	 * `HashLocationStrategy` is a {@link LocationStrategy} used to configure the
 	 * {@link Location} service to represent its state in the
@@ -24146,6 +24575,9 @@
 
 /***/ },
 /* 142 */
+/*!*********************************************************!*\
+  !*** ./~/angular2/src/router/path_location_strategy.js ***!
+  \*********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -24165,11 +24597,11 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var core_1 = __webpack_require__(8);
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var location_strategy_1 = __webpack_require__(133);
-	var platform_location_1 = __webpack_require__(139);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var location_strategy_1 = __webpack_require__(/*! ./location_strategy */ 133);
+	var platform_location_1 = __webpack_require__(/*! ./platform_location */ 139);
 	/**
 	 * `PathLocationStrategy` is a {@link LocationStrategy} used to configure the
 	 * {@link Location} service to represent its state in the
@@ -24260,12 +24692,18 @@
 
 /***/ },
 /* 143 */
+/*!***************************************************!*\
+  !*** ./~/angular2/src/router/route_definition.js ***!
+  \***************************************************/
 /***/ function(module, exports) {
 
 	'use strict';//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicm91dGVfZGVmaW5pdGlvbi5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbImFuZ3VsYXIyL3NyYy9yb3V0ZXIvcm91dGVfZGVmaW5pdGlvbi50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHtDT05TVCwgVHlwZX0gZnJvbSAnYW5ndWxhcjIvc3JjL2ZhY2FkZS9sYW5nJztcblxuLyoqXG4gKiBgUm91dGVEZWZpbml0aW9uYCBkZWZpbmVzIGEgcm91dGUgd2l0aGluIGEge0BsaW5rIFJvdXRlQ29uZmlnfSBkZWNvcmF0b3IuXG4gKlxuICogU3VwcG9ydGVkIGtleXM6XG4gKiAtIGBwYXRoYCBvciBgYXV4YCAocmVxdWlyZXMgZXhhY3RseSBvbmUgb2YgdGhlc2UpXG4gKiAtIGBjb21wb25lbnRgLCBgbG9hZGVyYCwgIGByZWRpcmVjdFRvYCAocmVxdWlyZXMgZXhhY3RseSBvbmUgb2YgdGhlc2UpXG4gKiAtIGBuYW1lYCBvciBgYXNgIChvcHRpb25hbCkgKHJlcXVpcmVzIGV4YWN0bHkgb25lIG9mIHRoZXNlKVxuICogLSBgZGF0YWAgKG9wdGlvbmFsKVxuICpcbiAqIFNlZSBhbHNvIHtAbGluayBSb3V0ZX0sIHtAbGluayBBc3luY1JvdXRlfSwge0BsaW5rIEF1eFJvdXRlfSwgYW5kIHtAbGluayBSZWRpcmVjdH0uXG4gKi9cbmV4cG9ydCBpbnRlcmZhY2UgUm91dGVEZWZpbml0aW9uIHtcbiAgcGF0aD86IHN0cmluZztcbiAgYXV4Pzogc3RyaW5nO1xuICBjb21wb25lbnQ/OiBUeXBlIHwgQ29tcG9uZW50RGVmaW5pdGlvbjtcbiAgbG9hZGVyPzogRnVuY3Rpb247XG4gIHJlZGlyZWN0VG8/OiBhbnlbXTtcbiAgYXM/OiBzdHJpbmc7XG4gIG5hbWU/OiBzdHJpbmc7XG4gIGRhdGE/OiBhbnk7XG4gIHVzZUFzRGVmYXVsdD86IGJvb2xlYW47XG59XG5cbi8qKlxuICogUmVwcmVzZW50cyBlaXRoZXIgYSBjb21wb25lbnQgdHlwZSAoYHR5cGVgIGlzIGBjb21wb25lbnRgKSBvciBhIGxvYWRlciBmdW5jdGlvblxuICogKGB0eXBlYCBpcyBgbG9hZGVyYCkuXG4gKlxuICogU2VlIGFsc28ge0BsaW5rIFJvdXRlRGVmaW5pdGlvbn0uXG4gKi9cbmV4cG9ydCBpbnRlcmZhY2UgQ29tcG9uZW50RGVmaW5pdGlvbiB7XG4gIHR5cGU6IHN0cmluZztcbiAgbG9hZGVyPzogRnVuY3Rpb247XG4gIGNvbXBvbmVudD86IFR5cGU7XG59XG4iXX0=
 
 /***/ },
 /* 144 */
+/*!****************************!*\
+  !*** ./~/angular2/http.js ***!
+  \****************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';/**
@@ -24274,45 +24712,45 @@
 	 * The http module provides services to perform http requests. To get started, see the {@link Http}
 	 * class.
 	 */
-	var core_1 = __webpack_require__(8);
-	var http_1 = __webpack_require__(145);
-	var xhr_backend_1 = __webpack_require__(153);
-	var jsonp_backend_1 = __webpack_require__(157);
-	var browser_xhr_1 = __webpack_require__(156);
-	var browser_jsonp_1 = __webpack_require__(158);
-	var base_request_options_1 = __webpack_require__(151);
-	var base_response_options_1 = __webpack_require__(155);
-	var static_request_1 = __webpack_require__(147);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var http_1 = __webpack_require__(/*! ./src/http/http */ 145);
+	var xhr_backend_1 = __webpack_require__(/*! ./src/http/backends/xhr_backend */ 153);
+	var jsonp_backend_1 = __webpack_require__(/*! ./src/http/backends/jsonp_backend */ 157);
+	var browser_xhr_1 = __webpack_require__(/*! ./src/http/backends/browser_xhr */ 156);
+	var browser_jsonp_1 = __webpack_require__(/*! ./src/http/backends/browser_jsonp */ 158);
+	var base_request_options_1 = __webpack_require__(/*! ./src/http/base_request_options */ 151);
+	var base_response_options_1 = __webpack_require__(/*! ./src/http/base_response_options */ 155);
+	var static_request_1 = __webpack_require__(/*! ./src/http/static_request */ 147);
 	exports.Request = static_request_1.Request;
-	var static_response_1 = __webpack_require__(154);
+	var static_response_1 = __webpack_require__(/*! ./src/http/static_response */ 154);
 	exports.Response = static_response_1.Response;
-	var interfaces_1 = __webpack_require__(146);
+	var interfaces_1 = __webpack_require__(/*! ./src/http/interfaces */ 146);
 	exports.Connection = interfaces_1.Connection;
 	exports.ConnectionBackend = interfaces_1.ConnectionBackend;
-	var browser_xhr_2 = __webpack_require__(156);
+	var browser_xhr_2 = __webpack_require__(/*! ./src/http/backends/browser_xhr */ 156);
 	exports.BrowserXhr = browser_xhr_2.BrowserXhr;
-	var base_request_options_2 = __webpack_require__(151);
+	var base_request_options_2 = __webpack_require__(/*! ./src/http/base_request_options */ 151);
 	exports.BaseRequestOptions = base_request_options_2.BaseRequestOptions;
 	exports.RequestOptions = base_request_options_2.RequestOptions;
-	var base_response_options_2 = __webpack_require__(155);
+	var base_response_options_2 = __webpack_require__(/*! ./src/http/base_response_options */ 155);
 	exports.BaseResponseOptions = base_response_options_2.BaseResponseOptions;
 	exports.ResponseOptions = base_response_options_2.ResponseOptions;
-	var xhr_backend_2 = __webpack_require__(153);
+	var xhr_backend_2 = __webpack_require__(/*! ./src/http/backends/xhr_backend */ 153);
 	exports.XHRBackend = xhr_backend_2.XHRBackend;
 	exports.XHRConnection = xhr_backend_2.XHRConnection;
-	var jsonp_backend_2 = __webpack_require__(157);
+	var jsonp_backend_2 = __webpack_require__(/*! ./src/http/backends/jsonp_backend */ 157);
 	exports.JSONPBackend = jsonp_backend_2.JSONPBackend;
 	exports.JSONPConnection = jsonp_backend_2.JSONPConnection;
-	var http_2 = __webpack_require__(145);
+	var http_2 = __webpack_require__(/*! ./src/http/http */ 145);
 	exports.Http = http_2.Http;
 	exports.Jsonp = http_2.Jsonp;
-	var headers_1 = __webpack_require__(148);
+	var headers_1 = __webpack_require__(/*! ./src/http/headers */ 148);
 	exports.Headers = headers_1.Headers;
-	var enums_1 = __webpack_require__(150);
+	var enums_1 = __webpack_require__(/*! ./src/http/enums */ 150);
 	exports.ResponseType = enums_1.ResponseType;
 	exports.ReadyState = enums_1.ReadyState;
 	exports.RequestMethod = enums_1.RequestMethod;
-	var url_search_params_1 = __webpack_require__(152);
+	var url_search_params_1 = __webpack_require__(/*! ./src/http/url_search_params */ 152);
 	exports.URLSearchParams = url_search_params_1.URLSearchParams;
 	/**
 	 * Provides a basic set of injectables to use the {@link Http} service in any application.
@@ -24576,6 +25014,9 @@
 
 /***/ },
 /* 145 */
+/*!*************************************!*\
+  !*** ./~/angular2/src/http/http.js ***!
+  \*************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -24592,13 +25033,13 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var core_1 = __webpack_require__(8);
-	var interfaces_1 = __webpack_require__(146);
-	var static_request_1 = __webpack_require__(147);
-	var base_request_options_1 = __webpack_require__(151);
-	var enums_1 = __webpack_require__(150);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var interfaces_1 = __webpack_require__(/*! ./interfaces */ 146);
+	var static_request_1 = __webpack_require__(/*! ./static_request */ 147);
+	var base_request_options_1 = __webpack_require__(/*! ./base_request_options */ 151);
+	var enums_1 = __webpack_require__(/*! ./enums */ 150);
 	function httpRequest(backend, request) {
 	    return backend.createConnection(request).response;
 	}
@@ -24784,6 +25225,9 @@
 
 /***/ },
 /* 146 */
+/*!*******************************************!*\
+  !*** ./~/angular2/src/http/interfaces.js ***!
+  \*******************************************/
 /***/ function(module, exports) {
 
 	'use strict';/**
@@ -24811,11 +25255,14 @@
 
 /***/ },
 /* 147 */
+/*!***********************************************!*\
+  !*** ./~/angular2/src/http/static_request.js ***!
+  \***********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var headers_1 = __webpack_require__(148);
-	var http_utils_1 = __webpack_require__(149);
-	var lang_1 = __webpack_require__(11);
+	'use strict';var headers_1 = __webpack_require__(/*! ./headers */ 148);
+	var http_utils_1 = __webpack_require__(/*! ./http_utils */ 149);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	// TODO(jeffbcross): properly implement body accessors
 	/**
 	 * Creates `Request` instances from provided values.
@@ -24890,11 +25337,14 @@
 
 /***/ },
 /* 148 */
+/*!****************************************!*\
+  !*** ./~/angular2/src/http/headers.js ***!
+  \****************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var collection_1 = __webpack_require__(18);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
 	/**
 	 * Polyfill for [Headers](https://developer.mozilla.org/en-US/docs/Web/API/Headers/Headers), as
 	 * specified in the [Fetch Spec](https://fetch.spec.whatwg.org/#headers-class).
@@ -25019,11 +25469,14 @@
 
 /***/ },
 /* 149 */
+/*!*******************************************!*\
+  !*** ./~/angular2/src/http/http_utils.js ***!
+  \*******************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var enums_1 = __webpack_require__(150);
-	var exceptions_1 = __webpack_require__(20);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var enums_1 = __webpack_require__(/*! ./enums */ 150);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
 	function normalizeMethodName(method) {
 	    if (lang_1.isString(method)) {
 	        var originalMethod = method;
@@ -25046,12 +25499,15 @@
 	    return;
 	}
 	exports.getResponseURL = getResponseURL;
-	var lang_2 = __webpack_require__(11);
+	var lang_2 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	exports.isJsObject = lang_2.isJsObject;
 
 
 /***/ },
 /* 150 */
+/*!**************************************!*\
+  !*** ./~/angular2/src/http/enums.js ***!
+  \**************************************/
 /***/ function(module, exports) {
 
 	'use strict';/**
@@ -25097,6 +25553,9 @@
 
 /***/ },
 /* 151 */
+/*!*****************************************************!*\
+  !*** ./~/angular2/src/http/base_request_options.js ***!
+  \*****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -25113,12 +25572,12 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var lang_1 = __webpack_require__(11);
-	var headers_1 = __webpack_require__(148);
-	var enums_1 = __webpack_require__(150);
-	var core_1 = __webpack_require__(8);
-	var url_search_params_1 = __webpack_require__(152);
-	var http_utils_1 = __webpack_require__(149);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var headers_1 = __webpack_require__(/*! ./headers */ 148);
+	var enums_1 = __webpack_require__(/*! ./enums */ 150);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var url_search_params_1 = __webpack_require__(/*! ./url_search_params */ 152);
+	var http_utils_1 = __webpack_require__(/*! ./http_utils */ 149);
 	/**
 	 * Creates a request options object to be optionally provided when instantiating a
 	 * {@link Request}.
@@ -25254,10 +25713,13 @@
 
 /***/ },
 /* 152 */
+/*!**************************************************!*\
+  !*** ./~/angular2/src/http/url_search_params.js ***!
+  \**************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var collection_1 = __webpack_require__(18);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
 	function paramParser(rawParams) {
 	    if (rawParams === void 0) { rawParams = ''; }
 	    var map = new collection_1.Map();
@@ -25386,6 +25848,9 @@
 
 /***/ },
 /* 153 */
+/*!*****************************************************!*\
+  !*** ./~/angular2/src/http/backends/xhr_backend.js ***!
+  \*****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -25397,15 +25862,15 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var enums_1 = __webpack_require__(150);
-	var static_response_1 = __webpack_require__(154);
-	var headers_1 = __webpack_require__(148);
-	var base_response_options_1 = __webpack_require__(155);
-	var core_1 = __webpack_require__(8);
-	var browser_xhr_1 = __webpack_require__(156);
-	var lang_1 = __webpack_require__(11);
-	var Observable_1 = __webpack_require__(58);
-	var http_utils_1 = __webpack_require__(149);
+	var enums_1 = __webpack_require__(/*! ../enums */ 150);
+	var static_response_1 = __webpack_require__(/*! ../static_response */ 154);
+	var headers_1 = __webpack_require__(/*! ../headers */ 148);
+	var base_response_options_1 = __webpack_require__(/*! ../base_response_options */ 155);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var browser_xhr_1 = __webpack_require__(/*! ./browser_xhr */ 156);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var Observable_1 = __webpack_require__(/*! rxjs/Observable */ 58);
+	var http_utils_1 = __webpack_require__(/*! ../http_utils */ 149);
 	/**
 	* Creates connections using `XMLHttpRequest`. Given a fully-qualified
 	* request, an `XHRConnection` will immediately create an `XMLHttpRequest` object and send the
@@ -25519,11 +25984,14 @@
 
 /***/ },
 /* 154 */
+/*!************************************************!*\
+  !*** ./~/angular2/src/http/static_response.js ***!
+  \************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var http_utils_1 = __webpack_require__(149);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var http_utils_1 = __webpack_require__(/*! ./http_utils */ 149);
 	/**
 	 * Creates `Response` instances from provided values.
 	 *
@@ -25587,6 +26055,9 @@
 
 /***/ },
 /* 155 */
+/*!******************************************************!*\
+  !*** ./~/angular2/src/http/base_response_options.js ***!
+  \******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -25603,10 +26074,10 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(8);
-	var lang_1 = __webpack_require__(11);
-	var headers_1 = __webpack_require__(148);
-	var enums_1 = __webpack_require__(150);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var headers_1 = __webpack_require__(/*! ./headers */ 148);
+	var enums_1 = __webpack_require__(/*! ./enums */ 150);
 	/**
 	 * Creates a response options object to be optionally provided when instantiating a
 	 * {@link Response}.
@@ -25742,6 +26213,9 @@
 
 /***/ },
 /* 156 */
+/*!*****************************************************!*\
+  !*** ./~/angular2/src/http/backends/browser_xhr.js ***!
+  \*****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -25753,7 +26227,7 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(8);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
 	/**
 	 * A backend for http that uses the `XMLHttpRequest` browser API.
 	 *
@@ -25774,6 +26248,9 @@
 
 /***/ },
 /* 157 */
+/*!*******************************************************!*\
+  !*** ./~/angular2/src/http/backends/jsonp_backend.js ***!
+  \*******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -25790,15 +26267,15 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var interfaces_1 = __webpack_require__(146);
-	var enums_1 = __webpack_require__(150);
-	var static_response_1 = __webpack_require__(154);
-	var base_response_options_1 = __webpack_require__(155);
-	var core_1 = __webpack_require__(8);
-	var browser_jsonp_1 = __webpack_require__(158);
-	var exceptions_1 = __webpack_require__(20);
-	var lang_1 = __webpack_require__(11);
-	var Observable_1 = __webpack_require__(58);
+	var interfaces_1 = __webpack_require__(/*! ../interfaces */ 146);
+	var enums_1 = __webpack_require__(/*! ../enums */ 150);
+	var static_response_1 = __webpack_require__(/*! ../static_response */ 154);
+	var base_response_options_1 = __webpack_require__(/*! ../base_response_options */ 155);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var browser_jsonp_1 = __webpack_require__(/*! ./browser_jsonp */ 158);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var Observable_1 = __webpack_require__(/*! rxjs/Observable */ 58);
 	var JSONP_ERR_NO_CALLBACK = 'JSONP injected script did not invoke callback.';
 	var JSONP_ERR_WRONG_METHOD = 'JSONP requests must use GET request method.';
 	/**
@@ -25924,6 +26401,9 @@
 
 /***/ },
 /* 158 */
+/*!*******************************************************!*\
+  !*** ./~/angular2/src/http/backends/browser_jsonp.js ***!
+  \*******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -25935,8 +26415,8 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(8);
-	var lang_1 = __webpack_require__(11);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	var _nextRequestId = 0;
 	exports.JSONP_HOME = '__ng_jsonp__';
 	var _jsonpConnections = null;
@@ -25985,6 +26465,9 @@
 
 /***/ },
 /* 159 */
+/*!*************************************************!*\
+  !*** ./~/ionic-framework/components/app/app.js ***!
+  \*************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -25996,11 +26479,11 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(8);
-	var browser_1 = __webpack_require__(160);
-	var config_1 = __webpack_require__(265);
-	var click_block_1 = __webpack_require__(269);
-	var dom_1 = __webpack_require__(268);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var browser_1 = __webpack_require__(/*! angular2/platform/browser */ 160);
+	var config_1 = __webpack_require__(/*! ../../config/config */ 265);
+	var click_block_1 = __webpack_require__(/*! ../../util/click-block */ 269);
+	var dom_1 = __webpack_require__(/*! ../../util/dom */ 268);
 	/**
 	 * @private
 	 * Component registry service.  For more information on registering
@@ -26129,11 +26612,14 @@
 
 /***/ },
 /* 160 */
+/*!****************************************!*\
+  !*** ./~/angular2/platform/browser.js ***!
+  \****************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var angular_entrypoint_1 = __webpack_require__(161);
+	'use strict';var angular_entrypoint_1 = __webpack_require__(/*! angular2/src/core/angular_entrypoint */ 161);
 	exports.AngularEntrypoint = angular_entrypoint_1.AngularEntrypoint;
-	var browser_common_1 = __webpack_require__(162);
+	var browser_common_1 = __webpack_require__(/*! angular2/src/platform/browser_common */ 162);
 	exports.BROWSER_PROVIDERS = browser_common_1.BROWSER_PROVIDERS;
 	exports.ELEMENT_PROBE_BINDINGS = browser_common_1.ELEMENT_PROBE_BINDINGS;
 	exports.ELEMENT_PROBE_PROVIDERS = browser_common_1.ELEMENT_PROBE_PROVIDERS;
@@ -26144,14 +26630,14 @@
 	exports.DOCUMENT = browser_common_1.DOCUMENT;
 	exports.enableDebugTools = browser_common_1.enableDebugTools;
 	exports.disableDebugTools = browser_common_1.disableDebugTools;
-	var lang_1 = __webpack_require__(11);
-	var browser_common_2 = __webpack_require__(162);
-	var compiler_1 = __webpack_require__(234);
-	var core_1 = __webpack_require__(8);
-	var reflection_capabilities_1 = __webpack_require__(24);
-	var xhr_impl_1 = __webpack_require__(223);
-	var compiler_2 = __webpack_require__(234);
-	var di_1 = __webpack_require__(12);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var browser_common_2 = __webpack_require__(/*! angular2/src/platform/browser_common */ 162);
+	var compiler_1 = __webpack_require__(/*! angular2/compiler */ 234);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var reflection_capabilities_1 = __webpack_require__(/*! angular2/src/core/reflection/reflection_capabilities */ 24);
+	var xhr_impl_1 = __webpack_require__(/*! angular2/src/platform/browser/xhr_impl */ 223);
+	var compiler_2 = __webpack_require__(/*! angular2/compiler */ 234);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
 	/**
 	 * An array of providers that should be passed into `application()` when bootstrapping a component.
 	 */
@@ -26238,6 +26724,9 @@
 
 /***/ },
 /* 161 */
+/*!***************************************************!*\
+  !*** ./~/angular2/src/core/angular_entrypoint.js ***!
+  \***************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -26249,7 +26738,7 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var lang_1 = __webpack_require__(11);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	/**
 	 * Marks a function or method as an Angular 2 entrypoint. Only necessary in Dart code.
 	 *
@@ -26282,40 +26771,43 @@
 
 /***/ },
 /* 162 */
+/*!***************************************************!*\
+  !*** ./~/angular2/src/platform/browser_common.js ***!
+  \***************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var di_1 = __webpack_require__(12);
-	var core_1 = __webpack_require__(8);
-	var common_1 = __webpack_require__(163);
-	var testability_1 = __webpack_require__(89);
-	var dom_adapter_1 = __webpack_require__(140);
-	var dom_events_1 = __webpack_require__(206);
-	var key_events_1 = __webpack_require__(208);
-	var hammer_gestures_1 = __webpack_require__(209);
-	var dom_tokens_1 = __webpack_require__(211);
-	var dom_renderer_1 = __webpack_require__(212);
-	var shared_styles_host_1 = __webpack_require__(220);
-	var shared_styles_host_2 = __webpack_require__(220);
-	var browser_details_1 = __webpack_require__(219);
-	var animation_builder_1 = __webpack_require__(213);
-	var browser_adapter_1 = __webpack_require__(221);
-	var testability_2 = __webpack_require__(225);
-	var wtf_init_1 = __webpack_require__(226);
-	var event_manager_1 = __webpack_require__(207);
-	var dom_tokens_2 = __webpack_require__(211);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var common_1 = __webpack_require__(/*! angular2/common */ 163);
+	var testability_1 = __webpack_require__(/*! angular2/src/core/testability/testability */ 89);
+	var dom_adapter_1 = __webpack_require__(/*! angular2/src/platform/dom/dom_adapter */ 140);
+	var dom_events_1 = __webpack_require__(/*! angular2/src/platform/dom/events/dom_events */ 206);
+	var key_events_1 = __webpack_require__(/*! angular2/src/platform/dom/events/key_events */ 208);
+	var hammer_gestures_1 = __webpack_require__(/*! angular2/src/platform/dom/events/hammer_gestures */ 209);
+	var dom_tokens_1 = __webpack_require__(/*! angular2/src/platform/dom/dom_tokens */ 211);
+	var dom_renderer_1 = __webpack_require__(/*! angular2/src/platform/dom/dom_renderer */ 212);
+	var shared_styles_host_1 = __webpack_require__(/*! angular2/src/platform/dom/shared_styles_host */ 220);
+	var shared_styles_host_2 = __webpack_require__(/*! angular2/src/platform/dom/shared_styles_host */ 220);
+	var browser_details_1 = __webpack_require__(/*! angular2/src/animate/browser_details */ 219);
+	var animation_builder_1 = __webpack_require__(/*! angular2/src/animate/animation_builder */ 213);
+	var browser_adapter_1 = __webpack_require__(/*! ./browser/browser_adapter */ 221);
+	var testability_2 = __webpack_require__(/*! angular2/src/platform/browser/testability */ 225);
+	var wtf_init_1 = __webpack_require__(/*! angular2/src/core/profile/wtf_init */ 226);
+	var event_manager_1 = __webpack_require__(/*! angular2/src/platform/dom/events/event_manager */ 207);
+	var dom_tokens_2 = __webpack_require__(/*! angular2/src/platform/dom/dom_tokens */ 211);
 	exports.DOCUMENT = dom_tokens_2.DOCUMENT;
-	var title_1 = __webpack_require__(227);
+	var title_1 = __webpack_require__(/*! angular2/src/platform/browser/title */ 227);
 	exports.Title = title_1.Title;
-	var common_dom_1 = __webpack_require__(228);
+	var common_dom_1 = __webpack_require__(/*! angular2/platform/common_dom */ 228);
 	exports.DebugElementViewListener = common_dom_1.DebugElementViewListener;
 	exports.ELEMENT_PROBE_PROVIDERS = common_dom_1.ELEMENT_PROBE_PROVIDERS;
 	exports.ELEMENT_PROBE_BINDINGS = common_dom_1.ELEMENT_PROBE_BINDINGS;
 	exports.inspectNativeElement = common_dom_1.inspectNativeElement;
 	exports.By = common_dom_1.By;
-	var browser_adapter_2 = __webpack_require__(221);
+	var browser_adapter_2 = __webpack_require__(/*! ./browser/browser_adapter */ 221);
 	exports.BrowserDomAdapter = browser_adapter_2.BrowserDomAdapter;
-	var tools_1 = __webpack_require__(231);
+	var tools_1 = __webpack_require__(/*! angular2/src/platform/browser/tools/tools */ 231);
 	exports.enableDebugTools = tools_1.enableDebugTools;
 	exports.disableDebugTools = tools_1.disableDebugTools;
 	/**
@@ -26369,19 +26861,25 @@
 
 /***/ },
 /* 163 */
+/*!******************************!*\
+  !*** ./~/angular2/common.js ***!
+  \******************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';function __export(m) {
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
-	__export(__webpack_require__(164));
-	__export(__webpack_require__(174));
-	__export(__webpack_require__(182));
-	__export(__webpack_require__(205));
+	__export(__webpack_require__(/*! ./src/common/pipes */ 164));
+	__export(__webpack_require__(/*! ./src/common/directives */ 174));
+	__export(__webpack_require__(/*! ./src/common/forms */ 182));
+	__export(__webpack_require__(/*! ./src/common/common_directives */ 205));
 
 
 /***/ },
 /* 164 */
+/*!****************************************!*\
+  !*** ./~/angular2/src/common/pipes.js ***!
+  \****************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';/**
@@ -26389,30 +26887,30 @@
 	 * @description
 	 * This module provides a set of common Pipes.
 	 */
-	var async_pipe_1 = __webpack_require__(165);
-	var uppercase_pipe_1 = __webpack_require__(167);
-	var lowercase_pipe_1 = __webpack_require__(168);
-	var json_pipe_1 = __webpack_require__(169);
-	var slice_pipe_1 = __webpack_require__(170);
-	var date_pipe_1 = __webpack_require__(171);
-	var number_pipe_1 = __webpack_require__(173);
-	var lang_1 = __webpack_require__(11);
-	var async_pipe_2 = __webpack_require__(165);
+	var async_pipe_1 = __webpack_require__(/*! ./pipes/async_pipe */ 165);
+	var uppercase_pipe_1 = __webpack_require__(/*! ./pipes/uppercase_pipe */ 167);
+	var lowercase_pipe_1 = __webpack_require__(/*! ./pipes/lowercase_pipe */ 168);
+	var json_pipe_1 = __webpack_require__(/*! ./pipes/json_pipe */ 169);
+	var slice_pipe_1 = __webpack_require__(/*! ./pipes/slice_pipe */ 170);
+	var date_pipe_1 = __webpack_require__(/*! ./pipes/date_pipe */ 171);
+	var number_pipe_1 = __webpack_require__(/*! ./pipes/number_pipe */ 173);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var async_pipe_2 = __webpack_require__(/*! ./pipes/async_pipe */ 165);
 	exports.AsyncPipe = async_pipe_2.AsyncPipe;
-	var date_pipe_2 = __webpack_require__(171);
+	var date_pipe_2 = __webpack_require__(/*! ./pipes/date_pipe */ 171);
 	exports.DatePipe = date_pipe_2.DatePipe;
-	var json_pipe_2 = __webpack_require__(169);
+	var json_pipe_2 = __webpack_require__(/*! ./pipes/json_pipe */ 169);
 	exports.JsonPipe = json_pipe_2.JsonPipe;
-	var slice_pipe_2 = __webpack_require__(170);
+	var slice_pipe_2 = __webpack_require__(/*! ./pipes/slice_pipe */ 170);
 	exports.SlicePipe = slice_pipe_2.SlicePipe;
-	var lowercase_pipe_2 = __webpack_require__(168);
+	var lowercase_pipe_2 = __webpack_require__(/*! ./pipes/lowercase_pipe */ 168);
 	exports.LowerCasePipe = lowercase_pipe_2.LowerCasePipe;
-	var number_pipe_2 = __webpack_require__(173);
+	var number_pipe_2 = __webpack_require__(/*! ./pipes/number_pipe */ 173);
 	exports.NumberPipe = number_pipe_2.NumberPipe;
 	exports.DecimalPipe = number_pipe_2.DecimalPipe;
 	exports.PercentPipe = number_pipe_2.PercentPipe;
 	exports.CurrencyPipe = number_pipe_2.CurrencyPipe;
-	var uppercase_pipe_2 = __webpack_require__(167);
+	var uppercase_pipe_2 = __webpack_require__(/*! ./pipes/uppercase_pipe */ 167);
 	exports.UpperCasePipe = uppercase_pipe_2.UpperCasePipe;
 	/**
 	 * A collection of Angular core pipes that are likely to be used in each and every
@@ -26436,6 +26934,9 @@
 
 /***/ },
 /* 165 */
+/*!***************************************************!*\
+  !*** ./~/angular2/src/common/pipes/async_pipe.js ***!
+  \***************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -26447,10 +26948,10 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var lang_1 = __webpack_require__(11);
-	var async_1 = __webpack_require__(55);
-	var core_1 = __webpack_require__(8);
-	var invalid_pipe_argument_exception_1 = __webpack_require__(166);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var async_1 = __webpack_require__(/*! angular2/src/facade/async */ 55);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var invalid_pipe_argument_exception_1 = __webpack_require__(/*! ./invalid_pipe_argument_exception */ 166);
 	var ObservableStrategy = (function () {
 	    function ObservableStrategy() {
 	    }
@@ -26575,6 +27076,9 @@
 
 /***/ },
 /* 166 */
+/*!************************************************************************!*\
+  !*** ./~/angular2/src/common/pipes/invalid_pipe_argument_exception.js ***!
+  \************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -26582,8 +27086,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
 	var InvalidPipeArgumentException = (function (_super) {
 	    __extends(InvalidPipeArgumentException, _super);
 	    function InvalidPipeArgumentException(type, value) {
@@ -26596,6 +27100,9 @@
 
 /***/ },
 /* 167 */
+/*!*******************************************************!*\
+  !*** ./~/angular2/src/common/pipes/uppercase_pipe.js ***!
+  \*******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -26607,9 +27114,9 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var lang_1 = __webpack_require__(11);
-	var core_1 = __webpack_require__(8);
-	var invalid_pipe_argument_exception_1 = __webpack_require__(166);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var invalid_pipe_argument_exception_1 = __webpack_require__(/*! ./invalid_pipe_argument_exception */ 166);
 	/**
 	 * Implements uppercase transforms to text.
 	 *
@@ -26642,6 +27149,9 @@
 
 /***/ },
 /* 168 */
+/*!*******************************************************!*\
+  !*** ./~/angular2/src/common/pipes/lowercase_pipe.js ***!
+  \*******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -26653,9 +27163,9 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var lang_1 = __webpack_require__(11);
-	var core_1 = __webpack_require__(8);
-	var invalid_pipe_argument_exception_1 = __webpack_require__(166);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var invalid_pipe_argument_exception_1 = __webpack_require__(/*! ./invalid_pipe_argument_exception */ 166);
 	/**
 	 * Transforms text to lowercase.
 	 *
@@ -26688,6 +27198,9 @@
 
 /***/ },
 /* 169 */
+/*!**************************************************!*\
+  !*** ./~/angular2/src/common/pipes/json_pipe.js ***!
+  \**************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -26699,8 +27212,8 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var lang_1 = __webpack_require__(11);
-	var core_1 = __webpack_require__(8);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
 	/**
 	 * Transforms any input value using `JSON.stringify`. Useful for debugging.
 	 *
@@ -26727,6 +27240,9 @@
 
 /***/ },
 /* 170 */
+/*!***************************************************!*\
+  !*** ./~/angular2/src/common/pipes/slice_pipe.js ***!
+  \***************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -26738,11 +27254,11 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var collection_1 = __webpack_require__(18);
-	var core_1 = __webpack_require__(8);
-	var invalid_pipe_argument_exception_1 = __webpack_require__(166);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var invalid_pipe_argument_exception_1 = __webpack_require__(/*! ./invalid_pipe_argument_exception */ 166);
 	/**
 	 * Creates a new List or String containing only a subset (slice) of the
 	 * elements.
@@ -26827,6 +27343,9 @@
 
 /***/ },
 /* 171 */
+/*!**************************************************!*\
+  !*** ./~/angular2/src/common/pipes/date_pipe.js ***!
+  \**************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -26838,11 +27357,11 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var lang_1 = __webpack_require__(11);
-	var intl_1 = __webpack_require__(172);
-	var core_1 = __webpack_require__(8);
-	var collection_1 = __webpack_require__(18);
-	var invalid_pipe_argument_exception_1 = __webpack_require__(166);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var intl_1 = __webpack_require__(/*! angular2/src/facade/intl */ 172);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var invalid_pipe_argument_exception_1 = __webpack_require__(/*! ./invalid_pipe_argument_exception */ 166);
 	// TODO: move to a global configurable location along with other i18n components.
 	var defaultLocale = 'en-US';
 	/**
@@ -26954,6 +27473,9 @@
 
 /***/ },
 /* 172 */
+/*!***************************************!*\
+  !*** ./~/angular2/src/facade/intl.js ***!
+  \***************************************/
 /***/ function(module, exports) {
 
 	'use strict';(function (NumberFormatStyle) {
@@ -27063,6 +27585,9 @@
 
 /***/ },
 /* 173 */
+/*!****************************************************!*\
+  !*** ./~/angular2/src/common/pipes/number_pipe.js ***!
+  \****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -27079,12 +27604,12 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var intl_1 = __webpack_require__(172);
-	var core_1 = __webpack_require__(8);
-	var collection_1 = __webpack_require__(18);
-	var invalid_pipe_argument_exception_1 = __webpack_require__(166);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var intl_1 = __webpack_require__(/*! angular2/src/facade/intl */ 172);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var invalid_pipe_argument_exception_1 = __webpack_require__(/*! ./invalid_pipe_argument_exception */ 166);
 	var defaultLocale = 'en-US';
 	var _re = lang_1.RegExpWrapper.create('^(\\d+)?\\.((\\d+)(\\-(\\d+))?)?$');
 	/**
@@ -27256,6 +27781,9 @@
 
 /***/ },
 /* 174 */
+/*!*********************************************!*\
+  !*** ./~/angular2/src/common/directives.js ***!
+  \*********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';function __export(m) {
@@ -27266,25 +27794,28 @@
 	 * @description
 	 * Common directives shipped with Angular.
 	 */
-	var ng_class_1 = __webpack_require__(175);
+	var ng_class_1 = __webpack_require__(/*! ./directives/ng_class */ 175);
 	exports.NgClass = ng_class_1.NgClass;
-	var ng_for_1 = __webpack_require__(176);
+	var ng_for_1 = __webpack_require__(/*! ./directives/ng_for */ 176);
 	exports.NgFor = ng_for_1.NgFor;
-	var ng_if_1 = __webpack_require__(177);
+	var ng_if_1 = __webpack_require__(/*! ./directives/ng_if */ 177);
 	exports.NgIf = ng_if_1.NgIf;
-	var ng_style_1 = __webpack_require__(178);
+	var ng_style_1 = __webpack_require__(/*! ./directives/ng_style */ 178);
 	exports.NgStyle = ng_style_1.NgStyle;
-	var ng_switch_1 = __webpack_require__(179);
+	var ng_switch_1 = __webpack_require__(/*! ./directives/ng_switch */ 179);
 	exports.NgSwitch = ng_switch_1.NgSwitch;
 	exports.NgSwitchWhen = ng_switch_1.NgSwitchWhen;
 	exports.NgSwitchDefault = ng_switch_1.NgSwitchDefault;
-	__export(__webpack_require__(180));
-	var core_directives_1 = __webpack_require__(181);
+	__export(__webpack_require__(/*! ./directives/observable_list_diff */ 180));
+	var core_directives_1 = __webpack_require__(/*! ./directives/core_directives */ 181);
 	exports.CORE_DIRECTIVES = core_directives_1.CORE_DIRECTIVES;
 
 
 /***/ },
 /* 175 */
+/*!******************************************************!*\
+  !*** ./~/angular2/src/common/directives/ng_class.js ***!
+  \******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -27296,9 +27827,9 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var lang_1 = __webpack_require__(11);
-	var core_1 = __webpack_require__(8);
-	var collection_1 = __webpack_require__(18);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
 	/**
 	 * The `NgClass` directive conditionally adds and removes CSS classes on an HTML element based on
 	 * an expression's evaluation result.
@@ -27479,6 +28010,9 @@
 
 /***/ },
 /* 176 */
+/*!****************************************************!*\
+  !*** ./~/angular2/src/common/directives/ng_for.js ***!
+  \****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -27490,8 +28024,8 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(8);
-	var lang_1 = __webpack_require__(11);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	/**
 	 * The `NgFor` directive instantiates a template once per item from an iterable. The context for
 	 * each instantiated template inherits from the outer context with the given loop variable set
@@ -27651,6 +28185,9 @@
 
 /***/ },
 /* 177 */
+/*!***************************************************!*\
+  !*** ./~/angular2/src/common/directives/ng_if.js ***!
+  \***************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -27662,8 +28199,8 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(8);
-	var lang_1 = __webpack_require__(11);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	/**
 	 * Removes or recreates a portion of the DOM tree based on an {expression}.
 	 *
@@ -27717,6 +28254,9 @@
 
 /***/ },
 /* 178 */
+/*!******************************************************!*\
+  !*** ./~/angular2/src/common/directives/ng_style.js ***!
+  \******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -27728,8 +28268,8 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(8);
-	var lang_1 = __webpack_require__(11);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	/**
 	 * The `NgStyle` directive changes styles based on a result of expression evaluation.
 	 *
@@ -27825,6 +28365,9 @@
 
 /***/ },
 /* 179 */
+/*!*******************************************************!*\
+  !*** ./~/angular2/src/common/directives/ng_switch.js ***!
+  \*******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -27839,9 +28382,9 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var core_1 = __webpack_require__(8);
-	var lang_1 = __webpack_require__(11);
-	var collection_1 = __webpack_require__(18);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
 	var _WHEN_DEFAULT = lang_1.CONST_EXPR(new Object());
 	var SwitchView = (function () {
 	    function SwitchView(_viewContainerRef, _templateRef) {
@@ -28054,6 +28597,9 @@
 
 /***/ },
 /* 180 */
+/*!******************************************************************!*\
+  !*** ./~/angular2/src/common/directives/observable_list_diff.js ***!
+  \******************************************************************/
 /***/ function(module, exports) {
 
 	'use strict';// TS does not have Observables
@@ -28061,14 +28607,17 @@
 
 /***/ },
 /* 181 */
+/*!*************************************************************!*\
+  !*** ./~/angular2/src/common/directives/core_directives.js ***!
+  \*************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var ng_class_1 = __webpack_require__(175);
-	var ng_for_1 = __webpack_require__(176);
-	var ng_if_1 = __webpack_require__(177);
-	var ng_style_1 = __webpack_require__(178);
-	var ng_switch_1 = __webpack_require__(179);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var ng_class_1 = __webpack_require__(/*! ./ng_class */ 175);
+	var ng_for_1 = __webpack_require__(/*! ./ng_for */ 176);
+	var ng_if_1 = __webpack_require__(/*! ./ng_if */ 177);
+	var ng_style_1 = __webpack_require__(/*! ./ng_style */ 178);
+	var ng_switch_1 = __webpack_require__(/*! ./ng_switch */ 179);
 	/**
 	 * A collection of Angular core directives that are likely to be used in each and every Angular
 	 * application.
@@ -28114,6 +28663,9 @@
 
 /***/ },
 /* 182 */
+/*!****************************************!*\
+  !*** ./~/angular2/src/common/forms.js ***!
+  \****************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';/**
@@ -28129,51 +28681,51 @@
 	 * explicitly.
 	 *
 	 */
-	var model_1 = __webpack_require__(183);
+	var model_1 = __webpack_require__(/*! ./forms/model */ 183);
 	exports.AbstractControl = model_1.AbstractControl;
 	exports.Control = model_1.Control;
 	exports.ControlGroup = model_1.ControlGroup;
 	exports.ControlArray = model_1.ControlArray;
-	var abstract_control_directive_1 = __webpack_require__(184);
+	var abstract_control_directive_1 = __webpack_require__(/*! ./forms/directives/abstract_control_directive */ 184);
 	exports.AbstractControlDirective = abstract_control_directive_1.AbstractControlDirective;
-	var control_container_1 = __webpack_require__(185);
+	var control_container_1 = __webpack_require__(/*! ./forms/directives/control_container */ 185);
 	exports.ControlContainer = control_container_1.ControlContainer;
-	var ng_control_name_1 = __webpack_require__(186);
+	var ng_control_name_1 = __webpack_require__(/*! ./forms/directives/ng_control_name */ 186);
 	exports.NgControlName = ng_control_name_1.NgControlName;
-	var ng_form_control_1 = __webpack_require__(196);
+	var ng_form_control_1 = __webpack_require__(/*! ./forms/directives/ng_form_control */ 196);
 	exports.NgFormControl = ng_form_control_1.NgFormControl;
-	var ng_model_1 = __webpack_require__(197);
+	var ng_model_1 = __webpack_require__(/*! ./forms/directives/ng_model */ 197);
 	exports.NgModel = ng_model_1.NgModel;
-	var ng_control_1 = __webpack_require__(187);
+	var ng_control_1 = __webpack_require__(/*! ./forms/directives/ng_control */ 187);
 	exports.NgControl = ng_control_1.NgControl;
-	var ng_control_group_1 = __webpack_require__(198);
+	var ng_control_group_1 = __webpack_require__(/*! ./forms/directives/ng_control_group */ 198);
 	exports.NgControlGroup = ng_control_group_1.NgControlGroup;
-	var ng_form_model_1 = __webpack_require__(199);
+	var ng_form_model_1 = __webpack_require__(/*! ./forms/directives/ng_form_model */ 199);
 	exports.NgFormModel = ng_form_model_1.NgFormModel;
-	var ng_form_1 = __webpack_require__(200);
+	var ng_form_1 = __webpack_require__(/*! ./forms/directives/ng_form */ 200);
 	exports.NgForm = ng_form_1.NgForm;
-	var control_value_accessor_1 = __webpack_require__(188);
+	var control_value_accessor_1 = __webpack_require__(/*! ./forms/directives/control_value_accessor */ 188);
 	exports.NG_VALUE_ACCESSOR = control_value_accessor_1.NG_VALUE_ACCESSOR;
-	var default_value_accessor_1 = __webpack_require__(191);
+	var default_value_accessor_1 = __webpack_require__(/*! ./forms/directives/default_value_accessor */ 191);
 	exports.DefaultValueAccessor = default_value_accessor_1.DefaultValueAccessor;
-	var ng_control_status_1 = __webpack_require__(201);
+	var ng_control_status_1 = __webpack_require__(/*! ./forms/directives/ng_control_status */ 201);
 	exports.NgControlStatus = ng_control_status_1.NgControlStatus;
-	var checkbox_value_accessor_1 = __webpack_require__(193);
+	var checkbox_value_accessor_1 = __webpack_require__(/*! ./forms/directives/checkbox_value_accessor */ 193);
 	exports.CheckboxControlValueAccessor = checkbox_value_accessor_1.CheckboxControlValueAccessor;
-	var select_control_value_accessor_1 = __webpack_require__(194);
+	var select_control_value_accessor_1 = __webpack_require__(/*! ./forms/directives/select_control_value_accessor */ 194);
 	exports.NgSelectOption = select_control_value_accessor_1.NgSelectOption;
 	exports.SelectControlValueAccessor = select_control_value_accessor_1.SelectControlValueAccessor;
-	var directives_1 = __webpack_require__(202);
+	var directives_1 = __webpack_require__(/*! ./forms/directives */ 202);
 	exports.FORM_DIRECTIVES = directives_1.FORM_DIRECTIVES;
-	var validators_1 = __webpack_require__(190);
+	var validators_1 = __webpack_require__(/*! ./forms/validators */ 190);
 	exports.NG_VALIDATORS = validators_1.NG_VALIDATORS;
 	exports.NG_ASYNC_VALIDATORS = validators_1.NG_ASYNC_VALIDATORS;
 	exports.Validators = validators_1.Validators;
-	var validators_2 = __webpack_require__(203);
+	var validators_2 = __webpack_require__(/*! ./forms/directives/validators */ 203);
 	exports.RequiredValidator = validators_2.RequiredValidator;
 	exports.MinLengthValidator = validators_2.MinLengthValidator;
 	exports.MaxLengthValidator = validators_2.MaxLengthValidator;
-	var form_builder_1 = __webpack_require__(204);
+	var form_builder_1 = __webpack_require__(/*! ./forms/form_builder */ 204);
 	exports.FormBuilder = form_builder_1.FormBuilder;
 	exports.FORM_PROVIDERS = form_builder_1.FORM_PROVIDERS;
 	exports.FORM_BINDINGS = form_builder_1.FORM_BINDINGS;
@@ -28181,6 +28733,9 @@
 
 /***/ },
 /* 183 */
+/*!**********************************************!*\
+  !*** ./~/angular2/src/common/forms/model.js ***!
+  \**********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -28188,10 +28743,10 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var lang_1 = __webpack_require__(11);
-	var async_1 = __webpack_require__(55);
-	var promise_1 = __webpack_require__(56);
-	var collection_1 = __webpack_require__(18);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var async_1 = __webpack_require__(/*! angular2/src/facade/async */ 55);
+	var promise_1 = __webpack_require__(/*! angular2/src/facade/promise */ 56);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
 	/**
 	 * Indicates that a Control is valid, i.e. that no errors exist in the input value.
 	 */
@@ -28675,10 +29230,13 @@
 
 /***/ },
 /* 184 */
+/*!******************************************************************************!*\
+  !*** ./~/angular2/src/common/forms/directives/abstract_control_directive.js ***!
+  \******************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
 	/**
 	 * Base class for control directives.
 	 *
@@ -28741,6 +29299,9 @@
 
 /***/ },
 /* 185 */
+/*!*********************************************************************!*\
+  !*** ./~/angular2/src/common/forms/directives/control_container.js ***!
+  \*********************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -28748,7 +29309,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var abstract_control_directive_1 = __webpack_require__(184);
+	var abstract_control_directive_1 = __webpack_require__(/*! ./abstract_control_directive */ 184);
 	/**
 	 * A directive that contains multiple {@link NgControl}s.
 	 *
@@ -28782,6 +29343,9 @@
 
 /***/ },
 /* 186 */
+/*!*******************************************************************!*\
+  !*** ./~/angular2/src/common/forms/directives/ng_control_name.js ***!
+  \*******************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -28801,14 +29365,14 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var lang_1 = __webpack_require__(11);
-	var async_1 = __webpack_require__(55);
-	var core_1 = __webpack_require__(8);
-	var control_container_1 = __webpack_require__(185);
-	var ng_control_1 = __webpack_require__(187);
-	var control_value_accessor_1 = __webpack_require__(188);
-	var shared_1 = __webpack_require__(189);
-	var validators_1 = __webpack_require__(190);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var async_1 = __webpack_require__(/*! angular2/src/facade/async */ 55);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var control_container_1 = __webpack_require__(/*! ./control_container */ 185);
+	var ng_control_1 = __webpack_require__(/*! ./ng_control */ 187);
+	var control_value_accessor_1 = __webpack_require__(/*! ./control_value_accessor */ 188);
+	var shared_1 = __webpack_require__(/*! ./shared */ 189);
+	var validators_1 = __webpack_require__(/*! ../validators */ 190);
 	var controlNameBinding = lang_1.CONST_EXPR(new core_1.Provider(ng_control_1.NgControl, { useExisting: core_1.forwardRef(function () { return NgControlName; }) }));
 	/**
 	 * Creates and binds a control with a specified name to a DOM element.
@@ -28945,6 +29509,9 @@
 
 /***/ },
 /* 187 */
+/*!**************************************************************!*\
+  !*** ./~/angular2/src/common/forms/directives/ng_control.js ***!
+  \**************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -28952,8 +29519,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var abstract_control_directive_1 = __webpack_require__(184);
-	var exceptions_1 = __webpack_require__(20);
+	var abstract_control_directive_1 = __webpack_require__(/*! ./abstract_control_directive */ 184);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
 	/**
 	 * A base class that all control directive extend.
 	 * It binds a {@link Control} object to a DOM element.
@@ -28984,10 +29551,13 @@
 
 /***/ },
 /* 188 */
+/*!**************************************************************************!*\
+  !*** ./~/angular2/src/common/forms/directives/control_value_accessor.js ***!
+  \**************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var core_1 = __webpack_require__(8);
-	var lang_1 = __webpack_require__(11);
+	'use strict';var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	/**
 	 * Used to provide a {@link ControlValueAccessor} for form controls.
 	 *
@@ -28998,17 +29568,20 @@
 
 /***/ },
 /* 189 */
+/*!**********************************************************!*\
+  !*** ./~/angular2/src/common/forms/directives/shared.js ***!
+  \**********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var collection_1 = __webpack_require__(18);
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var validators_1 = __webpack_require__(190);
-	var default_value_accessor_1 = __webpack_require__(191);
-	var number_value_accessor_1 = __webpack_require__(192);
-	var checkbox_value_accessor_1 = __webpack_require__(193);
-	var select_control_value_accessor_1 = __webpack_require__(194);
-	var normalize_validator_1 = __webpack_require__(195);
+	'use strict';var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var validators_1 = __webpack_require__(/*! ../validators */ 190);
+	var default_value_accessor_1 = __webpack_require__(/*! ./default_value_accessor */ 191);
+	var number_value_accessor_1 = __webpack_require__(/*! ./number_value_accessor */ 192);
+	var checkbox_value_accessor_1 = __webpack_require__(/*! ./checkbox_value_accessor */ 193);
+	var select_control_value_accessor_1 = __webpack_require__(/*! ./select_control_value_accessor */ 194);
+	var normalize_validator_1 = __webpack_require__(/*! ./normalize_validator */ 195);
 	function controlPath(name, parent) {
 	    var p = collection_1.ListWrapper.clone(parent.path);
 	    p.push(name);
@@ -29100,13 +29673,16 @@
 
 /***/ },
 /* 190 */
+/*!***************************************************!*\
+  !*** ./~/angular2/src/common/forms/validators.js ***!
+  \***************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var promise_1 = __webpack_require__(56);
-	var async_1 = __webpack_require__(55);
-	var collection_1 = __webpack_require__(18);
-	var core_1 = __webpack_require__(8);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var promise_1 = __webpack_require__(/*! angular2/src/facade/promise */ 56);
+	var async_1 = __webpack_require__(/*! angular2/src/facade/async */ 55);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
 	/**
 	 * Providers for validators to be used for {@link Control}s in a form.
 	 *
@@ -29221,6 +29797,9 @@
 
 /***/ },
 /* 191 */
+/*!**************************************************************************!*\
+  !*** ./~/angular2/src/common/forms/directives/default_value_accessor.js ***!
+  \**************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -29232,9 +29811,9 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(8);
-	var control_value_accessor_1 = __webpack_require__(188);
-	var lang_1 = __webpack_require__(11);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var control_value_accessor_1 = __webpack_require__(/*! ./control_value_accessor */ 188);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	var DEFAULT_VALUE_ACCESSOR = lang_1.CONST_EXPR(new core_1.Provider(control_value_accessor_1.NG_VALUE_ACCESSOR, { useExisting: core_1.forwardRef(function () { return DefaultValueAccessor; }), multi: true }));
 	/**
 	 * The default accessor for writing a value and listening to changes that is used by the
@@ -29276,6 +29855,9 @@
 
 /***/ },
 /* 192 */
+/*!*************************************************************************!*\
+  !*** ./~/angular2/src/common/forms/directives/number_value_accessor.js ***!
+  \*************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -29287,9 +29869,9 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(8);
-	var control_value_accessor_1 = __webpack_require__(188);
-	var lang_1 = __webpack_require__(11);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var control_value_accessor_1 = __webpack_require__(/*! ./control_value_accessor */ 188);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	var NUMBER_VALUE_ACCESSOR = lang_1.CONST_EXPR(new core_1.Provider(control_value_accessor_1.NG_VALUE_ACCESSOR, { useExisting: core_1.forwardRef(function () { return NumberValueAccessor; }), multi: true }));
 	/**
 	 * The accessor for writing a number value and listening to changes that is used by the
@@ -29333,6 +29915,9 @@
 
 /***/ },
 /* 193 */
+/*!***************************************************************************!*\
+  !*** ./~/angular2/src/common/forms/directives/checkbox_value_accessor.js ***!
+  \***************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -29344,9 +29929,9 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(8);
-	var control_value_accessor_1 = __webpack_require__(188);
-	var lang_1 = __webpack_require__(11);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var control_value_accessor_1 = __webpack_require__(/*! ./control_value_accessor */ 188);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	var CHECKBOX_VALUE_ACCESSOR = lang_1.CONST_EXPR(new core_1.Provider(control_value_accessor_1.NG_VALUE_ACCESSOR, { useExisting: core_1.forwardRef(function () { return CheckboxControlValueAccessor; }), multi: true }));
 	/**
 	 * The accessor for writing a value and listening to changes on a checkbox input element.
@@ -29383,6 +29968,9 @@
 
 /***/ },
 /* 194 */
+/*!*********************************************************************************!*\
+  !*** ./~/angular2/src/common/forms/directives/select_control_value_accessor.js ***!
+  \*********************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -29397,10 +29985,10 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var core_1 = __webpack_require__(8);
-	var async_1 = __webpack_require__(55);
-	var control_value_accessor_1 = __webpack_require__(188);
-	var lang_1 = __webpack_require__(11);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var async_1 = __webpack_require__(/*! angular2/src/facade/async */ 55);
+	var control_value_accessor_1 = __webpack_require__(/*! ./control_value_accessor */ 188);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	var SELECT_VALUE_ACCESSOR = lang_1.CONST_EXPR(new core_1.Provider(control_value_accessor_1.NG_VALUE_ACCESSOR, { useExisting: core_1.forwardRef(function () { return SelectControlValueAccessor; }), multi: true }));
 	/**
 	 * Marks `<option>` as dynamic, so Angular can be notified when options change.
@@ -29460,6 +30048,9 @@
 
 /***/ },
 /* 195 */
+/*!***********************************************************************!*\
+  !*** ./~/angular2/src/common/forms/directives/normalize_validator.js ***!
+  \***********************************************************************/
 /***/ function(module, exports) {
 
 	'use strict';function normalizeValidator(validator) {
@@ -29475,6 +30066,9 @@
 
 /***/ },
 /* 196 */
+/*!*******************************************************************!*\
+  !*** ./~/angular2/src/common/forms/directives/ng_form_control.js ***!
+  \*******************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -29494,14 +30088,14 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var lang_1 = __webpack_require__(11);
-	var collection_1 = __webpack_require__(18);
-	var async_1 = __webpack_require__(55);
-	var core_1 = __webpack_require__(8);
-	var ng_control_1 = __webpack_require__(187);
-	var validators_1 = __webpack_require__(190);
-	var control_value_accessor_1 = __webpack_require__(188);
-	var shared_1 = __webpack_require__(189);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var async_1 = __webpack_require__(/*! angular2/src/facade/async */ 55);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var ng_control_1 = __webpack_require__(/*! ./ng_control */ 187);
+	var validators_1 = __webpack_require__(/*! ../validators */ 190);
+	var control_value_accessor_1 = __webpack_require__(/*! ./control_value_accessor */ 188);
+	var shared_1 = __webpack_require__(/*! ./shared */ 189);
 	var formControlBinding = lang_1.CONST_EXPR(new core_1.Provider(ng_control_1.NgControl, { useExisting: core_1.forwardRef(function () { return NgFormControl; }) }));
 	/**
 	 * Binds an existing {@link Control} to a DOM element.
@@ -29622,6 +30216,9 @@
 
 /***/ },
 /* 197 */
+/*!************************************************************!*\
+  !*** ./~/angular2/src/common/forms/directives/ng_model.js ***!
+  \************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -29641,14 +30238,14 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var lang_1 = __webpack_require__(11);
-	var async_1 = __webpack_require__(55);
-	var core_1 = __webpack_require__(8);
-	var control_value_accessor_1 = __webpack_require__(188);
-	var ng_control_1 = __webpack_require__(187);
-	var model_1 = __webpack_require__(183);
-	var validators_1 = __webpack_require__(190);
-	var shared_1 = __webpack_require__(189);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var async_1 = __webpack_require__(/*! angular2/src/facade/async */ 55);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var control_value_accessor_1 = __webpack_require__(/*! ./control_value_accessor */ 188);
+	var ng_control_1 = __webpack_require__(/*! ./ng_control */ 187);
+	var model_1 = __webpack_require__(/*! ../model */ 183);
+	var validators_1 = __webpack_require__(/*! ../validators */ 190);
+	var shared_1 = __webpack_require__(/*! ./shared */ 189);
 	var formControlBinding = lang_1.CONST_EXPR(new core_1.Provider(ng_control_1.NgControl, { useExisting: core_1.forwardRef(function () { return NgModel; }) }));
 	/**
 	 * Binds a domain model to a form control.
@@ -29745,6 +30342,9 @@
 
 /***/ },
 /* 198 */
+/*!********************************************************************!*\
+  !*** ./~/angular2/src/common/forms/directives/ng_control_group.js ***!
+  \********************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -29764,11 +30364,11 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var core_1 = __webpack_require__(8);
-	var lang_1 = __webpack_require__(11);
-	var control_container_1 = __webpack_require__(185);
-	var shared_1 = __webpack_require__(189);
-	var validators_1 = __webpack_require__(190);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var control_container_1 = __webpack_require__(/*! ./control_container */ 185);
+	var shared_1 = __webpack_require__(/*! ./shared */ 189);
+	var validators_1 = __webpack_require__(/*! ../validators */ 190);
 	var controlGroupProvider = lang_1.CONST_EXPR(new core_1.Provider(control_container_1.ControlContainer, { useExisting: core_1.forwardRef(function () { return NgControlGroup; }) }));
 	/**
 	 * Creates and binds a control group to a DOM element.
@@ -29886,6 +30486,9 @@
 
 /***/ },
 /* 199 */
+/*!*****************************************************************!*\
+  !*** ./~/angular2/src/common/forms/directives/ng_form_model.js ***!
+  \*****************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -29905,13 +30508,13 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var lang_1 = __webpack_require__(11);
-	var collection_1 = __webpack_require__(18);
-	var async_1 = __webpack_require__(55);
-	var core_1 = __webpack_require__(8);
-	var control_container_1 = __webpack_require__(185);
-	var shared_1 = __webpack_require__(189);
-	var validators_1 = __webpack_require__(190);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var async_1 = __webpack_require__(/*! angular2/src/facade/async */ 55);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var control_container_1 = __webpack_require__(/*! ./control_container */ 185);
+	var shared_1 = __webpack_require__(/*! ./shared */ 189);
+	var validators_1 = __webpack_require__(/*! ../validators */ 190);
 	var formDirectiveProvider = lang_1.CONST_EXPR(new core_1.Provider(control_container_1.ControlContainer, { useExisting: core_1.forwardRef(function () { return NgFormModel; }) }));
 	/**
 	 * Binds an existing control group to a DOM element.
@@ -30077,6 +30680,9 @@
 
 /***/ },
 /* 200 */
+/*!***********************************************************!*\
+  !*** ./~/angular2/src/common/forms/directives/ng_form.js ***!
+  \***********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -30096,14 +30702,14 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var async_1 = __webpack_require__(55);
-	var collection_1 = __webpack_require__(18);
-	var lang_1 = __webpack_require__(11);
-	var core_1 = __webpack_require__(8);
-	var control_container_1 = __webpack_require__(185);
-	var model_1 = __webpack_require__(183);
-	var shared_1 = __webpack_require__(189);
-	var validators_1 = __webpack_require__(190);
+	var async_1 = __webpack_require__(/*! angular2/src/facade/async */ 55);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var control_container_1 = __webpack_require__(/*! ./control_container */ 185);
+	var model_1 = __webpack_require__(/*! ../model */ 183);
+	var shared_1 = __webpack_require__(/*! ./shared */ 189);
+	var validators_1 = __webpack_require__(/*! ../validators */ 190);
 	var formDirectiveProvider = lang_1.CONST_EXPR(new core_1.Provider(control_container_1.ControlContainer, { useExisting: core_1.forwardRef(function () { return NgForm; }) }));
 	/**
 	 * If `NgForm` is bound in a component, `<form>` elements in that component will be
@@ -30276,6 +30882,9 @@
 
 /***/ },
 /* 201 */
+/*!*********************************************************************!*\
+  !*** ./~/angular2/src/common/forms/directives/ng_control_status.js ***!
+  \*********************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -30290,9 +30899,9 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var core_1 = __webpack_require__(8);
-	var ng_control_1 = __webpack_require__(187);
-	var lang_1 = __webpack_require__(11);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var ng_control_1 = __webpack_require__(/*! ./ng_control */ 187);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	/**
 	 * Directive automatically applied to Angular forms that sets CSS classes
 	 * based on control status (valid/invalid/dirty/etc).
@@ -30365,49 +30974,52 @@
 
 /***/ },
 /* 202 */
+/*!***************************************************!*\
+  !*** ./~/angular2/src/common/forms/directives.js ***!
+  \***************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var ng_control_name_1 = __webpack_require__(186);
-	var ng_form_control_1 = __webpack_require__(196);
-	var ng_model_1 = __webpack_require__(197);
-	var ng_control_group_1 = __webpack_require__(198);
-	var ng_form_model_1 = __webpack_require__(199);
-	var ng_form_1 = __webpack_require__(200);
-	var default_value_accessor_1 = __webpack_require__(191);
-	var checkbox_value_accessor_1 = __webpack_require__(193);
-	var number_value_accessor_1 = __webpack_require__(192);
-	var ng_control_status_1 = __webpack_require__(201);
-	var select_control_value_accessor_1 = __webpack_require__(194);
-	var validators_1 = __webpack_require__(203);
-	var ng_control_name_2 = __webpack_require__(186);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var ng_control_name_1 = __webpack_require__(/*! ./directives/ng_control_name */ 186);
+	var ng_form_control_1 = __webpack_require__(/*! ./directives/ng_form_control */ 196);
+	var ng_model_1 = __webpack_require__(/*! ./directives/ng_model */ 197);
+	var ng_control_group_1 = __webpack_require__(/*! ./directives/ng_control_group */ 198);
+	var ng_form_model_1 = __webpack_require__(/*! ./directives/ng_form_model */ 199);
+	var ng_form_1 = __webpack_require__(/*! ./directives/ng_form */ 200);
+	var default_value_accessor_1 = __webpack_require__(/*! ./directives/default_value_accessor */ 191);
+	var checkbox_value_accessor_1 = __webpack_require__(/*! ./directives/checkbox_value_accessor */ 193);
+	var number_value_accessor_1 = __webpack_require__(/*! ./directives/number_value_accessor */ 192);
+	var ng_control_status_1 = __webpack_require__(/*! ./directives/ng_control_status */ 201);
+	var select_control_value_accessor_1 = __webpack_require__(/*! ./directives/select_control_value_accessor */ 194);
+	var validators_1 = __webpack_require__(/*! ./directives/validators */ 203);
+	var ng_control_name_2 = __webpack_require__(/*! ./directives/ng_control_name */ 186);
 	exports.NgControlName = ng_control_name_2.NgControlName;
-	var ng_form_control_2 = __webpack_require__(196);
+	var ng_form_control_2 = __webpack_require__(/*! ./directives/ng_form_control */ 196);
 	exports.NgFormControl = ng_form_control_2.NgFormControl;
-	var ng_model_2 = __webpack_require__(197);
+	var ng_model_2 = __webpack_require__(/*! ./directives/ng_model */ 197);
 	exports.NgModel = ng_model_2.NgModel;
-	var ng_control_group_2 = __webpack_require__(198);
+	var ng_control_group_2 = __webpack_require__(/*! ./directives/ng_control_group */ 198);
 	exports.NgControlGroup = ng_control_group_2.NgControlGroup;
-	var ng_form_model_2 = __webpack_require__(199);
+	var ng_form_model_2 = __webpack_require__(/*! ./directives/ng_form_model */ 199);
 	exports.NgFormModel = ng_form_model_2.NgFormModel;
-	var ng_form_2 = __webpack_require__(200);
+	var ng_form_2 = __webpack_require__(/*! ./directives/ng_form */ 200);
 	exports.NgForm = ng_form_2.NgForm;
-	var default_value_accessor_2 = __webpack_require__(191);
+	var default_value_accessor_2 = __webpack_require__(/*! ./directives/default_value_accessor */ 191);
 	exports.DefaultValueAccessor = default_value_accessor_2.DefaultValueAccessor;
-	var checkbox_value_accessor_2 = __webpack_require__(193);
+	var checkbox_value_accessor_2 = __webpack_require__(/*! ./directives/checkbox_value_accessor */ 193);
 	exports.CheckboxControlValueAccessor = checkbox_value_accessor_2.CheckboxControlValueAccessor;
-	var number_value_accessor_2 = __webpack_require__(192);
+	var number_value_accessor_2 = __webpack_require__(/*! ./directives/number_value_accessor */ 192);
 	exports.NumberValueAccessor = number_value_accessor_2.NumberValueAccessor;
-	var ng_control_status_2 = __webpack_require__(201);
+	var ng_control_status_2 = __webpack_require__(/*! ./directives/ng_control_status */ 201);
 	exports.NgControlStatus = ng_control_status_2.NgControlStatus;
-	var select_control_value_accessor_2 = __webpack_require__(194);
+	var select_control_value_accessor_2 = __webpack_require__(/*! ./directives/select_control_value_accessor */ 194);
 	exports.SelectControlValueAccessor = select_control_value_accessor_2.SelectControlValueAccessor;
 	exports.NgSelectOption = select_control_value_accessor_2.NgSelectOption;
-	var validators_2 = __webpack_require__(203);
+	var validators_2 = __webpack_require__(/*! ./directives/validators */ 203);
 	exports.RequiredValidator = validators_2.RequiredValidator;
 	exports.MinLengthValidator = validators_2.MinLengthValidator;
 	exports.MaxLengthValidator = validators_2.MaxLengthValidator;
-	var ng_control_1 = __webpack_require__(187);
+	var ng_control_1 = __webpack_require__(/*! ./directives/ng_control */ 187);
 	exports.NgControl = ng_control_1.NgControl;
 	/**
 	 *
@@ -30446,6 +31058,9 @@
 
 /***/ },
 /* 203 */
+/*!**************************************************************!*\
+  !*** ./~/angular2/src/common/forms/directives/validators.js ***!
+  \**************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -30460,10 +31075,10 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var core_1 = __webpack_require__(8);
-	var lang_1 = __webpack_require__(11);
-	var validators_1 = __webpack_require__(190);
-	var lang_2 = __webpack_require__(11);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var validators_1 = __webpack_require__(/*! ../validators */ 190);
+	var lang_2 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	var REQUIRED_VALIDATOR = lang_1.CONST_EXPR(new core_1.Provider(validators_1.NG_VALIDATORS, { useValue: validators_1.Validators.required, multi: true }));
 	/**
 	 * A Directive that adds the `required` validator to any controls marked with the
@@ -30548,6 +31163,9 @@
 
 /***/ },
 /* 204 */
+/*!*****************************************************!*\
+  !*** ./~/angular2/src/common/forms/form_builder.js ***!
+  \*****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -30559,10 +31177,10 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(8);
-	var collection_1 = __webpack_require__(18);
-	var lang_1 = __webpack_require__(11);
-	var modelModule = __webpack_require__(183);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var modelModule = __webpack_require__(/*! ./model */ 183);
 	/**
 	 * Creates a form object from a user-specified configuration.
 	 *
@@ -30693,11 +31311,14 @@
 
 /***/ },
 /* 205 */
+/*!****************************************************!*\
+  !*** ./~/angular2/src/common/common_directives.js ***!
+  \****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var forms_1 = __webpack_require__(182);
-	var directives_1 = __webpack_require__(174);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var forms_1 = __webpack_require__(/*! ./forms */ 182);
+	var directives_1 = __webpack_require__(/*! ./directives */ 174);
 	/**
 	 * A collection of Angular core directives that are likely to be used in each and every Angular
 	 * application. This includes core directives (e.g., NgIf and NgFor), and forms directives (e.g.,
@@ -30746,6 +31367,9 @@
 
 /***/ },
 /* 206 */
+/*!**********************************************************!*\
+  !*** ./~/angular2/src/platform/dom/events/dom_events.js ***!
+  \**********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -30762,9 +31386,9 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var dom_adapter_1 = __webpack_require__(140);
-	var core_1 = __webpack_require__(8);
-	var event_manager_1 = __webpack_require__(207);
+	var dom_adapter_1 = __webpack_require__(/*! angular2/src/platform/dom/dom_adapter */ 140);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var event_manager_1 = __webpack_require__(/*! ./event_manager */ 207);
 	var DomEventsPlugin = (function (_super) {
 	    __extends(DomEventsPlugin, _super);
 	    function DomEventsPlugin() {
@@ -30795,6 +31419,9 @@
 
 /***/ },
 /* 207 */
+/*!*************************************************************!*\
+  !*** ./~/angular2/src/platform/dom/events/event_manager.js ***!
+  \*************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -30809,11 +31436,11 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var di_1 = __webpack_require__(12);
-	var ng_zone_1 = __webpack_require__(87);
-	var collection_1 = __webpack_require__(18);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
+	var ng_zone_1 = __webpack_require__(/*! angular2/src/core/zone/ng_zone */ 87);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
 	exports.EVENT_MANAGER_PLUGINS = lang_1.CONST_EXPR(new di_1.OpaqueToken("EventManagerPlugins"));
 	var EventManager = (function () {
 	    function EventManager(plugins, _zone) {
@@ -30868,6 +31495,9 @@
 
 /***/ },
 /* 208 */
+/*!**********************************************************!*\
+  !*** ./~/angular2/src/platform/dom/events/key_events.js ***!
+  \**********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -30884,11 +31514,11 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var dom_adapter_1 = __webpack_require__(140);
-	var lang_1 = __webpack_require__(11);
-	var collection_1 = __webpack_require__(18);
-	var event_manager_1 = __webpack_require__(207);
-	var di_1 = __webpack_require__(12);
+	var dom_adapter_1 = __webpack_require__(/*! angular2/src/platform/dom/dom_adapter */ 140);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var event_manager_1 = __webpack_require__(/*! ./event_manager */ 207);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
 	var modifierKeys = ['alt', 'control', 'meta', 'shift'];
 	var modifierKeyGetters = {
 	    'alt': function (event) { return event.altKey; },
@@ -30986,6 +31616,9 @@
 
 /***/ },
 /* 209 */
+/*!***************************************************************!*\
+  !*** ./~/angular2/src/platform/dom/events/hammer_gestures.js ***!
+  \***************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -31002,10 +31635,10 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var hammer_common_1 = __webpack_require__(210);
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var di_1 = __webpack_require__(12);
+	var hammer_common_1 = __webpack_require__(/*! ./hammer_common */ 210);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
 	var HammerGesturesPlugin = (function (_super) {
 	    __extends(HammerGesturesPlugin, _super);
 	    function HammerGesturesPlugin() {
@@ -31041,6 +31674,9 @@
 
 /***/ },
 /* 210 */
+/*!*************************************************************!*\
+  !*** ./~/angular2/src/platform/dom/events/hammer_common.js ***!
+  \*************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -31048,8 +31684,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var event_manager_1 = __webpack_require__(207);
-	var collection_1 = __webpack_require__(18);
+	var event_manager_1 = __webpack_require__(/*! ./event_manager */ 207);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
 	var _eventNames = {
 	    // pan
 	    'pan': true,
@@ -31103,10 +31739,13 @@
 
 /***/ },
 /* 211 */
+/*!***************************************************!*\
+  !*** ./~/angular2/src/platform/dom/dom_tokens.js ***!
+  \***************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var di_1 = __webpack_require__(12);
-	var lang_1 = __webpack_require__(11);
+	'use strict';var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	/**
 	 * A DI Token representing the main rendering context. In a browser this is the DOM Document.
 	 *
@@ -31118,6 +31757,9 @@
 
 /***/ },
 /* 212 */
+/*!*****************************************************!*\
+  !*** ./~/angular2/src/platform/dom/dom_renderer.js ***!
+  \*****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -31137,16 +31779,16 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var di_1 = __webpack_require__(12);
-	var animation_builder_1 = __webpack_require__(213);
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var shared_styles_host_1 = __webpack_require__(220);
-	var event_manager_1 = __webpack_require__(207);
-	var dom_tokens_1 = __webpack_require__(211);
-	var metadata_1 = __webpack_require__(9);
-	var dom_adapter_1 = __webpack_require__(140);
-	var util_1 = __webpack_require__(218);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
+	var animation_builder_1 = __webpack_require__(/*! angular2/src/animate/animation_builder */ 213);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var shared_styles_host_1 = __webpack_require__(/*! ./shared_styles_host */ 220);
+	var event_manager_1 = __webpack_require__(/*! ./events/event_manager */ 207);
+	var dom_tokens_1 = __webpack_require__(/*! ./dom_tokens */ 211);
+	var metadata_1 = __webpack_require__(/*! angular2/src/core/metadata */ 9);
+	var dom_adapter_1 = __webpack_require__(/*! angular2/src/platform/dom/dom_adapter */ 140);
+	var util_1 = __webpack_require__(/*! ./util */ 218);
 	var NAMESPACE_URIS = lang_1.CONST_EXPR({ 'xlink': 'http://www.w3.org/1999/xlink', 'svg': 'http://www.w3.org/2000/svg' });
 	var TEMPLATE_COMMENT_TEXT = 'template bindings={}';
 	var TEMPLATE_BINDINGS_EXP = /^template bindings=(.*)$/g;
@@ -31437,6 +32079,9 @@
 
 /***/ },
 /* 213 */
+/*!*****************************************************!*\
+  !*** ./~/angular2/src/animate/animation_builder.js ***!
+  \*****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -31448,9 +32093,9 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var di_1 = __webpack_require__(12);
-	var css_animation_builder_1 = __webpack_require__(214);
-	var browser_details_1 = __webpack_require__(219);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
+	var css_animation_builder_1 = __webpack_require__(/*! ./css_animation_builder */ 214);
+	var browser_details_1 = __webpack_require__(/*! ./browser_details */ 219);
 	var AnimationBuilder = (function () {
 	    /**
 	     * Used for DI
@@ -31475,10 +32120,13 @@
 
 /***/ },
 /* 214 */
+/*!*********************************************************!*\
+  !*** ./~/angular2/src/animate/css_animation_builder.js ***!
+  \*********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var css_animation_options_1 = __webpack_require__(215);
-	var animation_1 = __webpack_require__(216);
+	'use strict';var css_animation_options_1 = __webpack_require__(/*! ./css_animation_options */ 215);
+	var animation_1 = __webpack_require__(/*! ./animation */ 216);
 	var CssAnimationBuilder = (function () {
 	    /**
 	     * Accepts public properties for CssAnimationBuilder
@@ -31566,6 +32214,9 @@
 
 /***/ },
 /* 215 */
+/*!*********************************************************!*\
+  !*** ./~/angular2/src/animate/css_animation_options.js ***!
+  \*********************************************************/
 /***/ function(module, exports) {
 
 	'use strict';var CssAnimationOptions = (function () {
@@ -31584,13 +32235,16 @@
 
 /***/ },
 /* 216 */
+/*!*********************************************!*\
+  !*** ./~/angular2/src/animate/animation.js ***!
+  \*********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var math_1 = __webpack_require__(217);
-	var util_1 = __webpack_require__(218);
-	var collection_1 = __webpack_require__(18);
-	var dom_adapter_1 = __webpack_require__(140);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var math_1 = __webpack_require__(/*! angular2/src/facade/math */ 217);
+	var util_1 = __webpack_require__(/*! angular2/src/platform/dom/util */ 218);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var dom_adapter_1 = __webpack_require__(/*! angular2/src/platform/dom/dom_adapter */ 140);
 	var Animation = (function () {
 	    /**
 	     * Stores the start time and starts the animation
@@ -31771,18 +32425,24 @@
 
 /***/ },
 /* 217 */
+/*!***************************************!*\
+  !*** ./~/angular2/src/facade/math.js ***!
+  \***************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	exports.Math = lang_1.global.Math;
 	exports.NaN = typeof exports.NaN;
 
 
 /***/ },
 /* 218 */
+/*!*********************************************!*\
+  !*** ./~/angular2/src/platform/dom/util.js ***!
+  \*********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	var CAMEL_CASE_REGEXP = /([A-Z])/g;
 	var DASH_CASE_REGEXP = /-([a-z])/g;
 	function camelCaseToDashCase(input) {
@@ -31797,6 +32457,9 @@
 
 /***/ },
 /* 219 */
+/*!***************************************************!*\
+  !*** ./~/angular2/src/animate/browser_details.js ***!
+  \***************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -31808,9 +32471,9 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var di_1 = __webpack_require__(12);
-	var math_1 = __webpack_require__(217);
-	var dom_adapter_1 = __webpack_require__(140);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
+	var math_1 = __webpack_require__(/*! angular2/src/facade/math */ 217);
+	var dom_adapter_1 = __webpack_require__(/*! angular2/src/platform/dom/dom_adapter */ 140);
 	var BrowserDetails = (function () {
 	    function BrowserDetails() {
 	        this.elapsedTimeIncludesDelay = false;
@@ -31875,6 +32538,9 @@
 
 /***/ },
 /* 220 */
+/*!***********************************************************!*\
+  !*** ./~/angular2/src/platform/dom/shared_styles_host.js ***!
+  \***********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -31894,10 +32560,10 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var dom_adapter_1 = __webpack_require__(140);
-	var di_1 = __webpack_require__(12);
-	var collection_1 = __webpack_require__(18);
-	var dom_tokens_1 = __webpack_require__(211);
+	var dom_adapter_1 = __webpack_require__(/*! angular2/src/platform/dom/dom_adapter */ 140);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var dom_tokens_1 = __webpack_require__(/*! ./dom_tokens */ 211);
 	var SharedStylesHost = (function () {
 	    function SharedStylesHost() {
 	        /** @internal */
@@ -31961,6 +32627,9 @@
 
 /***/ },
 /* 221 */
+/*!************************************************************!*\
+  !*** ./~/angular2/src/platform/browser/browser_adapter.js ***!
+  \************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -31968,10 +32637,10 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var collection_1 = __webpack_require__(18);
-	var lang_1 = __webpack_require__(11);
-	var dom_adapter_1 = __webpack_require__(140);
-	var generic_browser_adapter_1 = __webpack_require__(222);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var dom_adapter_1 = __webpack_require__(/*! angular2/src/platform/dom/dom_adapter */ 140);
+	var generic_browser_adapter_1 = __webpack_require__(/*! ./generic_browser_adapter */ 222);
 	var _attrToPropMap = {
 	    'class': 'className',
 	    'innerHtml': 'innerHTML',
@@ -32354,6 +33023,9 @@
 
 /***/ },
 /* 222 */
+/*!********************************************************************!*\
+  !*** ./~/angular2/src/platform/browser/generic_browser_adapter.js ***!
+  \********************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -32361,10 +33033,10 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var collection_1 = __webpack_require__(18);
-	var lang_1 = __webpack_require__(11);
-	var dom_adapter_1 = __webpack_require__(140);
-	var xhr_impl_1 = __webpack_require__(223);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var dom_adapter_1 = __webpack_require__(/*! angular2/src/platform/dom/dom_adapter */ 140);
+	var xhr_impl_1 = __webpack_require__(/*! angular2/src/platform/browser/xhr_impl */ 223);
 	/**
 	 * Provides DOM operations in any browser environment.
 	 */
@@ -32429,6 +33101,9 @@
 
 /***/ },
 /* 223 */
+/*!*****************************************************!*\
+  !*** ./~/angular2/src/platform/browser/xhr_impl.js ***!
+  \*****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -32436,9 +33111,9 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var promise_1 = __webpack_require__(56);
-	var lang_1 = __webpack_require__(11);
-	var xhr_1 = __webpack_require__(224);
+	var promise_1 = __webpack_require__(/*! angular2/src/facade/promise */ 56);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var xhr_1 = __webpack_require__(/*! angular2/src/compiler/xhr */ 224);
 	var XHRImpl = (function (_super) {
 	    __extends(XHRImpl, _super);
 	    function XHRImpl() {
@@ -32479,6 +33154,9 @@
 
 /***/ },
 /* 224 */
+/*!****************************************!*\
+  !*** ./~/angular2/src/compiler/xhr.js ***!
+  \****************************************/
 /***/ function(module, exports) {
 
 	'use strict';// TODO: vsavkin rename it into TemplateLoader
@@ -32497,11 +33175,14 @@
 
 /***/ },
 /* 225 */
+/*!********************************************************!*\
+  !*** ./~/angular2/src/platform/browser/testability.js ***!
+  \********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var dom_adapter_1 = __webpack_require__(140);
-	var core_1 = __webpack_require__(8);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var dom_adapter_1 = __webpack_require__(/*! angular2/src/platform/dom/dom_adapter */ 140);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
 	var PublicTestability = (function () {
 	    function PublicTestability(testability) {
 	        this._testability = testability;
@@ -32557,6 +33238,9 @@
 
 /***/ },
 /* 226 */
+/*!*************************************************!*\
+  !*** ./~/angular2/src/core/profile/wtf_init.js ***!
+  \*************************************************/
 /***/ function(module, exports) {
 
 	'use strict';/**
@@ -32568,9 +33252,12 @@
 
 /***/ },
 /* 227 */
+/*!**************************************************!*\
+  !*** ./~/angular2/src/platform/browser/title.js ***!
+  \**************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var dom_adapter_1 = __webpack_require__(140);
+	'use strict';var dom_adapter_1 = __webpack_require__(/*! angular2/src/platform/dom/dom_adapter */ 140);
 	/**
 	 * A service that can be used to get and set the title of a current HTML document.
 	 *
@@ -32599,6 +33286,9 @@
 
 /***/ },
 /* 228 */
+/*!*******************************************!*\
+  !*** ./~/angular2/platform/common_dom.js ***!
+  \*******************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';function __export(m) {
@@ -32607,33 +33297,36 @@
 	/**
 	 * This is a set of classes and objects that can be used both in the browser and on the server.
 	 */
-	var dom_adapter_1 = __webpack_require__(140);
+	var dom_adapter_1 = __webpack_require__(/*! angular2/src/platform/dom/dom_adapter */ 140);
 	exports.DOM = dom_adapter_1.DOM;
 	exports.setRootDomAdapter = dom_adapter_1.setRootDomAdapter;
 	exports.DomAdapter = dom_adapter_1.DomAdapter;
-	var dom_renderer_1 = __webpack_require__(212);
+	var dom_renderer_1 = __webpack_require__(/*! angular2/src/platform/dom/dom_renderer */ 212);
 	exports.DomRenderer = dom_renderer_1.DomRenderer;
-	var dom_tokens_1 = __webpack_require__(211);
+	var dom_tokens_1 = __webpack_require__(/*! angular2/src/platform/dom/dom_tokens */ 211);
 	exports.DOCUMENT = dom_tokens_1.DOCUMENT;
-	var shared_styles_host_1 = __webpack_require__(220);
+	var shared_styles_host_1 = __webpack_require__(/*! angular2/src/platform/dom/shared_styles_host */ 220);
 	exports.SharedStylesHost = shared_styles_host_1.SharedStylesHost;
 	exports.DomSharedStylesHost = shared_styles_host_1.DomSharedStylesHost;
-	var dom_events_1 = __webpack_require__(206);
+	var dom_events_1 = __webpack_require__(/*! angular2/src/platform/dom/events/dom_events */ 206);
 	exports.DomEventsPlugin = dom_events_1.DomEventsPlugin;
-	var event_manager_1 = __webpack_require__(207);
+	var event_manager_1 = __webpack_require__(/*! angular2/src/platform/dom/events/event_manager */ 207);
 	exports.EVENT_MANAGER_PLUGINS = event_manager_1.EVENT_MANAGER_PLUGINS;
 	exports.EventManager = event_manager_1.EventManager;
 	exports.EventManagerPlugin = event_manager_1.EventManagerPlugin;
-	__export(__webpack_require__(229));
-	__export(__webpack_require__(230));
+	__export(__webpack_require__(/*! angular2/src/platform/dom/debug/by */ 229));
+	__export(__webpack_require__(/*! angular2/src/platform/dom/debug/debug_element_view_listener */ 230));
 
 
 /***/ },
 /* 229 */
+/*!*************************************************!*\
+  !*** ./~/angular2/src/platform/dom/debug/by.js ***!
+  \*************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var dom_adapter_1 = __webpack_require__(140);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var dom_adapter_1 = __webpack_require__(/*! angular2/src/platform/dom/dom_adapter */ 140);
 	/**
 	 * Predicates for use with {@link DebugElement}'s query functions.
 	 */
@@ -32679,6 +33372,9 @@
 
 /***/ },
 /* 230 */
+/*!**************************************************************************!*\
+  !*** ./~/angular2/src/platform/dom/debug/debug_element_view_listener.js ***!
+  \**************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -32690,12 +33386,12 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var lang_1 = __webpack_require__(11);
-	var collection_1 = __webpack_require__(18);
-	var di_1 = __webpack_require__(12);
-	var view_listener_1 = __webpack_require__(106);
-	var dom_adapter_1 = __webpack_require__(140);
-	var debug_element_1 = __webpack_require__(113);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
+	var view_listener_1 = __webpack_require__(/*! angular2/src/core/linker/view_listener */ 106);
+	var dom_adapter_1 = __webpack_require__(/*! angular2/src/platform/dom/dom_adapter */ 140);
+	var debug_element_1 = __webpack_require__(/*! angular2/src/core/debug/debug_element */ 113);
 	var NG_ID_PROPERTY = 'ngid';
 	var INSPECT_GLOBAL_NAME = 'ng.probe';
 	var NG_ID_SEPARATOR = '#';
@@ -32779,10 +33475,13 @@
 
 /***/ },
 /* 231 */
+/*!********************************************************!*\
+  !*** ./~/angular2/src/platform/browser/tools/tools.js ***!
+  \********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var common_tools_1 = __webpack_require__(232);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var common_tools_1 = __webpack_require__(/*! ./common_tools */ 232);
 	var context = lang_1.global;
 	/**
 	 * Enabled Angular 2 debug tools that are accessible via your browser's
@@ -32810,12 +33509,15 @@
 
 /***/ },
 /* 232 */
+/*!***************************************************************!*\
+  !*** ./~/angular2/src/platform/browser/tools/common_tools.js ***!
+  \***************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var application_ref_1 = __webpack_require__(86);
-	var lang_1 = __webpack_require__(11);
-	var browser_1 = __webpack_require__(233);
-	var dom_adapter_1 = __webpack_require__(140);
+	'use strict';var application_ref_1 = __webpack_require__(/*! angular2/src/core/application_ref */ 86);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var browser_1 = __webpack_require__(/*! angular2/src/facade/browser */ 233);
+	var dom_adapter_1 = __webpack_require__(/*! angular2/src/platform/dom/dom_adapter */ 140);
 	/**
 	 * Entry point for all Angular debug tools. This object corresponds to the `ng`
 	 * global variable accessible in the dev console.
@@ -32884,6 +33586,9 @@
 
 /***/ },
 /* 233 */
+/*!******************************************!*\
+  !*** ./~/angular2/src/facade/browser.js ***!
+  \******************************************/
 /***/ function(module, exports) {
 
 	'use strict';/**
@@ -32906,6 +33611,9 @@
 
 /***/ },
 /* 234 */
+/*!********************************!*\
+  !*** ./~/angular2/compiler.js ***!
+  \********************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';function __export(m) {
@@ -32916,13 +33624,16 @@
 	 * @description
 	 * Starting point to import all compiler APIs.
 	 */
-	__export(__webpack_require__(235));
-	__export(__webpack_require__(224));
-	__export(__webpack_require__(236));
+	__export(__webpack_require__(/*! ./src/compiler/url_resolver */ 235));
+	__export(__webpack_require__(/*! ./src/compiler/xhr */ 224));
+	__export(__webpack_require__(/*! ./src/compiler/compiler */ 236));
 
 
 /***/ },
 /* 235 */
+/*!*************************************************!*\
+  !*** ./~/angular2/src/compiler/url_resolver.js ***!
+  \*************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -32937,10 +33648,10 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var di_1 = __webpack_require__(12);
-	var lang_1 = __webpack_require__(11);
-	var application_tokens_1 = __webpack_require__(88);
-	var di_2 = __webpack_require__(12);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var application_tokens_1 = __webpack_require__(/*! angular2/src/core/application_tokens */ 88);
+	var di_2 = __webpack_require__(/*! angular2/src/core/di */ 12);
 	/**
 	 * Create a {@link UrlResolver} with no package prefix.
 	 */
@@ -33253,45 +33964,48 @@
 
 /***/ },
 /* 236 */
+/*!*********************************************!*\
+  !*** ./~/angular2/src/compiler/compiler.js ***!
+  \*********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';function __export(m) {
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
-	var runtime_compiler_1 = __webpack_require__(237);
-	var template_compiler_1 = __webpack_require__(238);
+	var runtime_compiler_1 = __webpack_require__(/*! ./runtime_compiler */ 237);
+	var template_compiler_1 = __webpack_require__(/*! ./template_compiler */ 238);
 	exports.TemplateCompiler = template_compiler_1.TemplateCompiler;
-	var directive_metadata_1 = __webpack_require__(239);
+	var directive_metadata_1 = __webpack_require__(/*! ./directive_metadata */ 239);
 	exports.CompileDirectiveMetadata = directive_metadata_1.CompileDirectiveMetadata;
 	exports.CompileTypeMetadata = directive_metadata_1.CompileTypeMetadata;
 	exports.CompileTemplateMetadata = directive_metadata_1.CompileTemplateMetadata;
-	var source_module_1 = __webpack_require__(244);
+	var source_module_1 = __webpack_require__(/*! ./source_module */ 244);
 	exports.SourceModule = source_module_1.SourceModule;
 	exports.SourceWithImports = source_module_1.SourceWithImports;
-	var platform_directives_and_pipes_1 = __webpack_require__(114);
+	var platform_directives_and_pipes_1 = __webpack_require__(/*! angular2/src/core/platform_directives_and_pipes */ 114);
 	exports.PLATFORM_DIRECTIVES = platform_directives_and_pipes_1.PLATFORM_DIRECTIVES;
 	exports.PLATFORM_PIPES = platform_directives_and_pipes_1.PLATFORM_PIPES;
-	__export(__webpack_require__(243));
-	var template_parser_1 = __webpack_require__(253);
+	__export(__webpack_require__(/*! angular2/src/compiler/template_ast */ 243));
+	var template_parser_1 = __webpack_require__(/*! angular2/src/compiler/template_parser */ 253);
 	exports.TEMPLATE_TRANSFORMS = template_parser_1.TEMPLATE_TRANSFORMS;
-	var lang_1 = __webpack_require__(11);
-	var di_1 = __webpack_require__(12);
-	var template_parser_2 = __webpack_require__(253);
-	var html_parser_1 = __webpack_require__(254);
-	var template_normalizer_1 = __webpack_require__(261);
-	var runtime_metadata_1 = __webpack_require__(262);
-	var change_detector_compiler_1 = __webpack_require__(245);
-	var style_compiler_1 = __webpack_require__(248);
-	var view_compiler_1 = __webpack_require__(251);
-	var proto_view_compiler_1 = __webpack_require__(252);
-	var template_compiler_2 = __webpack_require__(238);
-	var change_detection_1 = __webpack_require__(31);
-	var compiler_1 = __webpack_require__(91);
-	var runtime_compiler_2 = __webpack_require__(237);
-	var element_schema_registry_1 = __webpack_require__(259);
-	var dom_element_schema_registry_1 = __webpack_require__(264);
-	var url_resolver_1 = __webpack_require__(235);
-	var change_detection_2 = __webpack_require__(31);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
+	var template_parser_2 = __webpack_require__(/*! angular2/src/compiler/template_parser */ 253);
+	var html_parser_1 = __webpack_require__(/*! angular2/src/compiler/html_parser */ 254);
+	var template_normalizer_1 = __webpack_require__(/*! angular2/src/compiler/template_normalizer */ 261);
+	var runtime_metadata_1 = __webpack_require__(/*! angular2/src/compiler/runtime_metadata */ 262);
+	var change_detector_compiler_1 = __webpack_require__(/*! angular2/src/compiler/change_detector_compiler */ 245);
+	var style_compiler_1 = __webpack_require__(/*! angular2/src/compiler/style_compiler */ 248);
+	var view_compiler_1 = __webpack_require__(/*! angular2/src/compiler/view_compiler */ 251);
+	var proto_view_compiler_1 = __webpack_require__(/*! angular2/src/compiler/proto_view_compiler */ 252);
+	var template_compiler_2 = __webpack_require__(/*! angular2/src/compiler/template_compiler */ 238);
+	var change_detection_1 = __webpack_require__(/*! angular2/src/core/change_detection/change_detection */ 31);
+	var compiler_1 = __webpack_require__(/*! angular2/src/core/linker/compiler */ 91);
+	var runtime_compiler_2 = __webpack_require__(/*! angular2/src/compiler/runtime_compiler */ 237);
+	var element_schema_registry_1 = __webpack_require__(/*! angular2/src/compiler/schema/element_schema_registry */ 259);
+	var dom_element_schema_registry_1 = __webpack_require__(/*! angular2/src/compiler/schema/dom_element_schema_registry */ 264);
+	var url_resolver_1 = __webpack_require__(/*! angular2/src/compiler/url_resolver */ 235);
+	var change_detection_2 = __webpack_require__(/*! angular2/src/core/change_detection/change_detection */ 31);
 	function _createChangeDetectorGenConfig() {
 	    return new change_detection_1.ChangeDetectorGenConfig(lang_1.assertionsEnabled(), false, true);
 	}
@@ -33323,6 +34037,9 @@
 
 /***/ },
 /* 237 */
+/*!*****************************************************!*\
+  !*** ./~/angular2/src/compiler/runtime_compiler.js ***!
+  \*****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -33339,10 +34056,10 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var compiler_1 = __webpack_require__(91);
-	var view_ref_1 = __webpack_require__(101);
-	var template_compiler_1 = __webpack_require__(238);
-	var di_1 = __webpack_require__(12);
+	var compiler_1 = __webpack_require__(/*! angular2/src/core/linker/compiler */ 91);
+	var view_ref_1 = __webpack_require__(/*! angular2/src/core/linker/view_ref */ 101);
+	var template_compiler_1 = __webpack_require__(/*! ./template_compiler */ 238);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
 	var RuntimeCompiler = (function (_super) {
 	    __extends(RuntimeCompiler, _super);
 	    function RuntimeCompiler() {
@@ -33376,6 +34093,9 @@
 
 /***/ },
 /* 238 */
+/*!******************************************************!*\
+  !*** ./~/angular2/src/compiler/template_compiler.js ***!
+  \******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -33387,25 +34107,25 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var collection_1 = __webpack_require__(18);
-	var async_1 = __webpack_require__(55);
-	var directive_metadata_1 = __webpack_require__(239);
-	var template_ast_1 = __webpack_require__(243);
-	var di_1 = __webpack_require__(12);
-	var source_module_1 = __webpack_require__(244);
-	var change_detector_compiler_1 = __webpack_require__(245);
-	var style_compiler_1 = __webpack_require__(248);
-	var view_compiler_1 = __webpack_require__(251);
-	var proto_view_compiler_1 = __webpack_require__(252);
-	var template_parser_1 = __webpack_require__(253);
-	var template_normalizer_1 = __webpack_require__(261);
-	var runtime_metadata_1 = __webpack_require__(262);
-	var view_1 = __webpack_require__(92);
-	var change_detection_1 = __webpack_require__(31);
-	var resolved_metadata_cache_1 = __webpack_require__(117);
-	var util_1 = __webpack_require__(241);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var async_1 = __webpack_require__(/*! angular2/src/facade/async */ 55);
+	var directive_metadata_1 = __webpack_require__(/*! ./directive_metadata */ 239);
+	var template_ast_1 = __webpack_require__(/*! ./template_ast */ 243);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
+	var source_module_1 = __webpack_require__(/*! ./source_module */ 244);
+	var change_detector_compiler_1 = __webpack_require__(/*! ./change_detector_compiler */ 245);
+	var style_compiler_1 = __webpack_require__(/*! ./style_compiler */ 248);
+	var view_compiler_1 = __webpack_require__(/*! ./view_compiler */ 251);
+	var proto_view_compiler_1 = __webpack_require__(/*! ./proto_view_compiler */ 252);
+	var template_parser_1 = __webpack_require__(/*! ./template_parser */ 253);
+	var template_normalizer_1 = __webpack_require__(/*! ./template_normalizer */ 261);
+	var runtime_metadata_1 = __webpack_require__(/*! ./runtime_metadata */ 262);
+	var view_1 = __webpack_require__(/*! angular2/src/core/linker/view */ 92);
+	var change_detection_1 = __webpack_require__(/*! angular2/src/core/change_detection/change_detection */ 31);
+	var resolved_metadata_cache_1 = __webpack_require__(/*! angular2/src/core/linker/resolved_metadata_cache */ 117);
+	var util_1 = __webpack_require__(/*! ./util */ 241);
 	exports.METADATA_CACHE_MODULE_REF = source_module_1.moduleRef('package:angular2/src/core/linker/resolved_metadata_cache' + util_1.MODULE_SUFFIX);
 	/**
 	 * An internal module of the Angular compiler that begins with component types,
@@ -33727,16 +34447,19 @@
 
 /***/ },
 /* 239 */
+/*!*******************************************************!*\
+  !*** ./~/angular2/src/compiler/directive_metadata.js ***!
+  \*******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var collection_1 = __webpack_require__(18);
-	var change_detection_1 = __webpack_require__(31);
-	var view_1 = __webpack_require__(82);
-	var selector_1 = __webpack_require__(240);
-	var util_1 = __webpack_require__(241);
-	var interfaces_1 = __webpack_require__(242);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var change_detection_1 = __webpack_require__(/*! angular2/src/core/change_detection/change_detection */ 31);
+	var view_1 = __webpack_require__(/*! angular2/src/core/metadata/view */ 82);
+	var selector_1 = __webpack_require__(/*! angular2/src/compiler/selector */ 240);
+	var util_1 = __webpack_require__(/*! ./util */ 241);
+	var interfaces_1 = __webpack_require__(/*! angular2/src/core/linker/interfaces */ 242);
 	// group 1: "property" from "[property]"
 	// group 2: "event" from "(event)"
 	var HOST_REG_EXP = /^(?:(?:\[([^\]]+)\])|(?:\(([^\)]+)\)))$/g;
@@ -33989,11 +34712,14 @@
 
 /***/ },
 /* 240 */
+/*!*********************************************!*\
+  !*** ./~/angular2/src/compiler/selector.js ***!
+  \*********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var collection_1 = __webpack_require__(18);
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
+	'use strict';var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
 	var _EMPTY_ATTR_VALUE = '';
 	// TODO: Can't use `const` here as
 	// in Dart this is not transpiled into `final` yet...
@@ -34351,9 +35077,12 @@
 
 /***/ },
 /* 241 */
+/*!*****************************************!*\
+  !*** ./~/angular2/src/compiler/util.js ***!
+  \*****************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	var CAMEL_CASE_REGEXP = /([A-Z])/g;
 	var DASH_CASE_REGEXP = /-([a-z])/g;
 	var SINGLE_QUOTE_ESCAPE_STRING_RE = /'|\\|\n|\r|\$/g;
@@ -34545,6 +35274,9 @@
 
 /***/ },
 /* 242 */
+/*!**************************************************!*\
+  !*** ./~/angular2/src/core/linker/interfaces.js ***!
+  \**************************************************/
 /***/ function(module, exports) {
 
 	'use strict';(function (LifecycleHooks) {
@@ -34575,9 +35307,12 @@
 
 /***/ },
 /* 243 */
+/*!*************************************************!*\
+  !*** ./~/angular2/src/compiler/template_ast.js ***!
+  \*************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	/**
 	 * A segment of text within the template.
 	 */
@@ -34824,9 +35559,12 @@
 
 /***/ },
 /* 244 */
+/*!**************************************************!*\
+  !*** ./~/angular2/src/compiler/source_module.js ***!
+  \**************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	var MODULE_REGEXP = /#MODULE\[([^\]]*)\]/g;
 	function moduleRef(moduleUrl) {
 	    return "#MODULE[" + moduleUrl + "]";
@@ -34898,6 +35636,9 @@
 
 /***/ },
 /* 245 */
+/*!*************************************************************!*\
+  !*** ./~/angular2/src/compiler/change_detector_compiler.js ***!
+  \*************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -34909,17 +35650,17 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var source_module_1 = __webpack_require__(244);
-	var change_detection_jit_generator_1 = __webpack_require__(78);
-	var abstract_change_detector_1 = __webpack_require__(49);
-	var change_detection_util_1 = __webpack_require__(44);
-	var constants_1 = __webpack_require__(42);
-	var change_definition_factory_1 = __webpack_require__(246);
-	var lang_1 = __webpack_require__(11);
-	var change_detection_1 = __webpack_require__(31);
-	var change_detector_codegen_1 = __webpack_require__(247);
-	var util_1 = __webpack_require__(241);
-	var di_1 = __webpack_require__(12);
+	var source_module_1 = __webpack_require__(/*! ./source_module */ 244);
+	var change_detection_jit_generator_1 = __webpack_require__(/*! angular2/src/core/change_detection/change_detection_jit_generator */ 78);
+	var abstract_change_detector_1 = __webpack_require__(/*! angular2/src/core/change_detection/abstract_change_detector */ 49);
+	var change_detection_util_1 = __webpack_require__(/*! angular2/src/core/change_detection/change_detection_util */ 44);
+	var constants_1 = __webpack_require__(/*! angular2/src/core/change_detection/constants */ 42);
+	var change_definition_factory_1 = __webpack_require__(/*! ./change_definition_factory */ 246);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var change_detection_1 = __webpack_require__(/*! angular2/src/core/change_detection/change_detection */ 31);
+	var change_detector_codegen_1 = __webpack_require__(/*! angular2/src/transform/template_compiler/change_detector_codegen */ 247);
+	var util_1 = __webpack_require__(/*! ./util */ 241);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
 	var ABSTRACT_CHANGE_DETECTOR = "AbstractChangeDetector";
 	var UTIL = "ChangeDetectionUtil";
 	var CHANGE_DETECTOR_STATE = "ChangeDetectorState";
@@ -34988,14 +35729,17 @@
 
 /***/ },
 /* 246 */
+/*!**************************************************************!*\
+  !*** ./~/angular2/src/compiler/change_definition_factory.js ***!
+  \**************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var collection_1 = __webpack_require__(18);
-	var lang_1 = __webpack_require__(11);
-	var reflection_1 = __webpack_require__(22);
-	var change_detection_1 = __webpack_require__(31);
-	var template_ast_1 = __webpack_require__(243);
-	var interfaces_1 = __webpack_require__(242);
+	'use strict';var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var reflection_1 = __webpack_require__(/*! angular2/src/core/reflection/reflection */ 22);
+	var change_detection_1 = __webpack_require__(/*! angular2/src/core/change_detection/change_detection */ 31);
+	var template_ast_1 = __webpack_require__(/*! ./template_ast */ 243);
+	var interfaces_1 = __webpack_require__(/*! angular2/src/core/linker/interfaces */ 242);
 	function createChangeDetectorDefinitions(componentType, componentStrategy, genConfig, parsedTemplate) {
 	    var pvVisitors = [];
 	    var visitor = new ProtoViewVisitor(null, pvVisitors, componentStrategy);
@@ -35161,6 +35905,9 @@
 
 /***/ },
 /* 247 */
+/*!*******************************************************************************!*\
+  !*** ./~/angular2/src/transform/template_compiler/change_detector_codegen.js ***!
+  \*******************************************************************************/
 /***/ function(module, exports) {
 
 	'use strict';// Note: This class is only here so that we can reference it from TypeScript code.
@@ -35181,6 +35928,9 @@
 
 /***/ },
 /* 248 */
+/*!***************************************************!*\
+  !*** ./~/angular2/src/compiler/style_compiler.js ***!
+  \***************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -35192,16 +35942,16 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var source_module_1 = __webpack_require__(244);
-	var view_1 = __webpack_require__(82);
-	var xhr_1 = __webpack_require__(224);
-	var lang_1 = __webpack_require__(11);
-	var async_1 = __webpack_require__(55);
-	var shadow_css_1 = __webpack_require__(249);
-	var url_resolver_1 = __webpack_require__(235);
-	var style_url_resolver_1 = __webpack_require__(250);
-	var util_1 = __webpack_require__(241);
-	var di_1 = __webpack_require__(12);
+	var source_module_1 = __webpack_require__(/*! ./source_module */ 244);
+	var view_1 = __webpack_require__(/*! angular2/src/core/metadata/view */ 82);
+	var xhr_1 = __webpack_require__(/*! angular2/src/compiler/xhr */ 224);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var async_1 = __webpack_require__(/*! angular2/src/facade/async */ 55);
+	var shadow_css_1 = __webpack_require__(/*! angular2/src/compiler/shadow_css */ 249);
+	var url_resolver_1 = __webpack_require__(/*! angular2/src/compiler/url_resolver */ 235);
+	var style_url_resolver_1 = __webpack_require__(/*! ./style_url_resolver */ 250);
+	var util_1 = __webpack_require__(/*! ./util */ 241);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
 	var COMPONENT_VARIABLE = '%COMP%';
 	var HOST_ATTR = "_nghost-" + COMPONENT_VARIABLE;
 	var CONTENT_ATTR = "_ngcontent-" + COMPONENT_VARIABLE;
@@ -35281,10 +36031,13 @@
 
 /***/ },
 /* 249 */
+/*!***********************************************!*\
+  !*** ./~/angular2/src/compiler/shadow_css.js ***!
+  \***********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var collection_1 = __webpack_require__(18);
-	var lang_1 = __webpack_require__(11);
+	'use strict';var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	/**
 	 * This file is a port of shadowCSS from webcomponents.js to TypeScript.
 	 *
@@ -35783,11 +36536,14 @@
 
 /***/ },
 /* 250 */
+/*!*******************************************************!*\
+  !*** ./~/angular2/src/compiler/style_url_resolver.js ***!
+  \*******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';// Some of the code comes from WebComponents.JS
 	// https://github.com/webcomponents/webcomponentsjs/blob/master/src/HTMLImports/path.js
-	var lang_1 = __webpack_require__(11);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	var StyleWithImports = (function () {
 	    function StyleWithImports(style, styleUrls) {
 	        this.style = style;
@@ -35829,6 +36585,9 @@
 
 /***/ },
 /* 251 */
+/*!**************************************************!*\
+  !*** ./~/angular2/src/compiler/view_compiler.js ***!
+  \**************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -35840,17 +36599,17 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var lang_1 = __webpack_require__(11);
-	var collection_1 = __webpack_require__(18);
-	var template_ast_1 = __webpack_require__(243);
-	var source_module_1 = __webpack_require__(244);
-	var view_1 = __webpack_require__(92);
-	var view_type_1 = __webpack_require__(94);
-	var element_1 = __webpack_require__(93);
-	var view_2 = __webpack_require__(82);
-	var util_1 = __webpack_require__(241);
-	var di_1 = __webpack_require__(12);
-	var proto_view_compiler_1 = __webpack_require__(252);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var template_ast_1 = __webpack_require__(/*! ./template_ast */ 243);
+	var source_module_1 = __webpack_require__(/*! ./source_module */ 244);
+	var view_1 = __webpack_require__(/*! angular2/src/core/linker/view */ 92);
+	var view_type_1 = __webpack_require__(/*! angular2/src/core/linker/view_type */ 94);
+	var element_1 = __webpack_require__(/*! angular2/src/core/linker/element */ 93);
+	var view_2 = __webpack_require__(/*! angular2/src/core/metadata/view */ 82);
+	var util_1 = __webpack_require__(/*! ./util */ 241);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
+	var proto_view_compiler_1 = __webpack_require__(/*! ./proto_view_compiler */ 252);
 	exports.VIEW_JIT_IMPORTS = lang_1.CONST_EXPR({
 	    'AppView': view_1.AppView,
 	    'AppElement': element_1.AppElement,
@@ -36230,6 +36989,9 @@
 
 /***/ },
 /* 252 */
+/*!********************************************************!*\
+  !*** ./~/angular2/src/compiler/proto_view_compiler.js ***!
+  \********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -36246,15 +37008,15 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var lang_1 = __webpack_require__(11);
-	var collection_1 = __webpack_require__(18);
-	var template_ast_1 = __webpack_require__(243);
-	var source_module_1 = __webpack_require__(244);
-	var view_1 = __webpack_require__(92);
-	var view_type_1 = __webpack_require__(94);
-	var element_1 = __webpack_require__(93);
-	var util_1 = __webpack_require__(241);
-	var di_1 = __webpack_require__(12);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var template_ast_1 = __webpack_require__(/*! ./template_ast */ 243);
+	var source_module_1 = __webpack_require__(/*! ./source_module */ 244);
+	var view_1 = __webpack_require__(/*! angular2/src/core/linker/view */ 92);
+	var view_type_1 = __webpack_require__(/*! angular2/src/core/linker/view_type */ 94);
+	var element_1 = __webpack_require__(/*! angular2/src/core/linker/element */ 93);
+	var util_1 = __webpack_require__(/*! ./util */ 241);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
 	exports.PROTO_VIEW_JIT_IMPORTS = lang_1.CONST_EXPR({ 'AppProtoView': view_1.AppProtoView, 'AppProtoElement': element_1.AppProtoElement, 'ViewType': view_type_1.ViewType });
 	// TODO: have a single file that reexports everything needed for
 	// codegen explicitly
@@ -36546,6 +37308,9 @@
 
 /***/ },
 /* 253 */
+/*!****************************************************!*\
+  !*** ./~/angular2/src/compiler/template_parser.js ***!
+  \****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -36565,23 +37330,23 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var collection_1 = __webpack_require__(18);
-	var lang_1 = __webpack_require__(11);
-	var core_1 = __webpack_require__(8);
-	var lang_2 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var change_detection_1 = __webpack_require__(31);
-	var html_parser_1 = __webpack_require__(254);
-	var html_tags_1 = __webpack_require__(258);
-	var parse_util_1 = __webpack_require__(257);
-	var ast_1 = __webpack_require__(36);
-	var template_ast_1 = __webpack_require__(243);
-	var selector_1 = __webpack_require__(240);
-	var element_schema_registry_1 = __webpack_require__(259);
-	var template_preparser_1 = __webpack_require__(260);
-	var style_url_resolver_1 = __webpack_require__(250);
-	var html_ast_1 = __webpack_require__(255);
-	var util_1 = __webpack_require__(241);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var lang_2 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var change_detection_1 = __webpack_require__(/*! angular2/src/core/change_detection/change_detection */ 31);
+	var html_parser_1 = __webpack_require__(/*! ./html_parser */ 254);
+	var html_tags_1 = __webpack_require__(/*! ./html_tags */ 258);
+	var parse_util_1 = __webpack_require__(/*! ./parse_util */ 257);
+	var ast_1 = __webpack_require__(/*! angular2/src/core/change_detection/parser/ast */ 36);
+	var template_ast_1 = __webpack_require__(/*! ./template_ast */ 243);
+	var selector_1 = __webpack_require__(/*! angular2/src/compiler/selector */ 240);
+	var element_schema_registry_1 = __webpack_require__(/*! angular2/src/compiler/schema/element_schema_registry */ 259);
+	var template_preparser_1 = __webpack_require__(/*! ./template_preparser */ 260);
+	var style_url_resolver_1 = __webpack_require__(/*! ./style_url_resolver */ 250);
+	var html_ast_1 = __webpack_require__(/*! ./html_ast */ 255);
+	var util_1 = __webpack_require__(/*! ./util */ 241);
 	// Group 1 = "bind-"
 	// Group 2 = "var-" or "#"
 	// Group 3 = "on-"
@@ -37211,6 +37976,9 @@
 
 /***/ },
 /* 254 */
+/*!************************************************!*\
+  !*** ./~/angular2/src/compiler/html_parser.js ***!
+  \************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -37227,13 +37995,13 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var lang_1 = __webpack_require__(11);
-	var collection_1 = __webpack_require__(18);
-	var html_ast_1 = __webpack_require__(255);
-	var di_1 = __webpack_require__(12);
-	var html_lexer_1 = __webpack_require__(256);
-	var parse_util_1 = __webpack_require__(257);
-	var html_tags_1 = __webpack_require__(258);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var html_ast_1 = __webpack_require__(/*! ./html_ast */ 255);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
+	var html_lexer_1 = __webpack_require__(/*! ./html_lexer */ 256);
+	var parse_util_1 = __webpack_require__(/*! ./parse_util */ 257);
+	var html_tags_1 = __webpack_require__(/*! ./html_tags */ 258);
 	var HtmlTreeError = (function (_super) {
 	    __extends(HtmlTreeError, _super);
 	    function HtmlTreeError(elementName, location, msg) {
@@ -37464,9 +38232,12 @@
 
 /***/ },
 /* 255 */
+/*!*********************************************!*\
+  !*** ./~/angular2/src/compiler/html_ast.js ***!
+  \*********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	var HtmlTextAst = (function () {
 	    function HtmlTextAst(value, sourceSpan) {
 	        this.value = value;
@@ -37513,6 +38284,9 @@
 
 /***/ },
 /* 256 */
+/*!***********************************************!*\
+  !*** ./~/angular2/src/compiler/html_lexer.js ***!
+  \***********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -37520,10 +38294,10 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var lang_1 = __webpack_require__(11);
-	var collection_1 = __webpack_require__(18);
-	var parse_util_1 = __webpack_require__(257);
-	var html_tags_1 = __webpack_require__(258);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var parse_util_1 = __webpack_require__(/*! ./parse_util */ 257);
+	var html_tags_1 = __webpack_require__(/*! ./html_tags */ 258);
 	(function (HtmlTokenType) {
 	    HtmlTokenType[HtmlTokenType["TAG_OPEN_START"] = 0] = "TAG_OPEN_START";
 	    HtmlTokenType[HtmlTokenType["TAG_OPEN_END"] = 1] = "TAG_OPEN_END";
@@ -38050,6 +38824,9 @@
 
 /***/ },
 /* 257 */
+/*!***********************************************!*\
+  !*** ./~/angular2/src/compiler/parse_util.js ***!
+  \***********************************************/
 /***/ function(module, exports) {
 
 	'use strict';var ParseLocation = (function () {
@@ -38127,9 +38904,12 @@
 
 /***/ },
 /* 258 */
+/*!**********************************************!*\
+  !*** ./~/angular2/src/compiler/html_tags.js ***!
+  \**********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
 	// see http://www.w3.org/TR/html51/syntax.html#named-character-references
 	// see https://html.spec.whatwg.org/multipage/entities.json
 	// This list is not exhaustive to keep the compiler footprint low.
@@ -38527,6 +39307,9 @@
 
 /***/ },
 /* 259 */
+/*!*******************************************************************!*\
+  !*** ./~/angular2/src/compiler/schema/element_schema_registry.js ***!
+  \*******************************************************************/
 /***/ function(module, exports) {
 
 	'use strict';var ElementSchemaRegistry = (function () {
@@ -38541,10 +39324,13 @@
 
 /***/ },
 /* 260 */
+/*!*******************************************************!*\
+  !*** ./~/angular2/src/compiler/template_preparser.js ***!
+  \*******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var html_tags_1 = __webpack_require__(258);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var html_tags_1 = __webpack_require__(/*! ./html_tags */ 258);
 	var NG_CONTENT_SELECT_ATTR = 'select';
 	var NG_CONTENT_ELEMENT = 'ng-content';
 	var LINK_ELEMENT = 'link';
@@ -38620,6 +39406,9 @@
 
 /***/ },
 /* 261 */
+/*!********************************************************!*\
+  !*** ./~/angular2/src/compiler/template_normalizer.js ***!
+  \********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -38631,18 +39420,18 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var directive_metadata_1 = __webpack_require__(239);
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var async_1 = __webpack_require__(55);
-	var xhr_1 = __webpack_require__(224);
-	var url_resolver_1 = __webpack_require__(235);
-	var style_url_resolver_1 = __webpack_require__(250);
-	var di_1 = __webpack_require__(12);
-	var view_1 = __webpack_require__(82);
-	var html_ast_1 = __webpack_require__(255);
-	var html_parser_1 = __webpack_require__(254);
-	var template_preparser_1 = __webpack_require__(260);
+	var directive_metadata_1 = __webpack_require__(/*! ./directive_metadata */ 239);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var async_1 = __webpack_require__(/*! angular2/src/facade/async */ 55);
+	var xhr_1 = __webpack_require__(/*! angular2/src/compiler/xhr */ 224);
+	var url_resolver_1 = __webpack_require__(/*! angular2/src/compiler/url_resolver */ 235);
+	var style_url_resolver_1 = __webpack_require__(/*! ./style_url_resolver */ 250);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
+	var view_1 = __webpack_require__(/*! angular2/src/core/metadata/view */ 82);
+	var html_ast_1 = __webpack_require__(/*! ./html_ast */ 255);
+	var html_parser_1 = __webpack_require__(/*! ./html_parser */ 254);
+	var template_preparser_1 = __webpack_require__(/*! ./template_preparser */ 260);
 	var TemplateNormalizer = (function () {
 	    function TemplateNormalizer(_xhr, _urlResolver, _htmlParser) {
 	        this._xhr = _xhr;
@@ -38748,6 +39537,9 @@
 
 /***/ },
 /* 262 */
+/*!*****************************************************!*\
+  !*** ./~/angular2/src/compiler/runtime_metadata.js ***!
+  \*****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -38762,21 +39554,21 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var di_1 = __webpack_require__(12);
-	var lang_1 = __webpack_require__(11);
-	var exceptions_1 = __webpack_require__(20);
-	var cpl = __webpack_require__(239);
-	var md = __webpack_require__(29);
-	var directive_resolver_1 = __webpack_require__(111);
-	var pipe_resolver_1 = __webpack_require__(118);
-	var view_resolver_1 = __webpack_require__(112);
-	var directive_lifecycle_reflector_1 = __webpack_require__(263);
-	var interfaces_1 = __webpack_require__(242);
-	var reflection_1 = __webpack_require__(22);
-	var di_2 = __webpack_require__(12);
-	var platform_directives_and_pipes_1 = __webpack_require__(114);
-	var util_1 = __webpack_require__(241);
-	var url_resolver_1 = __webpack_require__(235);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var exceptions_1 = __webpack_require__(/*! angular2/src/facade/exceptions */ 20);
+	var cpl = __webpack_require__(/*! ./directive_metadata */ 239);
+	var md = __webpack_require__(/*! angular2/src/core/metadata/directives */ 29);
+	var directive_resolver_1 = __webpack_require__(/*! angular2/src/core/linker/directive_resolver */ 111);
+	var pipe_resolver_1 = __webpack_require__(/*! angular2/src/core/linker/pipe_resolver */ 118);
+	var view_resolver_1 = __webpack_require__(/*! angular2/src/core/linker/view_resolver */ 112);
+	var directive_lifecycle_reflector_1 = __webpack_require__(/*! angular2/src/core/linker/directive_lifecycle_reflector */ 263);
+	var interfaces_1 = __webpack_require__(/*! angular2/src/core/linker/interfaces */ 242);
+	var reflection_1 = __webpack_require__(/*! angular2/src/core/reflection/reflection */ 22);
+	var di_2 = __webpack_require__(/*! angular2/src/core/di */ 12);
+	var platform_directives_and_pipes_1 = __webpack_require__(/*! angular2/src/core/platform_directives_and_pipes */ 114);
+	var util_1 = __webpack_require__(/*! ./util */ 241);
+	var url_resolver_1 = __webpack_require__(/*! angular2/src/compiler/url_resolver */ 235);
 	var RuntimeMetadataResolver = (function () {
 	    function RuntimeMetadataResolver(_directiveResolver, _pipeResolver, _viewResolver, _platformDirectives, _platformPipes) {
 	        this._directiveResolver = _directiveResolver;
@@ -38920,10 +39712,13 @@
 
 /***/ },
 /* 263 */
+/*!*********************************************************************!*\
+  !*** ./~/angular2/src/core/linker/directive_lifecycle_reflector.js ***!
+  \*********************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var lang_1 = __webpack_require__(11);
-	var interfaces_1 = __webpack_require__(242);
+	'use strict';var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var interfaces_1 = __webpack_require__(/*! ./interfaces */ 242);
 	function hasLifecycleHook(lcInterface, token) {
 	    if (!(token instanceof lang_1.Type))
 	        return false;
@@ -38954,6 +39749,9 @@
 
 /***/ },
 /* 264 */
+/*!***********************************************************************!*\
+  !*** ./~/angular2/src/compiler/schema/dom_element_schema_registry.js ***!
+  \***********************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';var __extends = (this && this.__extends) || function (d, b) {
@@ -38970,12 +39768,12 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var di_1 = __webpack_require__(12);
-	var lang_1 = __webpack_require__(11);
-	var collection_1 = __webpack_require__(18);
-	var dom_adapter_1 = __webpack_require__(140);
-	var html_tags_1 = __webpack_require__(258);
-	var element_schema_registry_1 = __webpack_require__(259);
+	var di_1 = __webpack_require__(/*! angular2/src/core/di */ 12);
+	var lang_1 = __webpack_require__(/*! angular2/src/facade/lang */ 11);
+	var collection_1 = __webpack_require__(/*! angular2/src/facade/collection */ 18);
+	var dom_adapter_1 = __webpack_require__(/*! angular2/src/platform/dom/dom_adapter */ 140);
+	var html_tags_1 = __webpack_require__(/*! angular2/src/compiler/html_tags */ 258);
+	var element_schema_registry_1 = __webpack_require__(/*! ./element_schema_registry */ 259);
 	var NAMESPACE_URIS = lang_1.CONST_EXPR({ 'xlink': 'http://www.w3.org/1999/xlink', 'svg': 'http://www.w3.org/2000/svg' });
 	var DomElementSchemaRegistry = (function (_super) {
 	    __extends(DomElementSchemaRegistry, _super);
@@ -39020,6 +39818,9 @@
 
 /***/ },
 /* 265 */
+/*!********************************************!*\
+  !*** ./~/ionic-framework/config/config.js ***!
+  \********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -39029,8 +39830,8 @@
 	* @description
 	* Config allows you to set the modes of your components
 	*/
-	var platform_1 = __webpack_require__(266);
-	var util_1 = __webpack_require__(267);
+	var platform_1 = __webpack_require__(/*! ../platform/platform */ 266);
+	var util_1 = __webpack_require__(/*! ../util/util */ 267);
 	/**
 	 * @name Config
 	 * @demo /docs/v2/demos/config/
@@ -39291,10 +40092,13 @@
 
 /***/ },
 /* 266 */
+/*!************************************************!*\
+  !*** ./~/ionic-framework/platform/platform.js ***!
+  \************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	var util_1 = __webpack_require__(267);
-	var dom_1 = __webpack_require__(268);
+	var util_1 = __webpack_require__(/*! ../util/util */ 267);
+	var dom_1 = __webpack_require__(/*! ../util/dom */ 268);
 	/**
 	 * @name Platform
 	 * @description
@@ -39892,6 +40696,9 @@
 
 /***/ },
 /* 267 */
+/*!****************************************!*\
+  !*** ./~/ionic-framework/util/util.js ***!
+  \****************************************/
 /***/ function(module, exports) {
 
 	// Simple noop function
@@ -40117,6 +40924,9 @@
 
 /***/ },
 /* 268 */
+/*!***************************************!*\
+  !*** ./~/ionic-framework/util/dom.js ***!
+  \***************************************/
 /***/ function(module, exports) {
 
 	var win = window;
@@ -40425,6 +41235,9 @@
 
 /***/ },
 /* 269 */
+/*!***********************************************!*\
+  !*** ./~/ionic-framework/util/click-block.js ***!
+  \***********************************************/
 /***/ function(module, exports) {
 
 	var CSS_CLICK_BLOCK = 'click-block-active';
@@ -40479,6 +41292,9 @@
 
 /***/ },
 /* 270 */
+/*!****************************************!*\
+  !*** ./~/ionic-framework/util/form.js ***!
+  \****************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -40490,7 +41306,7 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(8);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
 	/**
 	 * The Input component is used to focus text input elements.
 	 *
@@ -40575,6 +41391,9 @@
 
 /***/ },
 /* 271 */
+/*!********************************************!*\
+  !*** ./~/ionic-framework/util/keyboard.js ***!
+  \********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -40586,10 +41405,10 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(8);
-	var config_1 = __webpack_require__(265);
-	var form_1 = __webpack_require__(270);
-	var dom_1 = __webpack_require__(268);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var config_1 = __webpack_require__(/*! ../config/config */ 265);
+	var form_1 = __webpack_require__(/*! ./form */ 270);
+	var dom_1 = __webpack_require__(/*! ./dom */ 268);
 	/**
 	 * @name Keyboard
 	 * @description
@@ -40762,9 +41581,12 @@
 
 /***/ },
 /* 272 */
+/*!***************************************************!*\
+  !*** ./~/ionic-framework/animations/scroll-to.js ***!
+  \***************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	var dom_1 = __webpack_require__(268);
+	var dom_1 = __webpack_require__(/*! ../util/dom */ 268);
 	var ScrollTo = (function () {
 	    function ScrollTo(ele) {
 	        if (typeof ele === 'string') {
@@ -40859,6 +41681,9 @@
 
 /***/ },
 /* 273 */
+/*!******************************************!*\
+  !*** ./~/ionic-framework/util/events.js ***!
+  \******************************************/
 /***/ function(module, exports) {
 
 	/**
@@ -40964,6 +41789,9 @@
 
 /***/ },
 /* 274 */
+/*!**********************************************************!*\
+  !*** ./~/ionic-framework/components/nav/nav-registry.js ***!
+  \**********************************************************/
 /***/ function(module, exports) {
 
 	/**
@@ -40993,6 +41821,9 @@
 
 /***/ },
 /* 275 */
+/*!****************************************************!*\
+  !*** ./~/ionic-framework/translation/translate.js ***!
+  \****************************************************/
 /***/ function(module, exports) {
 
 	/**
@@ -41061,6 +41892,9 @@
 
 /***/ },
 /* 276 */
+/*!**************************************************!*\
+  !*** ./~/ionic-framework/util/feature-detect.js ***!
+  \**************************************************/
 /***/ function(module, exports) {
 
 	var FeatureDetect = (function () {
@@ -41111,6 +41945,9 @@
 
 /***/ },
 /* 277 */
+/*!*************************************************************!*\
+  !*** ./~/ionic-framework/components/tap-click/tap-click.js ***!
+  \*************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -41122,12 +41959,12 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(8);
-	var app_1 = __webpack_require__(159);
-	var config_1 = __webpack_require__(265);
-	var dom_1 = __webpack_require__(268);
-	var activator_1 = __webpack_require__(278);
-	var ripple_1 = __webpack_require__(279);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var app_1 = __webpack_require__(/*! ../app/app */ 159);
+	var config_1 = __webpack_require__(/*! ../../config/config */ 265);
+	var dom_1 = __webpack_require__(/*! ../../util/dom */ 268);
+	var activator_1 = __webpack_require__(/*! ./activator */ 278);
+	var ripple_1 = __webpack_require__(/*! ./ripple */ 279);
 	/**
 	 * @private
 	 */
@@ -41307,9 +42144,12 @@
 
 /***/ },
 /* 278 */
+/*!*************************************************************!*\
+  !*** ./~/ionic-framework/components/tap-click/activator.js ***!
+  \*************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	var dom_1 = __webpack_require__(268);
+	var dom_1 = __webpack_require__(/*! ../../util/dom */ 268);
 	var Activator = (function () {
 	    function Activator(app, config, zone) {
 	        this.app = app;
@@ -41406,6 +42246,9 @@
 
 /***/ },
 /* 279 */
+/*!**********************************************************!*\
+  !*** ./~/ionic-framework/components/tap-click/ripple.js ***!
+  \**********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -41413,9 +42256,9 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var activator_1 = __webpack_require__(278);
-	var animation_1 = __webpack_require__(280);
-	var dom_1 = __webpack_require__(268);
+	var activator_1 = __webpack_require__(/*! ./activator */ 278);
+	var animation_1 = __webpack_require__(/*! ../../animations/animation */ 280);
+	var dom_1 = __webpack_require__(/*! ../../util/dom */ 268);
 	var RippleActivator = (function (_super) {
 	    __extends(RippleActivator, _super);
 	    function RippleActivator(app, config, zone) {
@@ -41530,10 +42373,13 @@
 
 /***/ },
 /* 280 */
+/*!***************************************************!*\
+  !*** ./~/ionic-framework/animations/animation.js ***!
+  \***************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	var dom_1 = __webpack_require__(268);
-	var util_1 = __webpack_require__(267);
+	var dom_1 = __webpack_require__(/*! ../util/dom */ 268);
+	var util_1 = __webpack_require__(/*! ../util/util */ 267);
 	var doc = document;
 	/**
 	  Animation Steps/Process
@@ -42319,42 +43165,45 @@
 
 /***/ },
 /* 281 */
+/*!************************************************!*\
+  !*** ./~/ionic-framework/config/directives.js ***!
+  \************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	var common_1 = __webpack_require__(163);
-	var overlay_1 = __webpack_require__(282);
-	var menu_1 = __webpack_require__(283);
-	var menu_toggle_1 = __webpack_require__(292);
-	var menu_close_1 = __webpack_require__(302);
-	var button_1 = __webpack_require__(298);
-	var blur_1 = __webpack_require__(303);
-	var content_1 = __webpack_require__(304);
-	var scroll_1 = __webpack_require__(305);
-	var pull_to_refresh_1 = __webpack_require__(306);
-	var slides_1 = __webpack_require__(307);
-	var tabs_1 = __webpack_require__(309);
-	var tab_1 = __webpack_require__(311);
-	var list_1 = __webpack_require__(313);
-	var input_1 = __webpack_require__(316);
-	var item_1 = __webpack_require__(319);
-	var item_sliding_1 = __webpack_require__(320);
-	var toolbar_1 = __webpack_require__(297);
-	var icon_1 = __webpack_require__(296);
-	var checkbox_1 = __webpack_require__(321);
-	var select_1 = __webpack_require__(322);
-	var option_1 = __webpack_require__(324);
-	var toggle_1 = __webpack_require__(325);
-	var text_input_1 = __webpack_require__(318);
-	var label_1 = __webpack_require__(317);
-	var segment_1 = __webpack_require__(326);
-	var radio_1 = __webpack_require__(327);
-	var searchbar_1 = __webpack_require__(328);
-	var nav_1 = __webpack_require__(329);
-	var nav_push_1 = __webpack_require__(330);
-	var nav_router_1 = __webpack_require__(331);
-	var navbar_1 = __webpack_require__(295);
-	var id_1 = __webpack_require__(332);
-	var show_hide_when_1 = __webpack_require__(333);
+	var common_1 = __webpack_require__(/*! angular2/common */ 163);
+	var overlay_1 = __webpack_require__(/*! ../components/overlay/overlay */ 282);
+	var menu_1 = __webpack_require__(/*! ../components/menu/menu */ 283);
+	var menu_toggle_1 = __webpack_require__(/*! ../components/menu/menu-toggle */ 292);
+	var menu_close_1 = __webpack_require__(/*! ../components/menu/menu-close */ 302);
+	var button_1 = __webpack_require__(/*! ../components/button/button */ 298);
+	var blur_1 = __webpack_require__(/*! ../components/blur/blur */ 303);
+	var content_1 = __webpack_require__(/*! ../components/content/content */ 304);
+	var scroll_1 = __webpack_require__(/*! ../components/scroll/scroll */ 305);
+	var pull_to_refresh_1 = __webpack_require__(/*! ../components/scroll/pull-to-refresh */ 306);
+	var slides_1 = __webpack_require__(/*! ../components/slides/slides */ 307);
+	var tabs_1 = __webpack_require__(/*! ../components/tabs/tabs */ 309);
+	var tab_1 = __webpack_require__(/*! ../components/tabs/tab */ 311);
+	var list_1 = __webpack_require__(/*! ../components/list/list */ 313);
+	var input_1 = __webpack_require__(/*! ../components/input/input */ 316);
+	var item_1 = __webpack_require__(/*! ../components/item/item */ 319);
+	var item_sliding_1 = __webpack_require__(/*! ../components/item/item-sliding */ 320);
+	var toolbar_1 = __webpack_require__(/*! ../components/toolbar/toolbar */ 297);
+	var icon_1 = __webpack_require__(/*! ../components/icon/icon */ 296);
+	var checkbox_1 = __webpack_require__(/*! ../components/checkbox/checkbox */ 321);
+	var select_1 = __webpack_require__(/*! ../components/select/select */ 322);
+	var option_1 = __webpack_require__(/*! ../components/option/option */ 324);
+	var toggle_1 = __webpack_require__(/*! ../components/toggle/toggle */ 325);
+	var text_input_1 = __webpack_require__(/*! ../components/text-input/text-input */ 318);
+	var label_1 = __webpack_require__(/*! ../components/label/label */ 317);
+	var segment_1 = __webpack_require__(/*! ../components/segment/segment */ 326);
+	var radio_1 = __webpack_require__(/*! ../components/radio/radio */ 327);
+	var searchbar_1 = __webpack_require__(/*! ../components/searchbar/searchbar */ 328);
+	var nav_1 = __webpack_require__(/*! ../components/nav/nav */ 329);
+	var nav_push_1 = __webpack_require__(/*! ../components/nav/nav-push */ 330);
+	var nav_router_1 = __webpack_require__(/*! ../components/nav/nav-router */ 331);
+	var navbar_1 = __webpack_require__(/*! ../components/navbar/navbar */ 295);
+	var id_1 = __webpack_require__(/*! ../components/app/id */ 332);
+	var show_hide_when_1 = __webpack_require__(/*! ../components/show-hide-when/show-hide-when */ 333);
 	/**
 	 * @name IONIC_DIRECTIVES
 	 * @private
@@ -42487,6 +43336,9 @@
 
 /***/ },
 /* 282 */
+/*!*********************************************************!*\
+  !*** ./~/ionic-framework/components/overlay/overlay.js ***!
+  \*********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -42498,7 +43350,7 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(8);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
 	/**
 	 * @private
 	 */
@@ -42522,6 +43374,9 @@
 
 /***/ },
 /* 283 */
+/*!***************************************************!*\
+  !*** ./~/ionic-framework/components/menu/menu.js ***!
+  \***************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -42541,13 +43396,13 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var core_1 = __webpack_require__(8);
-	var ion_1 = __webpack_require__(284);
-	var app_1 = __webpack_require__(159);
-	var config_1 = __webpack_require__(265);
-	var platform_1 = __webpack_require__(266);
-	var keyboard_1 = __webpack_require__(271);
-	var gestures = __webpack_require__(285);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var ion_1 = __webpack_require__(/*! ../ion */ 284);
+	var app_1 = __webpack_require__(/*! ../app/app */ 159);
+	var config_1 = __webpack_require__(/*! ../../config/config */ 265);
+	var platform_1 = __webpack_require__(/*! ../../platform/platform */ 266);
+	var keyboard_1 = __webpack_require__(/*! ../../util/keyboard */ 271);
+	var gestures = __webpack_require__(/*! ./menu-gestures */ 285);
 	/**
 	 * @name Menu
 	 * @description
@@ -43002,9 +43857,12 @@
 
 /***/ },
 /* 284 */
+/*!*********************************************!*\
+  !*** ./~/ionic-framework/components/ion.js ***!
+  \*********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	var dom = __webpack_require__(268);
+	var dom = __webpack_require__(/*! ../util/dom */ 268);
 	var ids = 0;
 	/**
 	 * Base class for all Ionic components. Exposes some common functionality
@@ -43038,6 +43896,9 @@
 
 /***/ },
 /* 285 */
+/*!************************************************************!*\
+  !*** ./~/ionic-framework/components/menu/menu-gestures.js ***!
+  \************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -43045,8 +43906,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var slide_edge_gesture_1 = __webpack_require__(286);
-	var util_1 = __webpack_require__(267);
+	var slide_edge_gesture_1 = __webpack_require__(/*! ../../gestures/slide-edge-gesture */ 286);
+	var util_1 = __webpack_require__(/*! ../../util/util */ 267);
 	var MenuContentGesture = (function (_super) {
 	    __extends(MenuContentGesture, _super);
 	    function MenuContentGesture(menu, targetEl, options) {
@@ -43131,6 +43992,9 @@
 
 /***/ },
 /* 286 */
+/*!**********************************************************!*\
+  !*** ./~/ionic-framework/gestures/slide-edge-gesture.js ***!
+  \**********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -43138,9 +44002,9 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var slide_gesture_1 = __webpack_require__(287);
-	var util_1 = __webpack_require__(267);
-	var dom_1 = __webpack_require__(268);
+	var slide_gesture_1 = __webpack_require__(/*! ./slide-gesture */ 287);
+	var util_1 = __webpack_require__(/*! ../util/util */ 267);
+	var dom_1 = __webpack_require__(/*! ../util/dom */ 268);
 	var SlideEdgeGesture = (function (_super) {
 	    __extends(SlideEdgeGesture, _super);
 	    function SlideEdgeGesture(element, opts) {
@@ -43182,6 +44046,9 @@
 
 /***/ },
 /* 287 */
+/*!*****************************************************!*\
+  !*** ./~/ionic-framework/gestures/slide-gesture.js ***!
+  \*****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -43189,8 +44056,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var drag_gesture_1 = __webpack_require__(288);
-	var util_1 = __webpack_require__(290);
+	var drag_gesture_1 = __webpack_require__(/*! ./drag-gesture */ 288);
+	var util_1 = __webpack_require__(/*! ../util */ 290);
 	var SlideGesture = (function (_super) {
 	    __extends(SlideGesture, _super);
 	    function SlideGesture(element, opts) {
@@ -43262,6 +44129,9 @@
 
 /***/ },
 /* 288 */
+/*!****************************************************!*\
+  !*** ./~/ionic-framework/gestures/drag-gesture.js ***!
+  \****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -43269,8 +44139,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var gesture_1 = __webpack_require__(289);
-	var util_1 = __webpack_require__(290);
+	var gesture_1 = __webpack_require__(/*! ./gesture */ 289);
+	var util_1 = __webpack_require__(/*! ../util */ 290);
 	var DragGesture = (function (_super) {
 	    __extends(DragGesture, _super);
 	    function DragGesture(element, opts) {
@@ -43310,10 +44180,13 @@
 
 /***/ },
 /* 289 */
+/*!***********************************************!*\
+  !*** ./~/ionic-framework/gestures/gesture.js ***!
+  \***********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	var util_1 = __webpack_require__(290);
-	var hammer_1 = __webpack_require__(291);
+	var util_1 = __webpack_require__(/*! ../util */ 290);
+	var hammer_1 = __webpack_require__(/*! ./hammer */ 291);
 	/**
 	 * A gesture recognizer class.
 	 *
@@ -43373,21 +44246,27 @@
 
 /***/ },
 /* 290 */
+/*!***********************************!*\
+  !*** ./~/ionic-framework/util.js ***!
+  \***********************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	function __export(m) {
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
-	var domUtil = __webpack_require__(268);
+	var domUtil = __webpack_require__(/*! ./util/dom */ 268);
 	exports.dom = domUtil;
-	__export(__webpack_require__(267));
+	__export(__webpack_require__(/*! ./util/util */ 267));
 
 
 /***/ },
 /* 291 */
+/*!**********************************************!*\
+  !*** ./~/ionic-framework/gestures/hammer.js ***!
+  \**********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	var util_1 = __webpack_require__(267);
+	var util_1 = __webpack_require__(/*! ../util/util */ 267);
 	var win = window;
 	var doc = document;
 	/*! Hammer.JS - v2.0.6 - 2015-12-23
@@ -45541,6 +46420,9 @@
 
 /***/ },
 /* 292 */
+/*!**********************************************************!*\
+  !*** ./~/ionic-framework/components/menu/menu-toggle.js ***!
+  \**********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -45555,11 +46437,11 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var core_1 = __webpack_require__(8);
-	var app_1 = __webpack_require__(159);
-	var view_controller_1 = __webpack_require__(293);
-	var navbar_1 = __webpack_require__(295);
-	var menu_1 = __webpack_require__(283);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var app_1 = __webpack_require__(/*! ../app/app */ 159);
+	var view_controller_1 = __webpack_require__(/*! ../nav/view-controller */ 293);
+	var navbar_1 = __webpack_require__(/*! ../navbar/navbar */ 295);
+	var menu_1 = __webpack_require__(/*! ./menu */ 283);
 	/**
 	* @name MenuToggle
 	* @description
@@ -45638,6 +46520,9 @@
 
 /***/ },
 /* 293 */
+/*!*************************************************************!*\
+  !*** ./~/ionic-framework/components/nav/view-controller.js ***!
+  \*************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -45649,8 +46534,8 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(8);
-	var nav_params_1 = __webpack_require__(294);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var nav_params_1 = __webpack_require__(/*! ./nav-params */ 294);
 	/**
 	 * @name ViewController
 	 * @description
@@ -46059,6 +46944,9 @@
 
 /***/ },
 /* 294 */
+/*!********************************************************!*\
+  !*** ./~/ionic-framework/components/nav/nav-params.js ***!
+  \********************************************************/
 /***/ function(module, exports) {
 
 	/**
@@ -46119,6 +47007,9 @@
 
 /***/ },
 /* 295 */
+/*!*******************************************************!*\
+  !*** ./~/ionic-framework/components/navbar/navbar.js ***!
+  \*******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -46138,14 +47029,14 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var core_1 = __webpack_require__(8);
-	var ion_1 = __webpack_require__(284);
-	var icon_1 = __webpack_require__(296);
-	var toolbar_1 = __webpack_require__(297);
-	var config_1 = __webpack_require__(265);
-	var app_1 = __webpack_require__(159);
-	var view_controller_1 = __webpack_require__(293);
-	var nav_controller_1 = __webpack_require__(299);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var ion_1 = __webpack_require__(/*! ../ion */ 284);
+	var icon_1 = __webpack_require__(/*! ../icon/icon */ 296);
+	var toolbar_1 = __webpack_require__(/*! ../toolbar/toolbar */ 297);
+	var config_1 = __webpack_require__(/*! ../../config/config */ 265);
+	var app_1 = __webpack_require__(/*! ../app/app */ 159);
+	var view_controller_1 = __webpack_require__(/*! ../nav/view-controller */ 293);
+	var nav_controller_1 = __webpack_require__(/*! ../nav/nav-controller */ 299);
 	var BackButton = (function (_super) {
 	    __extends(BackButton, _super);
 	    function BackButton(_nav, elementRef, navbar) {
@@ -46362,6 +47253,9 @@
 
 /***/ },
 /* 296 */
+/*!***************************************************!*\
+  !*** ./~/ionic-framework/components/icon/icon.js ***!
+  \***************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -46373,8 +47267,8 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(8);
-	var config_1 = __webpack_require__(265);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var config_1 = __webpack_require__(/*! ../../config/config */ 265);
 	/**
 	 * @name Icon
 	 * @description
@@ -46551,6 +47445,9 @@
 
 /***/ },
 /* 297 */
+/*!*********************************************************!*\
+  !*** ./~/ionic-framework/components/toolbar/toolbar.js ***!
+  \*********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -46570,10 +47467,10 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var core_1 = __webpack_require__(8);
-	var ion_1 = __webpack_require__(284);
-	var navbar_1 = __webpack_require__(295);
-	var button_1 = __webpack_require__(298);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var ion_1 = __webpack_require__(/*! ../ion */ 284);
+	var navbar_1 = __webpack_require__(/*! ../navbar/navbar */ 295);
+	var button_1 = __webpack_require__(/*! ../button/button */ 298);
 	/**
 	 * @private
 	 */
@@ -46762,6 +47659,9 @@
 
 /***/ },
 /* 298 */
+/*!*******************************************************!*\
+  !*** ./~/ionic-framework/components/button/button.js ***!
+  \*******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -46776,8 +47676,8 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var core_1 = __webpack_require__(8);
-	var config_1 = __webpack_require__(265);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var config_1 = __webpack_require__(/*! ../../config/config */ 265);
 	/**
 	  * @name Button
 	  * @module ionic
@@ -46991,6 +47891,9 @@
 
 /***/ },
 /* 299 */
+/*!************************************************************!*\
+  !*** ./~/ionic-framework/components/nav/nav-controller.js ***!
+  \************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -46998,15 +47901,15 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var core_1 = __webpack_require__(8);
-	var instrumentation_1 = __webpack_require__(300);
-	var animation_1 = __webpack_require__(280);
-	var ion_1 = __webpack_require__(284);
-	var util_1 = __webpack_require__(267);
-	var nav_params_1 = __webpack_require__(294);
-	var dom_1 = __webpack_require__(268);
-	var swipe_back_1 = __webpack_require__(301);
-	var view_controller_1 = __webpack_require__(293);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var instrumentation_1 = __webpack_require__(/*! angular2/instrumentation */ 300);
+	var animation_1 = __webpack_require__(/*! ../../animations/animation */ 280);
+	var ion_1 = __webpack_require__(/*! ../ion */ 284);
+	var util_1 = __webpack_require__(/*! ../../util/util */ 267);
+	var nav_params_1 = __webpack_require__(/*! ./nav-params */ 294);
+	var dom_1 = __webpack_require__(/*! ../../util/dom */ 268);
+	var swipe_back_1 = __webpack_require__(/*! ./swipe-back */ 301);
+	var view_controller_1 = __webpack_require__(/*! ./view-controller */ 293);
 	/**
 	 * _For examples on the basic usage of NavController, check out the
 	 * [Navigation section](../../../../components/#navigation) of the Component
@@ -48390,9 +49293,12 @@
 
 /***/ },
 /* 300 */
+/*!***************************************!*\
+  !*** ./~/angular2/instrumentation.js ***!
+  \***************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var profile_1 = __webpack_require__(51);
+	'use strict';var profile_1 = __webpack_require__(/*! ./src/core/profile/profile */ 51);
 	exports.wtfCreateScope = profile_1.wtfCreateScope;
 	exports.wtfLeave = profile_1.wtfLeave;
 	exports.wtfStartTimeRange = profile_1.wtfStartTimeRange;
@@ -48401,6 +49307,9 @@
 
 /***/ },
 /* 301 */
+/*!********************************************************!*\
+  !*** ./~/ionic-framework/components/nav/swipe-back.js ***!
+  \********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -48408,7 +49317,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var slide_edge_gesture_1 = __webpack_require__(286);
+	var slide_edge_gesture_1 = __webpack_require__(/*! ../../gestures/slide-edge-gesture */ 286);
 	var SwipeBackGesture = (function (_super) {
 	    __extends(SwipeBackGesture, _super);
 	    function SwipeBackGesture(element, opts, _nav) {
@@ -48437,6 +49346,9 @@
 
 /***/ },
 /* 302 */
+/*!*********************************************************!*\
+  !*** ./~/ionic-framework/components/menu/menu-close.js ***!
+  \*********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -48448,9 +49360,9 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(8);
-	var app_1 = __webpack_require__(159);
-	var menu_1 = __webpack_require__(283);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var app_1 = __webpack_require__(/*! ../app/app */ 159);
+	var menu_1 = __webpack_require__(/*! ./menu */ 283);
 	/**
 	* @name MenuClose
 	* @description
@@ -48507,6 +49419,9 @@
 
 /***/ },
 /* 303 */
+/*!***************************************************!*\
+  !*** ./~/ionic-framework/components/blur/blur.js ***!
+  \***************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -48518,7 +49433,7 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(8);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
 	/**
 	 * @name Blur
 	 * @description
@@ -48553,6 +49468,9 @@
 
 /***/ },
 /* 304 */
+/*!*********************************************************!*\
+  !*** ./~/ionic-framework/components/content/content.js ***!
+  \*********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -48572,13 +49490,13 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var core_1 = __webpack_require__(8);
-	var ion_1 = __webpack_require__(284);
-	var app_1 = __webpack_require__(159);
-	var config_1 = __webpack_require__(265);
-	var dom_1 = __webpack_require__(268);
-	var view_controller_1 = __webpack_require__(293);
-	var scroll_to_1 = __webpack_require__(272);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var ion_1 = __webpack_require__(/*! ../ion */ 284);
+	var app_1 = __webpack_require__(/*! ../app/app */ 159);
+	var config_1 = __webpack_require__(/*! ../../config/config */ 265);
+	var dom_1 = __webpack_require__(/*! ../../util/dom */ 268);
+	var view_controller_1 = __webpack_require__(/*! ../nav/view-controller */ 293);
+	var scroll_to_1 = __webpack_require__(/*! ../../animations/scroll-to */ 272);
 	/**
 	 * @name Content
 	 * @description
@@ -48862,6 +49780,9 @@
 
 /***/ },
 /* 305 */
+/*!*******************************************************!*\
+  !*** ./~/ionic-framework/components/scroll/scroll.js ***!
+  \*******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -48878,8 +49799,8 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(8);
-	var ion_1 = __webpack_require__(284);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var ion_1 = __webpack_require__(/*! ../ion */ 284);
 	/**
 	 * @name Scroll
 	 * @description
@@ -48955,6 +49876,9 @@
 
 /***/ },
 /* 306 */
+/*!****************************************************************!*\
+  !*** ./~/ionic-framework/components/scroll/pull-to-refresh.js ***!
+  \****************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -48969,12 +49893,12 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var core_1 = __webpack_require__(8);
-	var common_1 = __webpack_require__(163);
-	var content_1 = __webpack_require__(304);
-	var icon_1 = __webpack_require__(296);
-	var util_1 = __webpack_require__(267);
-	var dom_1 = __webpack_require__(268);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var common_1 = __webpack_require__(/*! angular2/common */ 163);
+	var content_1 = __webpack_require__(/*! ../content/content */ 304);
+	var icon_1 = __webpack_require__(/*! ../icon/icon */ 296);
+	var util_1 = __webpack_require__(/*! ../../util/util */ 267);
+	var dom_1 = __webpack_require__(/*! ../../util/dom */ 268);
 	/**
 	 * @name Refresher
 	 * @description
@@ -49391,6 +50315,9 @@
 
 /***/ },
 /* 307 */
+/*!*******************************************************!*\
+  !*** ./~/ionic-framework/components/slides/slides.js ***!
+  \*******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -49410,15 +50337,15 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var core_1 = __webpack_require__(8);
-	var common_1 = __webpack_require__(163);
-	var ion_1 = __webpack_require__(284);
-	var animation_1 = __webpack_require__(280);
-	var gesture_1 = __webpack_require__(289);
-	var util_1 = __webpack_require__(290);
-	var dom_1 = __webpack_require__(268);
-	var util_2 = __webpack_require__(267);
-	var swiper_widget_1 = __webpack_require__(308);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var common_1 = __webpack_require__(/*! angular2/common */ 163);
+	var ion_1 = __webpack_require__(/*! ../ion */ 284);
+	var animation_1 = __webpack_require__(/*! ../../animations/animation */ 280);
+	var gesture_1 = __webpack_require__(/*! ../../gestures/gesture */ 289);
+	var util_1 = __webpack_require__(/*! ../../util */ 290);
+	var dom_1 = __webpack_require__(/*! ../../util/dom */ 268);
+	var util_2 = __webpack_require__(/*! ../../util/util */ 267);
+	var swiper_widget_1 = __webpack_require__(/*! ./swiper-widget */ 308);
 	/**
 	 * @name Slides
 	 * @description
@@ -49972,6 +50899,9 @@
 
 /***/ },
 /* 308 */
+/*!**************************************************************!*\
+  !*** ./~/ionic-framework/components/slides/swiper-widget.js ***!
+  \**************************************************************/
 /***/ function(module, exports) {
 
 	/**
@@ -53932,6 +54862,9 @@
 
 /***/ },
 /* 309 */
+/*!***************************************************!*\
+  !*** ./~/ionic-framework/components/tabs/tabs.js ***!
+  \***************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -53951,18 +54884,18 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var core_1 = __webpack_require__(8);
-	var common_1 = __webpack_require__(163);
-	var app_1 = __webpack_require__(159);
-	var config_1 = __webpack_require__(265);
-	var tab_button_1 = __webpack_require__(310);
-	var tab_highlight_1 = __webpack_require__(312);
-	var ion_1 = __webpack_require__(284);
-	var platform_1 = __webpack_require__(266);
-	var nav_controller_1 = __webpack_require__(299);
-	var view_controller_1 = __webpack_require__(293);
-	var icon_1 = __webpack_require__(296);
-	var util_1 = __webpack_require__(267);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var common_1 = __webpack_require__(/*! angular2/common */ 163);
+	var app_1 = __webpack_require__(/*! ../app/app */ 159);
+	var config_1 = __webpack_require__(/*! ../../config/config */ 265);
+	var tab_button_1 = __webpack_require__(/*! ./tab-button */ 310);
+	var tab_highlight_1 = __webpack_require__(/*! ./tab-highlight */ 312);
+	var ion_1 = __webpack_require__(/*! ../ion */ 284);
+	var platform_1 = __webpack_require__(/*! ../../platform/platform */ 266);
+	var nav_controller_1 = __webpack_require__(/*! ../nav/nav-controller */ 299);
+	var view_controller_1 = __webpack_require__(/*! ../nav/view-controller */ 293);
+	var icon_1 = __webpack_require__(/*! ../icon/icon */ 296);
+	var util_1 = __webpack_require__(/*! ../../util/util */ 267);
 	/**
 	 * @name Tabs
 	 * @property {any} [tabbarPlacement] - set position of the tabbar, top or bottom
@@ -54249,6 +55182,9 @@
 
 /***/ },
 /* 310 */
+/*!*********************************************************!*\
+  !*** ./~/ionic-framework/components/tabs/tab-button.js ***!
+  \*********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -54265,10 +55201,10 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(8);
-	var tab_1 = __webpack_require__(311);
-	var ion_1 = __webpack_require__(284);
-	var config_1 = __webpack_require__(265);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var tab_1 = __webpack_require__(/*! ./tab */ 311);
+	var ion_1 = __webpack_require__(/*! ../ion */ 284);
+	var config_1 = __webpack_require__(/*! ../../config/config */ 265);
 	/**
 	 * @private
 	 */
@@ -54326,6 +55262,9 @@
 
 /***/ },
 /* 311 */
+/*!**************************************************!*\
+  !*** ./~/ionic-framework/components/tabs/tab.js ***!
+  \**************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -54345,13 +55284,13 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var core_1 = __webpack_require__(8);
-	var core_2 = __webpack_require__(8);
-	var app_1 = __webpack_require__(159);
-	var config_1 = __webpack_require__(265);
-	var keyboard_1 = __webpack_require__(271);
-	var nav_controller_1 = __webpack_require__(299);
-	var tabs_1 = __webpack_require__(309);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var core_2 = __webpack_require__(/*! angular2/core */ 8);
+	var app_1 = __webpack_require__(/*! ../app/app */ 159);
+	var config_1 = __webpack_require__(/*! ../../config/config */ 265);
+	var keyboard_1 = __webpack_require__(/*! ../../util/keyboard */ 271);
+	var nav_controller_1 = __webpack_require__(/*! ../nav/nav-controller */ 299);
+	var tabs_1 = __webpack_require__(/*! ./tabs */ 309);
 	/**
 	 * @name Tab
 	 * @usage
@@ -54570,6 +55509,9 @@
 
 /***/ },
 /* 312 */
+/*!************************************************************!*\
+  !*** ./~/ionic-framework/components/tabs/tab-highlight.js ***!
+  \************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -54581,8 +55523,8 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(8);
-	var dom_1 = __webpack_require__(268);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var dom_1 = __webpack_require__(/*! ../../util/dom */ 268);
 	/**
 	 * @private
 	 */
@@ -54617,6 +55559,9 @@
 
 /***/ },
 /* 313 */
+/*!***************************************************!*\
+  !*** ./~/ionic-framework/components/list/list.js ***!
+  \***************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -54636,11 +55581,11 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var core_1 = __webpack_require__(8);
-	var ion_1 = __webpack_require__(284);
-	var virtual_1 = __webpack_require__(314);
-	var item_sliding_gesture_1 = __webpack_require__(315);
-	var util_1 = __webpack_require__(290);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var ion_1 = __webpack_require__(/*! ../ion */ 284);
+	var virtual_1 = __webpack_require__(/*! ./virtual */ 314);
+	var item_sliding_gesture_1 = __webpack_require__(/*! ../item/item-sliding-gesture */ 315);
+	var util_1 = __webpack_require__(/*! ../../util */ 290);
 	/**
 	 * The List is a widely used interface element in almost any mobile app, and can include
 	 * content ranging from basic text all the way to buttons, toggles, icons, and thumbnails.
@@ -54803,6 +55748,9 @@
 
 /***/ },
 /* 314 */
+/*!******************************************************!*\
+  !*** ./~/ionic-framework/components/list/virtual.js ***!
+  \******************************************************/
 /***/ function(module, exports) {
 
 	var ListVirtualScroll = (function () {
@@ -54897,6 +55845,9 @@
 
 /***/ },
 /* 315 */
+/*!*******************************************************************!*\
+  !*** ./~/ionic-framework/components/item/item-sliding-gesture.js ***!
+  \*******************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -54904,8 +55855,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var drag_gesture_1 = __webpack_require__(288);
-	var dom_1 = __webpack_require__(268);
+	var drag_gesture_1 = __webpack_require__(/*! ../../gestures/drag-gesture */ 288);
+	var dom_1 = __webpack_require__(/*! ../../util/dom */ 268);
 	var ItemSlidingGesture = (function (_super) {
 	    __extends(ItemSlidingGesture, _super);
 	    function ItemSlidingGesture(list, listEle) {
@@ -55118,6 +56069,9 @@
 
 /***/ },
 /* 316 */
+/*!*****************************************************!*\
+  !*** ./~/ionic-framework/components/input/input.js ***!
+  \*****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -55132,19 +56086,19 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var core_1 = __webpack_require__(8);
-	var common_1 = __webpack_require__(163);
-	var nav_controller_1 = __webpack_require__(299);
-	var config_1 = __webpack_require__(265);
-	var form_1 = __webpack_require__(270);
-	var label_1 = __webpack_require__(317);
-	var text_input_1 = __webpack_require__(318);
-	var app_1 = __webpack_require__(159);
-	var content_1 = __webpack_require__(304);
-	var dom_1 = __webpack_require__(268);
-	var platform_1 = __webpack_require__(266);
-	var button_1 = __webpack_require__(298);
-	var icon_1 = __webpack_require__(296);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var common_1 = __webpack_require__(/*! angular2/common */ 163);
+	var nav_controller_1 = __webpack_require__(/*! ../nav/nav-controller */ 299);
+	var config_1 = __webpack_require__(/*! ../../config/config */ 265);
+	var form_1 = __webpack_require__(/*! ../../util/form */ 270);
+	var label_1 = __webpack_require__(/*! ../label/label */ 317);
+	var text_input_1 = __webpack_require__(/*! ../text-input/text-input */ 318);
+	var app_1 = __webpack_require__(/*! ../app/app */ 159);
+	var content_1 = __webpack_require__(/*! ../content/content */ 304);
+	var dom_1 = __webpack_require__(/*! ../../util/dom */ 268);
+	var platform_1 = __webpack_require__(/*! ../../platform/platform */ 266);
+	var button_1 = __webpack_require__(/*! ../button/button */ 298);
+	var icon_1 = __webpack_require__(/*! ../icon/icon */ 296);
 	/**
 	 * @name Input
 	 * @module ionic
@@ -55652,6 +56606,9 @@
 
 /***/ },
 /* 317 */
+/*!*****************************************************!*\
+  !*** ./~/ionic-framework/components/label/label.js ***!
+  \*****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -55663,8 +56620,8 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(8);
-	var form_1 = __webpack_require__(270);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var form_1 = __webpack_require__(/*! ../../util/form */ 270);
 	/**
 	 * @name Label
 	 * @description
@@ -55730,6 +56687,9 @@
 
 /***/ },
 /* 318 */
+/*!***************************************************************!*\
+  !*** ./~/ionic-framework/components/text-input/text-input.js ***!
+  \***************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -55744,8 +56704,8 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var core_1 = __webpack_require__(8);
-	var dom_1 = __webpack_require__(268);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var dom_1 = __webpack_require__(/*! ../../util/dom */ 268);
 	/**
 	 * @private
 	 */
@@ -55918,6 +56878,9 @@
 
 /***/ },
 /* 319 */
+/*!***************************************************!*\
+  !*** ./~/ionic-framework/components/item/item.js ***!
+  \***************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -55929,9 +56892,9 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(8);
-	var button_1 = __webpack_require__(298);
-	var icon_1 = __webpack_require__(296);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var button_1 = __webpack_require__(/*! ../button/button */ 298);
+	var icon_1 = __webpack_require__(/*! ../icon/icon */ 296);
 	/**
 	 * @name Item
 	 * @description
@@ -56030,6 +56993,9 @@
 
 /***/ },
 /* 320 */
+/*!***********************************************************!*\
+  !*** ./~/ionic-framework/components/item/item-sliding.js ***!
+  \***********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -56044,8 +57010,8 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var core_1 = __webpack_require__(8);
-	var list_1 = __webpack_require__(313);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var list_1 = __webpack_require__(/*! ../list/list */ 313);
 	/**
 	 * @name ItemSliding
 	 *
@@ -56098,6 +57064,9 @@
 
 /***/ },
 /* 321 */
+/*!***********************************************************!*\
+  !*** ./~/ionic-framework/components/checkbox/checkbox.js ***!
+  \***********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -56112,9 +57081,9 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var core_1 = __webpack_require__(8);
-	var common_1 = __webpack_require__(163);
-	var form_1 = __webpack_require__(270);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var common_1 = __webpack_require__(/*! angular2/common */ 163);
+	var form_1 = __webpack_require__(/*! ../../util/form */ 270);
 	/**
 	 * The checkbox is no different than the HTML checkbox input, except it's styled differently.
 	 *
@@ -56276,6 +57245,9 @@
 
 /***/ },
 /* 322 */
+/*!*******************************************************!*\
+  !*** ./~/ionic-framework/components/select/select.js ***!
+  \*******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -56290,14 +57262,14 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var core_1 = __webpack_require__(8);
-	var common_1 = __webpack_require__(163);
-	var alert_1 = __webpack_require__(323);
-	var form_1 = __webpack_require__(270);
-	var label_1 = __webpack_require__(317);
-	var util_1 = __webpack_require__(267);
-	var nav_controller_1 = __webpack_require__(299);
-	var option_1 = __webpack_require__(324);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var common_1 = __webpack_require__(/*! angular2/common */ 163);
+	var alert_1 = __webpack_require__(/*! ../alert/alert */ 323);
+	var form_1 = __webpack_require__(/*! ../../util/form */ 270);
+	var label_1 = __webpack_require__(/*! ../label/label */ 317);
+	var util_1 = __webpack_require__(/*! ../../util/util */ 267);
+	var nav_controller_1 = __webpack_require__(/*! ../nav/nav-controller */ 299);
+	var option_1 = __webpack_require__(/*! ../option/option */ 324);
 	/**
 	 * @name Select
 	 * @description
@@ -56632,6 +57604,9 @@
 
 /***/ },
 /* 323 */
+/*!*****************************************************!*\
+  !*** ./~/ionic-framework/components/alert/alert.js ***!
+  \*****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -56648,13 +57623,13 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(8);
-	var common_1 = __webpack_require__(163);
-	var animation_1 = __webpack_require__(280);
-	var config_1 = __webpack_require__(265);
-	var util_1 = __webpack_require__(267);
-	var nav_params_1 = __webpack_require__(294);
-	var view_controller_1 = __webpack_require__(293);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var common_1 = __webpack_require__(/*! angular2/common */ 163);
+	var animation_1 = __webpack_require__(/*! ../../animations/animation */ 280);
+	var config_1 = __webpack_require__(/*! ../../config/config */ 265);
+	var util_1 = __webpack_require__(/*! ../../util/util */ 267);
+	var nav_params_1 = __webpack_require__(/*! ../nav/nav-params */ 294);
+	var view_controller_1 = __webpack_require__(/*! ../nav/view-controller */ 293);
 	/**
 	 * @name Alert
 	 * @description
@@ -57094,6 +58069,9 @@
 
 /***/ },
 /* 324 */
+/*!*******************************************************!*\
+  !*** ./~/ionic-framework/components/option/option.js ***!
+  \*******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -57105,7 +58083,7 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(8);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
 	/**
 	 * @name Option
 	 */
@@ -57153,6 +58131,9 @@
 
 /***/ },
 /* 325 */
+/*!*******************************************************!*\
+  !*** ./~/ionic-framework/components/toggle/toggle.js ***!
+  \*******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -57167,11 +58148,11 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var core_1 = __webpack_require__(8);
-	var common_1 = __webpack_require__(163);
-	var form_1 = __webpack_require__(270);
-	var config_1 = __webpack_require__(265);
-	var dom_1 = __webpack_require__(268);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var common_1 = __webpack_require__(/*! angular2/common */ 163);
+	var form_1 = __webpack_require__(/*! ../../util/form */ 270);
+	var config_1 = __webpack_require__(/*! ../../config/config */ 265);
+	var dom_1 = __webpack_require__(/*! ../../util/dom */ 268);
 	/**
 	 * @name Toggle
 	 * @description
@@ -57414,6 +58395,9 @@
 
 /***/ },
 /* 326 */
+/*!*********************************************************!*\
+  !*** ./~/ionic-framework/components/segment/segment.js ***!
+  \*********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -57428,9 +58412,9 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var core_1 = __webpack_require__(8);
-	var common_1 = __webpack_require__(163);
-	var util_1 = __webpack_require__(267);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var common_1 = __webpack_require__(/*! angular2/common */ 163);
+	var util_1 = __webpack_require__(/*! ../../util/util */ 267);
 	/**
 	 * @name SegmentButton
 	 * @description
@@ -57650,6 +58634,9 @@
 
 /***/ },
 /* 327 */
+/*!*****************************************************!*\
+  !*** ./~/ionic-framework/components/radio/radio.js ***!
+  \*****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -57664,11 +58651,11 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var core_1 = __webpack_require__(8);
-	var common_1 = __webpack_require__(163);
-	var list_1 = __webpack_require__(313);
-	var form_1 = __webpack_require__(270);
-	var util_1 = __webpack_require__(267);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var common_1 = __webpack_require__(/*! angular2/common */ 163);
+	var list_1 = __webpack_require__(/*! ../list/list */ 313);
+	var form_1 = __webpack_require__(/*! ../../util/form */ 270);
+	var util_1 = __webpack_require__(/*! ../../util/util */ 267);
 	/**
 	 * @description
 	 * A radio button with a unique value. Note that all `<ion-radio>` components
@@ -57947,6 +58934,9 @@
 
 /***/ },
 /* 328 */
+/*!*************************************************************!*\
+  !*** ./~/ionic-framework/components/searchbar/searchbar.js ***!
+  \*************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -57966,13 +58956,13 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var core_1 = __webpack_require__(8);
-	var common_1 = __webpack_require__(163);
-	var ion_1 = __webpack_require__(284);
-	var config_1 = __webpack_require__(265);
-	var icon_1 = __webpack_require__(296);
-	var button_1 = __webpack_require__(298);
-	var util_1 = __webpack_require__(267);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var common_1 = __webpack_require__(/*! angular2/common */ 163);
+	var ion_1 = __webpack_require__(/*! ../ion */ 284);
+	var config_1 = __webpack_require__(/*! ../../config/config */ 265);
+	var icon_1 = __webpack_require__(/*! ../icon/icon */ 296);
+	var button_1 = __webpack_require__(/*! ../button/button */ 298);
+	var util_1 = __webpack_require__(/*! ../../util/util */ 267);
 	/**
 	* @private
 	*/
@@ -58282,6 +59272,9 @@
 
 /***/ },
 /* 329 */
+/*!*************************************************!*\
+  !*** ./~/ionic-framework/components/nav/nav.js ***!
+  \*************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -58301,12 +59294,12 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var core_1 = __webpack_require__(8);
-	var app_1 = __webpack_require__(159);
-	var config_1 = __webpack_require__(265);
-	var keyboard_1 = __webpack_require__(271);
-	var nav_controller_1 = __webpack_require__(299);
-	var view_controller_1 = __webpack_require__(293);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var app_1 = __webpack_require__(/*! ../app/app */ 159);
+	var config_1 = __webpack_require__(/*! ../../config/config */ 265);
+	var keyboard_1 = __webpack_require__(/*! ../../util/keyboard */ 271);
+	var nav_controller_1 = __webpack_require__(/*! ./nav-controller */ 299);
+	var view_controller_1 = __webpack_require__(/*! ./view-controller */ 293);
 	/**
 	 * @name Nav
 	 * @description
@@ -58448,6 +59441,9 @@
 
 /***/ },
 /* 330 */
+/*!******************************************************!*\
+  !*** ./~/ionic-framework/components/nav/nav-push.js ***!
+  \******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -58462,9 +59458,9 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var core_1 = __webpack_require__(8);
-	var nav_controller_1 = __webpack_require__(299);
-	var nav_registry_1 = __webpack_require__(274);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var nav_controller_1 = __webpack_require__(/*! ./nav-controller */ 299);
+	var nav_registry_1 = __webpack_require__(/*! ./nav-registry */ 274);
 	/**
 	 * @name NavPush
 	 * @description
@@ -58609,6 +59605,9 @@
 
 /***/ },
 /* 331 */
+/*!********************************************************!*\
+  !*** ./~/ionic-framework/components/nav/nav-router.js ***!
+  \********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -58628,9 +59627,9 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var core_1 = __webpack_require__(8);
-	var router_1 = __webpack_require__(119);
-	var nav_1 = __webpack_require__(329);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var router_1 = __webpack_require__(/*! angular2/router */ 119);
+	var nav_1 = __webpack_require__(/*! ./nav */ 329);
 	/**
 	 * @private
 	 */
@@ -58733,6 +59732,9 @@
 
 /***/ },
 /* 332 */
+/*!************************************************!*\
+  !*** ./~/ionic-framework/components/app/id.js ***!
+  \************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -58744,8 +59746,8 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(8);
-	var app_1 = __webpack_require__(159);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var app_1 = __webpack_require__(/*! ./app */ 159);
 	/**
 	 * @name Id
 	 * @description
@@ -58850,6 +59852,9 @@
 
 /***/ },
 /* 333 */
+/*!***********************************************************************!*\
+  !*** ./~/ionic-framework/components/show-hide-when/show-hide-when.js ***!
+  \***********************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -58869,8 +59874,8 @@
 	var __param = (this && this.__param) || function (paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
-	var core_1 = __webpack_require__(8);
-	var platform_1 = __webpack_require__(266);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var platform_1 = __webpack_require__(/*! ../../platform/platform */ 266);
 	/**
 	 * @private
 	 */
@@ -58999,13 +60004,16 @@
 
 /***/ },
 /* 334 */
+/*!*********************************************!*\
+  !*** ./~/ionic-framework/decorators/app.js ***!
+  \*********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	var core_1 = __webpack_require__(8);
-	var browser_1 = __webpack_require__(160);
-	var tap_click_1 = __webpack_require__(277);
-	var bootstrap_1 = __webpack_require__(7);
-	var directives_1 = __webpack_require__(281);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var browser_1 = __webpack_require__(/*! angular2/platform/browser */ 160);
+	var tap_click_1 = __webpack_require__(/*! ../components/tap-click/tap-click */ 277);
+	var bootstrap_1 = __webpack_require__(/*! ../config/bootstrap */ 7);
+	var directives_1 = __webpack_require__(/*! ../config/directives */ 281);
 	var _reflect = Reflect;
 	/**
 	* @name App
@@ -59060,10 +60068,13 @@
 
 /***/ },
 /* 335 */
+/*!**********************************************!*\
+  !*** ./~/ionic-framework/decorators/page.js ***!
+  \**********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	var core_1 = __webpack_require__(8);
-	var directives_1 = __webpack_require__(281);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var directives_1 = __webpack_require__(/*! ../config/directives */ 281);
 	var _reflect = Reflect;
 	/**
 	 * @name Page
@@ -59151,57 +60162,63 @@
 
 /***/ },
 /* 336 */
+/*!*****************************************!*\
+  !*** ./~/ionic-framework/components.js ***!
+  \*****************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	function __export(m) {
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
-	__export(__webpack_require__(159));
-	__export(__webpack_require__(332));
-	__export(__webpack_require__(337));
-	__export(__webpack_require__(323));
-	__export(__webpack_require__(303));
-	__export(__webpack_require__(298));
-	__export(__webpack_require__(321));
-	__export(__webpack_require__(304));
-	__export(__webpack_require__(296));
-	__export(__webpack_require__(316));
-	__export(__webpack_require__(319));
-	__export(__webpack_require__(320));
-	__export(__webpack_require__(283));
-	__export(__webpack_require__(338));
-	__export(__webpack_require__(292));
-	__export(__webpack_require__(302));
-	__export(__webpack_require__(317));
-	__export(__webpack_require__(313));
-	__export(__webpack_require__(333));
-	__export(__webpack_require__(339));
-	__export(__webpack_require__(329));
-	__export(__webpack_require__(299));
-	__export(__webpack_require__(293));
-	__export(__webpack_require__(294));
-	__export(__webpack_require__(330));
-	__export(__webpack_require__(331));
-	__export(__webpack_require__(295));
-	__export(__webpack_require__(324));
-	__export(__webpack_require__(282));
-	__export(__webpack_require__(307));
-	__export(__webpack_require__(327));
-	__export(__webpack_require__(305));
-	__export(__webpack_require__(306));
-	__export(__webpack_require__(328));
-	__export(__webpack_require__(326));
-	__export(__webpack_require__(322));
-	__export(__webpack_require__(309));
-	__export(__webpack_require__(311));
-	__export(__webpack_require__(277));
-	__export(__webpack_require__(318));
-	__export(__webpack_require__(325));
-	__export(__webpack_require__(297));
+	__export(__webpack_require__(/*! ./components/app/app */ 159));
+	__export(__webpack_require__(/*! ./components/app/id */ 332));
+	__export(__webpack_require__(/*! ./components/action-sheet/action-sheet */ 337));
+	__export(__webpack_require__(/*! ./components/alert/alert */ 323));
+	__export(__webpack_require__(/*! ./components/blur/blur */ 303));
+	__export(__webpack_require__(/*! ./components/button/button */ 298));
+	__export(__webpack_require__(/*! ./components/checkbox/checkbox */ 321));
+	__export(__webpack_require__(/*! ./components/content/content */ 304));
+	__export(__webpack_require__(/*! ./components/icon/icon */ 296));
+	__export(__webpack_require__(/*! ./components/input/input */ 316));
+	__export(__webpack_require__(/*! ./components/item/item */ 319));
+	__export(__webpack_require__(/*! ./components/item/item-sliding */ 320));
+	__export(__webpack_require__(/*! ./components/menu/menu */ 283));
+	__export(__webpack_require__(/*! ./components/menu/menu-types */ 338));
+	__export(__webpack_require__(/*! ./components/menu/menu-toggle */ 292));
+	__export(__webpack_require__(/*! ./components/menu/menu-close */ 302));
+	__export(__webpack_require__(/*! ./components/label/label */ 317));
+	__export(__webpack_require__(/*! ./components/list/list */ 313));
+	__export(__webpack_require__(/*! ./components/show-hide-when/show-hide-when */ 333));
+	__export(__webpack_require__(/*! ./components/modal/modal */ 339));
+	__export(__webpack_require__(/*! ./components/nav/nav */ 329));
+	__export(__webpack_require__(/*! ./components/nav/nav-controller */ 299));
+	__export(__webpack_require__(/*! ./components/nav/view-controller */ 293));
+	__export(__webpack_require__(/*! ./components/nav/nav-params */ 294));
+	__export(__webpack_require__(/*! ./components/nav/nav-push */ 330));
+	__export(__webpack_require__(/*! ./components/nav/nav-router */ 331));
+	__export(__webpack_require__(/*! ./components/navbar/navbar */ 295));
+	__export(__webpack_require__(/*! ./components/option/option */ 324));
+	__export(__webpack_require__(/*! ./components/overlay/overlay */ 282));
+	__export(__webpack_require__(/*! ./components/slides/slides */ 307));
+	__export(__webpack_require__(/*! ./components/radio/radio */ 327));
+	__export(__webpack_require__(/*! ./components/scroll/scroll */ 305));
+	__export(__webpack_require__(/*! ./components/scroll/pull-to-refresh */ 306));
+	__export(__webpack_require__(/*! ./components/searchbar/searchbar */ 328));
+	__export(__webpack_require__(/*! ./components/segment/segment */ 326));
+	__export(__webpack_require__(/*! ./components/select/select */ 322));
+	__export(__webpack_require__(/*! ./components/tabs/tabs */ 309));
+	__export(__webpack_require__(/*! ./components/tabs/tab */ 311));
+	__export(__webpack_require__(/*! ./components/tap-click/tap-click */ 277));
+	__export(__webpack_require__(/*! ./components/text-input/text-input */ 318));
+	__export(__webpack_require__(/*! ./components/toggle/toggle */ 325));
+	__export(__webpack_require__(/*! ./components/toolbar/toolbar */ 297));
 
 
 /***/ },
 /* 337 */
+/*!*******************************************************************!*\
+  !*** ./~/ionic-framework/components/action-sheet/action-sheet.js ***!
+  \*******************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -59218,13 +60235,13 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(8);
-	var common_1 = __webpack_require__(163);
-	var animation_1 = __webpack_require__(280);
-	var config_1 = __webpack_require__(265);
-	var icon_1 = __webpack_require__(296);
-	var nav_params_1 = __webpack_require__(294);
-	var view_controller_1 = __webpack_require__(293);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var common_1 = __webpack_require__(/*! angular2/common */ 163);
+	var animation_1 = __webpack_require__(/*! ../../animations/animation */ 280);
+	var config_1 = __webpack_require__(/*! ../../config/config */ 265);
+	var icon_1 = __webpack_require__(/*! ../icon/icon */ 296);
+	var nav_params_1 = __webpack_require__(/*! ../nav/nav-params */ 294);
+	var view_controller_1 = __webpack_require__(/*! ../nav/view-controller */ 293);
 	/**
 	 * @name ActionSheet
 	 * @description
@@ -59490,6 +60507,9 @@
 
 /***/ },
 /* 338 */
+/*!*********************************************************!*\
+  !*** ./~/ionic-framework/components/menu/menu-types.js ***!
+  \*********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -59497,8 +60517,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var menu_1 = __webpack_require__(283);
-	var animation_1 = __webpack_require__(280);
+	var menu_1 = __webpack_require__(/*! ./menu */ 283);
+	var animation_1 = __webpack_require__(/*! ../../animations/animation */ 280);
 	/**
 	 * Menu Type
 	 * Base class which is extended by the various types. Each
@@ -59677,6 +60697,9 @@
 
 /***/ },
 /* 339 */
+/*!*****************************************************!*\
+  !*** ./~/ionic-framework/components/modal/modal.js ***!
+  \*****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -59684,8 +60707,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var view_controller_1 = __webpack_require__(293);
-	var animation_1 = __webpack_require__(280);
+	var view_controller_1 = __webpack_require__(/*! ../nav/view-controller */ 293);
+	var animation_1 = __webpack_require__(/*! ../../animations/animation */ 280);
 	/**
 	 * @name Modal
 	 * @description
@@ -59848,18 +60871,24 @@
 
 /***/ },
 /* 340 */
+/*!***********************************************!*\
+  !*** ./~/ionic-framework/platform/storage.js ***!
+  \***********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	function __export(m) {
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
-	__export(__webpack_require__(341));
-	__export(__webpack_require__(342));
-	__export(__webpack_require__(343));
+	__export(__webpack_require__(/*! ./storage/storage */ 341));
+	__export(__webpack_require__(/*! ./storage/local-storage */ 342));
+	__export(__webpack_require__(/*! ./storage/sql */ 343));
 
 
 /***/ },
 /* 341 */
+/*!*******************************************************!*\
+  !*** ./~/ionic-framework/platform/storage/storage.js ***!
+  \*******************************************************/
 /***/ function(module, exports) {
 
 	/**
@@ -59939,6 +60968,9 @@
 
 /***/ },
 /* 342 */
+/*!*************************************************************!*\
+  !*** ./~/ionic-framework/platform/storage/local-storage.js ***!
+  \*************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -59946,7 +60978,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var storage_1 = __webpack_require__(341);
+	var storage_1 = __webpack_require__(/*! ./storage */ 341);
 	/**
 	 * @name LocalStorage
 	 * @description
@@ -60033,6 +61065,9 @@
 
 /***/ },
 /* 343 */
+/*!***************************************************!*\
+  !*** ./~/ionic-framework/platform/storage/sql.js ***!
+  \***************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -60040,8 +61075,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var storage_1 = __webpack_require__(341);
-	var util_1 = __webpack_require__(267);
+	var storage_1 = __webpack_require__(/*! ./storage */ 341);
+	var util_1 = __webpack_require__(/*! ../../util/util */ 267);
 	var DB_NAME = '__ionicstorage';
 	var win = window;
 	/**
@@ -60251,6 +61286,9 @@
 
 /***/ },
 /* 344 */
+/*!*********************************************************!*\
+  !*** ./~/ionic-framework/translation/translate_pipe.js ***!
+  \*********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -60262,8 +61300,8 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(8);
-	var translate_1 = __webpack_require__(275);
+	var core_1 = __webpack_require__(/*! angular2/core */ 8);
+	var translate_1 = __webpack_require__(/*! ./translate */ 275);
 	/**
 	 * @private
 	 * The Translate pipe makes it easy to translate strings.
@@ -60300,9 +61338,12 @@
 
 /***/ },
 /* 345 */
+/*!*******************************************!*\
+  !*** ./~/ionic-framework/config/modes.js ***!
+  \*******************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	var config_1 = __webpack_require__(265);
+	var config_1 = __webpack_require__(/*! ./config */ 265);
 	// iOS Mode Settings
 	config_1.Config.setModeConfig('ios', {
 	    activator: 'highlight',
@@ -60343,10 +61384,13 @@
 
 /***/ },
 /* 346 */
+/*!************************************************!*\
+  !*** ./~/ionic-framework/platform/registry.js ***!
+  \************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	var platform_1 = __webpack_require__(266);
-	var dom_1 = __webpack_require__(268);
+	var platform_1 = __webpack_require__(/*! ./platform */ 266);
+	var dom_1 = __webpack_require__(/*! ../util/dom */ 268);
 	var win = window;
 	var doc = document;
 	platform_1.Platform.register({
@@ -60506,6 +61550,9 @@
 
 /***/ },
 /* 347 */
+/*!**************************************************!*\
+  !*** ./~/ionic-framework/animations/builtins.js ***!
+  \**************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -60513,7 +61560,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var animation_1 = __webpack_require__(280);
+	var animation_1 = __webpack_require__(/*! ./animation */ 280);
 	var SlideIn = (function (_super) {
 	    __extends(SlideIn, _super);
 	    function SlideIn(element) {
@@ -60566,6 +61613,9 @@
 
 /***/ },
 /* 348 */
+/*!********************************************************!*\
+  !*** ./~/ionic-framework/animations/ios-transition.js ***!
+  \********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -60573,7 +61623,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var animation_1 = __webpack_require__(280);
+	var animation_1 = __webpack_require__(/*! ./animation */ 280);
 	var DURATION = 400;
 	var EASING = 'cubic-bezier(0.36,0.66,0.04,1)';
 	var OPACITY = 'opacity';
@@ -60739,6 +61789,9 @@
 
 /***/ },
 /* 349 */
+/*!*******************************************************!*\
+  !*** ./~/ionic-framework/animations/md-transition.js ***!
+  \*******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -60746,7 +61799,7 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var animation_1 = __webpack_require__(280);
+	var animation_1 = __webpack_require__(/*! ./animation */ 280);
 	var TRANSLATEY = 'translateY';
 	var OFF_BOTTOM = '40px';
 	var CENTER = '0px';
@@ -60802,6 +61855,9 @@
 
 /***/ },
 /* 350 */
+/*!********************************!*\
+  !*** ./app/pages/tabs/tabs.js ***!
+  \********************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -60813,10 +61869,12 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var ionic_1 = __webpack_require__(6);
-	var page1_1 = __webpack_require__(351);
-	var page2_1 = __webpack_require__(352);
-	var page3_1 = __webpack_require__(353);
+	var ionic_1 = __webpack_require__(/*! ionic/ionic */ 6);
+	var page1_1 = __webpack_require__(/*! ../page1/page1 */ 351);
+	var page2_1 = __webpack_require__(/*! ../page2/page2 */ 352);
+	var page3_1 = __webpack_require__(/*! ../page3/page3 */ 357);
+	var page4_1 = __webpack_require__(/*! ../page4/page4 */ 358);
+	var page5_1 = __webpack_require__(/*! ../page5/page5 */ 359);
 	var TabsPage = (function () {
 	    function TabsPage() {
 	        // this tells the tabs component which Pages
@@ -60824,6 +61882,8 @@
 	        this.tab1Root = page1_1.Page1;
 	        this.tab2Root = page2_1.Page2;
 	        this.tab3Root = page3_1.Page3;
+	        this.tab4Root = page4_1.Page4;
+	        this.tab5Root = page5_1.Page5;
 	    }
 	    TabsPage = __decorate([
 	        ionic_1.Page({
@@ -60838,6 +61898,9 @@
 
 /***/ },
 /* 351 */
+/*!**********************************!*\
+  !*** ./app/pages/page1/page1.js ***!
+  \**********************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -60849,10 +61912,59 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var ionic_1 = __webpack_require__(6);
+	var ionic_1 = __webpack_require__(/*! ionic/ionic */ 6);
 	var Page1 = (function () {
 	    function Page1() {
+	        this.name = 'RFP Player';
+	        document.playStatus = false;
+	        this.interval = null;
+	        this.currentTrack = null;
+	        document.streamSource = 'http://trentradio.ca:8800/rfp';
+	        document.trackDataURL = 'http://radiofreepeterborough.ca/ionic_rfp_current_song.php';
+	        this.interval = setInterval(function () {
+	            var xmlHttp = new XMLHttpRequest();
+	            xmlHttp.onreadystatechange = function () {
+	                if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+	                    var track = xmlHttp.responseText;
+	                if (this.currentTrack != track) {
+	                    var track_chunks = track.split(' - ');
+	                    var artist = track_chunks[0];
+	                    var track = track_chunks[1];
+	                    //console.log("play status: " + document.playStatus );
+	                    if (!document.playStatus) {
+	                        return null;
+	                    }
+	                    document.getElementById('artist').innerHTML = artist;
+	                    document.getElementById('track').innerHTML = track;
+	                    this.currentTrack = track;
+	                }
+	            };
+	            xmlHttp.open("GET", document.trackDataURL, true);
+	            xmlHttp.send(null);
+	        }, 5000);
 	    }
+	    Page1.prototype.playerclick = function () {
+	        var player = document.getElementById("rfp-hidden-player");
+	        var button = document.getElementById("playbutton");
+	        var click_to_play = '<img src="play.png" width="150px;" height="150px;">';
+	        var click_to_stop = '<img src="stop.png" width="150px;" height="150px;">';
+	        if (document.playStatus == false) {
+	            player.setAttribute('src', document.streamSource);
+	            player.play();
+	            button.innerHTML = click_to_stop;
+	            document.playStatus = true;
+	            document.getElementById('artist').innerHTML = 'Loading track info..';
+	            document.getElementById('track').innerHTML = 'One moment please..';
+	        }
+	        else {
+	            player.pause();
+	            player.setAttribute('src', document.streamSource);
+	            button.innerHTML = click_to_play;
+	            document.playStatus = false;
+	            document.getElementById('track').innerHTML = 'Click play to start stream';
+	            document.getElementById('artist').innerHTML = '';
+	        }
+	    };
 	    Page1 = __decorate([
 	        ionic_1.Page({
 	            templateUrl: 'build/pages/page1/page1.html'
@@ -60866,6 +61978,9 @@
 
 /***/ },
 /* 352 */
+/*!**********************************!*\
+  !*** ./app/pages/page2/page2.js ***!
+  \**********************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -60877,23 +61992,200 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var ionic_1 = __webpack_require__(6);
+	var ionic_1 = __webpack_require__(/*! ionic/ionic */ 6);
+	var http_1 = __webpack_require__(/*! angular2/http */ 144);
+	var ionic_2 = __webpack_require__(/*! ionic/ionic */ 6);
+	__webpack_require__(/*! rxjs/add/operator/map */ 353);
+	//import * as helpers from 'directives/helpers';
 	var Page2 = (function () {
-	    function Page2() {
+	    function Page2(http, nav) {
+	        this.searchQuery = '';
+	        this.searchInput = '';
+	        document.searchURL = 'http://radiofreepeterborough.ca/ionic_search.php?mode=artist_list';
+	        document.http = http;
+	        document.nav = nav;
+	        document.items_raw = null;
+	        this.firstInit = false;
+	        this.items = ['Loading artist data....'];
+	        this.initializeItems();
 	    }
+	    Page2.prototype.openModal = function (thisArtist) {
+	        var profileModal = ionic_2.Modal.create(ArtistPopup, { userId: 8675309 });
+	        console.log("TODO:  open modal for" + thisArtist);
+	    };
+	    Page2.prototype.initializeItems = function () {
+	        var _this = this;
+	        document.http.get(document.searchURL).map(function (res) { return res.json(); }).subscribe(function (data) {
+	            document.items_raw = data;
+	            if (_this.firstInit == false) {
+	                _this.items = data;
+	                _this.firstInit = true;
+	            }
+	        });
+	    };
+	    Page2.prototype.onSearchCancel = function ($event) {
+	        this.items = document.items_raw;
+	    };
+	    Page2.prototype.onArtistClick = function ($event) {
+	        var artist = '';
+	        if ($event.target.innerHTML.indexOf('ion-item') > 0) {
+	            artist = $event.target.firstChild.innerHTML.trim();
+	        }
+	        else {
+	            artist = $event.target.innerHTML.trim();
+	        }
+	        this.openModal(artist);
+	    };
+	    Page2.prototype.getItems = function (searchbar) {
+	        this.initializeItems();
+	        var q = searchbar.value;
+	        if (q.trim() == '') {
+	            return;
+	        }
+	        var items_raw = document.items_raw;
+	        if (isNaN(q)) {
+	            this.items = items_raw.filter(function (v) {
+	                if (v.toLowerCase().indexOf(q.toLowerCase()) > -1) {
+	                    return true;
+	                }
+	                return false;
+	            });
+	        }
+	        else {
+	            this.items = items_raw.filter(function (v) {
+	                if (v.indexOf(q) > -1) {
+	                    return true;
+	                }
+	                return false;
+	            });
+	        }
+	    };
 	    Page2 = __decorate([
 	        ionic_1.Page({
-	            templateUrl: 'build/pages/page2/page2.html'
+	            templateUrl: 'build/pages/page2/page2.html',
 	        }), 
-	        __metadata('design:paramtypes', [])
+	        __metadata('design:paramtypes', [http_1.Http, (typeof (_a = typeof ionic_2.NavController !== 'undefined' && ionic_2.NavController) === 'function' && _a) || Object])
 	    ], Page2);
 	    return Page2;
+	    var _a;
 	})();
 	exports.Page2 = Page2;
 
 
 /***/ },
 /* 353 */
+/*!************************************!*\
+  !*** ./~/rxjs/add/operator/map.js ***!
+  \************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	var Observable_1 = __webpack_require__(/*! ../../Observable */ 58);
+	var map_1 = __webpack_require__(/*! ../../operator/map */ 354);
+	Observable_1.Observable.prototype.map = map_1.map;
+	//# sourceMappingURL=map.js.map
+
+/***/ },
+/* 354 */
+/*!********************************!*\
+  !*** ./~/rxjs/operator/map.js ***!
+  \********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	var __extends = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var Subscriber_1 = __webpack_require__(/*! ../Subscriber */ 59);
+	var tryCatch_1 = __webpack_require__(/*! ../util/tryCatch */ 355);
+	var errorObject_1 = __webpack_require__(/*! ../util/errorObject */ 356);
+	/**
+	 * Similar to the well known `Array.prototype.map` function, this operator
+	 * applies a projection to each value and emits that projection in the returned observable
+	 *
+	 * @param {Function} project the function to create projection
+	 * @param {any} [thisArg] an optional argument to define what `this` is in the project function
+	 * @returns {Observable} a observable of projected values
+	 */
+	function map(project, thisArg) {
+	    if (typeof project !== 'function') {
+	        throw new TypeError('argument is not a function. Are you looking for `mapTo()`?');
+	    }
+	    return this.lift(new MapOperator(project, thisArg));
+	}
+	exports.map = map;
+	var MapOperator = (function () {
+	    function MapOperator(project, thisArg) {
+	        this.project = project;
+	        this.thisArg = thisArg;
+	    }
+	    MapOperator.prototype.call = function (subscriber) {
+	        return new MapSubscriber(subscriber, this.project, this.thisArg);
+	    };
+	    return MapOperator;
+	})();
+	var MapSubscriber = (function (_super) {
+	    __extends(MapSubscriber, _super);
+	    function MapSubscriber(destination, project, thisArg) {
+	        _super.call(this, destination);
+	        this.project = project;
+	        this.thisArg = thisArg;
+	        this.count = 0;
+	    }
+	    MapSubscriber.prototype._next = function (x) {
+	        var result = tryCatch_1.tryCatch(this.project).call(this.thisArg || this, x, this.count++);
+	        if (result === errorObject_1.errorObject) {
+	            this.error(errorObject_1.errorObject.e);
+	        }
+	        else {
+	            this.destination.next(result);
+	        }
+	    };
+	    return MapSubscriber;
+	})(Subscriber_1.Subscriber);
+	//# sourceMappingURL=map.js.map
+
+/***/ },
+/* 355 */
+/*!*********************************!*\
+  !*** ./~/rxjs/util/tryCatch.js ***!
+  \*********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	var errorObject_1 = __webpack_require__(/*! ./errorObject */ 356);
+	var tryCatchTarget;
+	function tryCatcher() {
+	    try {
+	        return tryCatchTarget.apply(this, arguments);
+	    }
+	    catch (e) {
+	        errorObject_1.errorObject.e = e;
+	        return errorObject_1.errorObject;
+	    }
+	}
+	function tryCatch(fn) {
+	    tryCatchTarget = fn;
+	    return tryCatcher;
+	}
+	exports.tryCatch = tryCatch;
+	;
+	//# sourceMappingURL=tryCatch.js.map
+
+/***/ },
+/* 356 */
+/*!************************************!*\
+  !*** ./~/rxjs/util/errorObject.js ***!
+  \************************************/
+/***/ function(module, exports) {
+
+	exports.errorObject = { e: {} };
+	//# sourceMappingURL=errorObject.js.map
+
+/***/ },
+/* 357 */
+/*!**********************************!*\
+  !*** ./app/pages/page3/page3.js ***!
+  \**********************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -60905,7 +62197,7 @@
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var ionic_1 = __webpack_require__(6);
+	var ionic_1 = __webpack_require__(/*! ionic/ionic */ 6);
 	var Page3 = (function () {
 	    function Page3() {
 	    }
@@ -60918,6 +62210,68 @@
 	    return Page3;
 	})();
 	exports.Page3 = Page3;
+
+
+/***/ },
+/* 358 */
+/*!**********************************!*\
+  !*** ./app/pages/page4/page4.js ***!
+  \**********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var ionic_1 = __webpack_require__(/*! ionic/ionic */ 6);
+	var Page4 = (function () {
+	    function Page4() {
+	    }
+	    Page4 = __decorate([
+	        ionic_1.Page({
+	            templateUrl: 'build/pages/page4/page4.html'
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], Page4);
+	    return Page4;
+	})();
+	exports.Page4 = Page4;
+
+
+/***/ },
+/* 359 */
+/*!**********************************!*\
+  !*** ./app/pages/page5/page5.js ***!
+  \**********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var ionic_1 = __webpack_require__(/*! ionic/ionic */ 6);
+	var Page5 = (function () {
+	    function Page5() {
+	    }
+	    Page5 = __decorate([
+	        ionic_1.Page({
+	            templateUrl: 'build/pages/page5/page5.html'
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], Page5);
+	    return Page5;
+	})();
+	exports.Page5 = Page5;
 
 
 /***/ }

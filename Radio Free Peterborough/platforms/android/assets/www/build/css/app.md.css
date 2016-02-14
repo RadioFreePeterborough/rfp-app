@@ -8506,3 +8506,40 @@ body {
   font-family: "Roboto", "Helvetica Neue", sans-serif;
   font-size: 1.4rem;
   background-color: #fff; }
+
+.page1 {
+  text-align: center; }
+
+.rfp-player {
+  width: auto;
+  height: vh 20%; }
+
+#playbutton {
+  background: none;
+  padding: 5%;
+  text-align: center !important; }
+
+#playbutton IMG {
+  width: auto;
+  height: vh 30%;
+  margin: auto; }
+
+#rfp-hidden-player {
+  display: none; }
+
+a:hover {
+  color: orange;
+  cursor: pointer; }
+
+#metadata-wrapper {
+  padding: 2%; }
+
+#artist {
+  font-size: 1.2em;
+  color: red;
+  text-align: center; }
+
+#track {
+  font-size: 2.5em;
+  color: red;
+  text-align: center; }

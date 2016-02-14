@@ -1,7 +1,21 @@
+
+<ion-navbar *navbar>
+  <ion-title>
+   {{name}} nid: {{nid}}
+  </ion-title>
+</ion-navbar>
 <ion-content>
-<artist-modal>I am the artist modal page...</artist-modal>
+<div id="biography" ng-bind-html="bio">{{bio}}</div>
+<div id="stream-all-btn"></div>
+<div id="recordings">
+	
+	<ion-list>
+	  <ion-item *ngFor="#recording of recordings" (click)="onRecordingClick($event)">
+	    {{ recording }} 
+	  </ion-item>
+	</ion-list>
 
-TODO - load artist info by nid, including bio and a list of recordings - should we include listen buttons for the recordings as well? 
-
+	
+</div>
 
 </ion-content>
