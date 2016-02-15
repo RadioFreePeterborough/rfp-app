@@ -18,7 +18,7 @@ import 'rxjs/add/operator/map';
 
 export class Page2 {
   constructor( http: Http, nav: NavController ) {
-
+		
 	this.searchQuery = '';
 	this.searchInput = '';
    
@@ -44,15 +44,16 @@ export class Page2 {
 		document.http.get( document.searchURL ).map(res => res.json()).subscribe(data => {
 	    
 			document.items_raw = data[0];
-			document.nid_list = data[1];
-			
+			document.nid_list  = data[1];
 			
 			if( this.firstInit == false ) {
 				
 				this.items = data[0];
 				this.firstInit = true; 
 			}
-			 
+			
+			// wait for the two lists to synch up 
+			while( document.items_raw.count != document.nid_list.count ) { 1; } 
 	   });
 	}
 	

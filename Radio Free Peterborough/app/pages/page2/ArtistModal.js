@@ -15,51 +15,47 @@ export class ArtistModal {
 		this.bio = 'Loading artist details...';
 		this.recordings = [];
 		
-		var artistDetailURL = 'http://radiofreepeterborough.ca/ionic_artist_details.php?artist_nid=' + this.nid;
+		if( this.nid != undefined ) {
 		
-		console.log("Loading " +  artistDetailURL );
-		
-		document.http.get( artistDetailURL ).map(res => res.json()).subscribe(data => {
-
-			this.bio = data.biography;		
-			this.recordings 	= [];
-			this.recording_nids = [];
-			 
-			for( index in data.recordings ) {
-				
-				var recording_title = data.recordings[index];
-				this.recordings.push( recording_title );
-				this.recording_nids.push( index );
-				//console.log( " see index " + index  );
-			}
+			var artistDetailURL = 'http://radiofreepeterborough.ca/ionic_artist_details.php?artist_nid=' + this.nid;
 			
+			console.log( 'loading ' + artistDetailURL );
 			
-			
+			document.http.get( artistDetailURL ).map(res => res.json()).subscribe(data => {
 
-
-
-		//	console.log("RECORDINGS FROM DATA: " + this.recordings[ 123 ] );
-			
-				
-	   });
-	
-	
-	
-		
-		
-		
-		
-		//document.getElementById( '#biography' ).innerHTML( 'here is the bio - TODO load this from server');
-		
+				this.bio = data.biography;		
+				this.recordings 	= data.recordings;
+				this.recording_nids = data.recording_nids;
+			}			
+	  });
 	}
 	
 	
 	onRecordingClick( $event ) {
 		
-		var recording = $event.target.innerHTML.trim();
-		
-		console.log("NEEDS TO CHECK FOR HTML AND PARSE IT OUT FOR THIS...");
-		console.log( "clicked recording " + $event + " target is " + recording );
+		var recording;
+		if( $event.target.innerHTML.indexOf( 'ion-label') > 0  ) {
+			
+			var chunks = $event.target.innerHTML.split( '>');
+			chunks = chunks[2].split( '<');
+			recording = chunks[0].trim();
+		}
+		else {
+			recording = $event.target.innerHTML.trim();
+		}
+				
+		if( recording != '' && recording != undefined ) {
+			
+			var index = null;
+			
+			// find the index of this recording - we don't have many per artist so iteration is fine here
+			for(  var x =0;  x < this.recordings.length; ++x ) {
+								
+				if( recording.match( this.recordings[x])) { index = x; }
+			}
+			
+			console.log( "Show Modal for *" + recording + "  -- nid is:  " + this.recording_nids[index] );
+		}
 	}
 		
 
