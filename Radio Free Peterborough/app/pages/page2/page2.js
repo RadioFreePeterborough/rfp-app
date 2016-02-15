@@ -71,8 +71,16 @@ export class Page2 {
 		else {
 			artist = $event.target.innerHTML.trim();
 		}
+		
+		console.log( "TODO - PARSE OUT LINKS FOR CLICKS TO THE EDGE OF THE LINE - LOOK FOR THE WORD 'TEMPLATE'");
+		
+		//if( artist.indexOf( 'template')  == 0 ) {
+		
+			console.log( "clicked open modal link for artist " + artist );
 			
-	   this.openModal( artist );		
+			
+		   this.openModal( artist );		
+	///	}
 	}
 
   getItems(searchbar) {

@@ -8,10 +8,11 @@
 
 	width: auto;
 	height: vh 20%;
+	min-height: 200px;
 
 }
 
-#playbutton {  background: none; padding: 5%; text-align: center !important;  }
+#playbutton {  background: none; padding: 5%; text-align: center !important; min-height: 250px;   }
 
 #playbutton IMG { width: auto;  height: vh 30%;  margin: auto;  }
 
