@@ -1,5 +1,7 @@
 import {Page, NavController, NavParams, Component, Http } from 'ionic/ionic';
-import {Inject} from 'angular2/core';
+import {RecordingModal} from './RecordingModal';
+
+//import {Inject} from 'angular2/core';
 
 @Page({
    templateUrl: 'build/pages/page2/artistModal.html',
@@ -7,8 +9,9 @@ import {Inject} from 'angular2/core';
 })
 
 export class ArtistModal {
-		constructor( navParams: NavParams ) {
+		constructor( nav: NavController, navParams: NavParams ) {
 		
+		this.nav = nav; 
 		this.params = navParams;
 		this.name = navParams.get('name');
 		this.nid  = navParams.get( 'nid');
@@ -19,7 +22,7 @@ export class ArtistModal {
 		
 			var artistDetailURL = 'http://radiofreepeterborough.ca/ionic_artist_details.php?artist_nid=' + this.nid;
 			
-			console.log( 'loading ' + artistDetailURL );
+		//	console.log( 'loading ' + artistDetailURL );
 			
 			document.http.get( artistDetailURL ).map(res => res.json()).subscribe(data => {
 
@@ -29,7 +32,6 @@ export class ArtistModal {
 			}			
 	  });
 	}
-	
 	
 	onRecordingClick( $event ) {
 		
@@ -53,6 +55,9 @@ export class ArtistModal {
 								
 				if( recording.match( this.recordings[x])) { index = x; }
 			}
+			
+			
+			this.nav.push( RecordingModal, { name:  recording, nid: this.recording_nids[ index ] } );
 			
 			console.log( "Show Modal for *" + recording + "  -- nid is:  " + this.recording_nids[index] );
 		}
