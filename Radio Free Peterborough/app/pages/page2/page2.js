@@ -35,8 +35,7 @@ export class Page2 {
 
 	openModal( thisArtist ) {
 	
-		this.nav.push( ArtistModal, { name:  thisArtist, nid: document.nid_list[ thisArtist ] } );
-	//	console.log( "TODO:  open modal for" + thisArtist );		
+		this.nav.push( ArtistModal, { name:  thisArtist, nid: document.nid_list[ thisArtist ] } );		
 	}
 
 	initializeItems() {
@@ -71,16 +70,9 @@ export class Page2 {
 		else {
 			artist = $event.target.innerHTML.trim();
 		}
-		
-		console.log( "TODO - PARSE OUT LINKS FOR CLICKS TO THE EDGE OF THE LINE - LOOK FOR THE WORD 'TEMPLATE'");
-		
-		//if( artist.indexOf( 'template')  == 0 ) {
-		
-			console.log( "clicked open modal link for artist " + artist );
-			
-			
-		   this.openModal( artist );		
-	///	}
+	
+		// ignore clicks on the dividers..
+		if( !artist.match( /template/)) {	this.openModal( artist );	}	
 	}
 
   getItems(searchbar) {
