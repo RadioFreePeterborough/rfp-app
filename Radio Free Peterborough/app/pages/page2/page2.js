@@ -1,4 +1,4 @@
-import {Page} from 'ionic/ionic';
+import {Page, Alert} from 'ionic/ionic';
 import {Http} from 'angular2/http';
 import {Modal, NavController, NavParams} from 'ionic/ionic';
 import {NgFor} from 'angular2/common';
@@ -30,7 +30,7 @@ export class Page2 {
 	this.firstInit = false;
 	this.items = [ 'Loading artist data....' ]; 
 	this.initializeItems();
-	
+
   }
 
 	openModal( thisArtist ) {
@@ -40,7 +40,8 @@ export class Page2 {
 
 	initializeItems() {
 
-		document.http.get( document.searchURL ).map(res => res.json()).subscribe(data => {
+		document.http.get( document.searchURL ).map(res => res.json()).subscribe(
+			data => {
 	    
 			document.items_raw = data[0];
 			document.nid_list  = data[1];
@@ -53,7 +54,18 @@ export class Page2 {
 			
 			// wait for the two lists to synch up 
 			while( document.items_raw.count != document.nid_list.count ) { 1; } 
-	   });
+	   		},
+			err => {
+			        
+					let alert = Alert.create({  
+							title: 'Error:  Offline',
+						      subTitle: 'I cannot seem to get to the Internet - are you offline?',
+						      buttons: ['Ok']
+						} );
+					this.nav.present( alert );
+			    }
+			
+			);
 	}
 	
 	onSearchCancel($event) { // reset the list

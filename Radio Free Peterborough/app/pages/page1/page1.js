@@ -1,4 +1,4 @@
-import {Page} from 'ionic/ionic';
+import {Page, NavController, Alert} from 'ionic/ionic';
 import {Component, Template} from 'angular2/core';
 import {Http} from 'angular2/http';
 
@@ -8,7 +8,7 @@ import {Http} from 'angular2/http';
 
 export class Page1 {
 	
-  constructor() {
+  constructor( nav: NavController ) {
 
 		this.name 			= 'RFP Player';
 		document.playStatus = false;
@@ -16,16 +16,16 @@ export class Page1 {
 		this.currentTrack 	= null;
 		document.streamSource = 'http://trentradio.ca:8800/rfp';
 		document.trackDataURL = 'http://radiofreepeterborough.ca/ionic_rfp_current_song.php';
+		document.nav = nav;
+		//console.log( "initialized with nav " + nav );
 		
-		
-		this.interval 		= setInterval( function() { 
+		this.interval = setInterval( function() { 
 			
 			var xmlHttp = new XMLHttpRequest();
 			
 			xmlHttp.onreadystatechange = function( ) { 
-				
-				
-		        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+							
+		        if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
 		       
 					var track = xmlHttp.responseText;
 					if( this.currentTrack != track ) {
@@ -33,8 +33,6 @@ export class Page1 {
 						var track_chunks = track.split( ' - ');
 						var artist = track_chunks[0];
 						var track  = track_chunks[1];
-						
-						//console.log("play status: " + document.playStatus );
 						
 						if( ! document.playStatus ) { return null; }
 						
@@ -44,19 +42,40 @@ export class Page1 {
 							
 						this.currentTrack = track; 
 					}
-		    }
-		    xmlHttp.open("GET", document.trackDataURL , true); 
-		    xmlHttp.send(null);
-			
+		    	}
+			}
+		    xmlHttp.open("GET", document.trackDataURL , true);    
+		    xmlHttp.send(null);	
 		}, 5000 );	
   }
 
   playerclick() {
 	
 	var player = document.getElementById("rfp-hidden-player");
+	
+	// Set up an error handler on the html5 audio player.
+	player.addEventListener('error', function failed(e) {
+			
+			//console.log("Looks like you are offline...");
+			   
+			let alert = Alert.create({  
+					title: 'Error:  Offline',
+				      subTitle: 'I cannot seem to get to the Internet - are you offline?',
+				      buttons: ['Ok']
+				} );
+			document.nav.present( alert );
+			
+			
+			
+			
+		});		
+	
+	
 	var button   = document.getElementById("playbutton");
-	var click_to_play = '<img src="play.png" width="150px;" height="150px;">';
-	var click_to_stop = '<img src="stop.png" width="150px;" height="150px;">';
+	
+	
+	var click_to_play = '<img src="play.png" width="70px;" height="70px;">';
+	var click_to_stop = '<img src="stop.png" width="70px;" height="70px;">';
 		
 	if( document.playStatus == false ) {
 		

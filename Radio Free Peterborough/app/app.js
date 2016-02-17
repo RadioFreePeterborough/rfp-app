@@ -1,6 +1,8 @@
 import {App, Platform} from 'ionic/ionic';
 import {TabsPage} from './pages/tabs/tabs';
+import {enableProdMode} from "angular2/core";
 
+enableProdMode();
 
 @App({
   template: '<ion-nav [root]="rootPage"></ion-nav>',

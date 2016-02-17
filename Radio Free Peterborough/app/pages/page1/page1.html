@@ -1,5 +1,5 @@
 <ion-navbar *navbar>
-  <ion-title>Listen to Peterborough</ion-title>
+  <ion-title>Listen</ion-title>
 </ion-navbar>
 
 <ion-content padding class="page1">
@@ -12,8 +12,16 @@
 	</audio>
 	</div>
 	<button class="button button-full button-light" id="playbutton" (click)="playerclick()">
-			<img src="play.png" width="150px;" height="150px;">
+			<img src="play.png" width="70px;" height="70px;">
 	</button>
+	
+	TODO
+	<ul>
+		<li>code in support for next / prev buttons</li>
+		<li>code in recording details to pull tracks in order by track number</li>
+		<li>code in support for storing artist list locally </li>
+	
+	</ul>
 	
 	<div id="metadata-wrapper">
 	<div id="track">Click play to start stream</div>
