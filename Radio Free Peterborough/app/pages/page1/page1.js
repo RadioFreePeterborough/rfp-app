@@ -44,8 +44,11 @@ export class Page1 {
 					}
 		    	}
 			}
-		    xmlHttp.open("GET", document.trackDataURL , true);    
-		    xmlHttp.send(null);	
+			
+			if( document.playStatus ) {
+		    	xmlHttp.open("GET", document.trackDataURL , true);    
+		    	xmlHttp.send(null);	
+			}
 		}, 5000 );	
   }
 
