@@ -14,7 +14,6 @@ export class ArtistModal {
 		this.nid  = navParams.get( 'nid');
 		this.bio = 'Loading artist details...';
 		this.recordings = [];
-		console.log( "Loaded detail page for artist nid " + this.nid +  " - " + this.name );
 		
 		if( this.nid != undefined ) {
 		
@@ -57,26 +56,17 @@ export class ArtistModal {
 			
 			// find the index of this recording - we don't have many per artist so iteration is fine here
 			for(  var x =0;  x < this.recordings.length; ++x ) {
-				
-				console.log( "Compairing *" + recording + "* with *" + this.recordings[x] + '*' );
-						
+										
 				if( recording.localeCompare( this.recordings[x].trim()) == 0) { 
 					index = x; 
 				}
 			}
-			
-			console.log( "RECORDING IS IN POSITION " + index );
-			console.log( "NID SHOULD BE " + this.recording_nids[index]);
 			
 			this.nav.push( RecordingModal, { 
 				name:  recording, 
 				nid: this.recording_nids[ index ] });
 		}
 	}
-		
-
-
-
 }
 
 
