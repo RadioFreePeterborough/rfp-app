@@ -8,7 +8,6 @@ import {ControlGroup, FormBuilder, Validators} from 'angular2/common';
 import {ArtistModal} from './ArtistModal';
 
 import 'rxjs/add/operator/map';
-//import * as helpers from 'directives/helpers';
 
 
 @Page({
@@ -41,20 +40,17 @@ export class Page2 {
 	initializeItems() {
 
 		document.http.get( document.searchURL ).map(res => res.json()).subscribe(
+			
 			data => {
 	    
-			document.items_raw = data[0];
-			document.nid_list  = data[1];
+				document.items_raw = data[0];
+				document.nid_list  = data[1];
 			
-			if( this.firstInit == false ) {
+				if( this.firstInit == false ) {
 				
-				this.items = data[0];
-				this.firstInit = true; 
-			}
-					console.log("list initialized with " + this.items.length + " artists ");
-			
-			// wait for the two lists to synch up 
-			while( document.items_raw.count != document.nid_list.count ) { 1; } 
+					this.items = data[0];
+					this.firstInit = true; 
+				}
 	   		},
 			err => {
 			        
@@ -65,11 +61,7 @@ export class Page2 {
 						} );
 					this.nav.present( alert );
 			    }
-	
-			
-			);
-			
-			
+			);		
 	}
 	
 	onSearchCancel($event) { // reset the list

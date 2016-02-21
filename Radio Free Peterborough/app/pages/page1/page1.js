@@ -10,15 +10,14 @@ export class Page1 {
 	
   constructor( nav: NavController ) {
 
-		this.name 			= 'RFP Player';
-		document.playStatus = false;
-		this.interval 		= null;
-		this.currentTrack 	= null;
-		document.streamSource = 'http://trentradio.ca:8800/rfp';
-		document.trackDataURL = 'http://radiofreepeterborough.ca/ionic_rfp_current_song.php';
-		document.nav = nav;
-		//console.log( "initialized with nav " + nav );
-		
+		this.name 				= 'RFP Player';
+		document.playStatus 	= false;
+		this.interval 			= null;
+		this.currentTrack 		= null;
+		document.streamSource 	= 'http://trentradio.ca:8800/rfp';
+		document.trackDataURL 	= 'http://radiofreepeterborough.ca/ionic_rfp_current_song.php';
+		document.nav 			= nav;
+	
 		this.interval = setInterval( function() { 
 			
 			var xmlHttp = new XMLHttpRequest();
@@ -37,8 +36,7 @@ export class Page1 {
 						if( ! document.playStatus ) { return null; }
 						
 						document.getElementById('artist').innerHTML = artist;
-						document.getElementById('track').innerHTML = track;
-						
+						document.getElementById('track').innerHTML  = track;
 							
 						this.currentTrack = track; 
 					}
@@ -50,33 +48,34 @@ export class Page1 {
 		    	xmlHttp.send(null);	
 			}
 		}, 5000 );	
+		
+		var player = document.getElementById("rfp-hidden-player");
+		if( player != null) {
+
+			player.pause();
+			var button   = document.getElementById("playbutton");
+			button.innerHTML = '<img src="play.png" width="70px;" height="70px;">';
+			this.playStatus = false;
+			player.onended = function() { null; } // clear the onended handler
+		}	
   }
 
   playerclick() {
 	
 	var player = document.getElementById("rfp-hidden-player");
 	
-	// Set up an error handler on the html5 audio player.
+	// Set up an error handler for offline
 	player.addEventListener('error', function failed(e) {
-			
-			//console.log("Looks like you are offline...");
-			   
+				   
 			let alert = Alert.create({  
 					title: 'Error:  Offline',
 				      subTitle: 'I cannot seem to get to the Internet - are you offline?',
 				      buttons: ['Ok']
 				} );
 			document.nav.present( alert );
-			
-			
-			
-			
 		});		
 	
-	
 	var button   = document.getElementById("playbutton");
-	
-	
 	var click_to_play = '<img src="play.png" width="70px;" height="70px;">';
 	var click_to_stop = '<img src="stop.png" width="70px;" height="70px;">';
 		
@@ -99,6 +98,6 @@ export class Page1 {
 		document.getElementById( 'artist' ).innerHTML = '';
 		
 	}
+   }
   }
-}
 }

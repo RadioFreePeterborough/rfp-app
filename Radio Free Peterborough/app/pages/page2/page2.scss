@@ -1,13 +1,14 @@
-.page2 {
+.page2, #artistmodal, #recordingmodal {
 	
 	text-align: center;
+	background: #FFF;
 }
 
 IMG.album-cover { width: 100%; height: auto;  }
 
 H2#recording-name { background: #fff; font-size: 0.85em; }
 
-.artist-modal { background: #fff;  }
+.artist-modal, .recording-modal { background: #fff;  }
 
 #recording-playbutton { min-width: 50px !important; min-height: 50px !important; }
 #recording-playbutton IMG {  width: 50px !important;  height: 50px !important; background: none;  } 
@@ -18,6 +19,7 @@ H2#recording-name { background: #fff; font-size: 0.85em; }
 
 	margin: 0;
 	padding: 0;
+	width: 30px !important;  height: 30px !important; background: none; 
 }
 
 #track-details { margin-left: 10px; }
