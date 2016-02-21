@@ -1,7 +1,4 @@
-.page1 {
-
-	text-align: center;
-}
+.page1 { text-align: center; }
 
 
 .rfp-player {
@@ -12,18 +9,13 @@
 
 }
 
-#playbutton {  background: none; padding: 5%; text-align: center !important; min-height: 250px;   }
+#playbutton {  background: none; padding: 5%; text-align: center !important; min-height: 100px;   }
 
 #playbutton IMG { width: auto;  height: vh 30%;  margin: auto;  }
 
-#rfp-hidden-player { 
-
-display: none;  
-
-
-}
+#rfp-hidden-player { display: none; }
 
 a:hover { color: orange; cursor: pointer; }
 
 #artist { font-size: 1.2em; color: red; text-align: center; }
-#track { font-size: 2.5em; color: red; text-align: center;  }
+#track  { font-size: 2.5em; color: red; text-align: center;  }

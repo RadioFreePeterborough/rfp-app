@@ -29,6 +29,7 @@
 #import "MainViewController.h"
 
 #import <Cordova/CDVPlugin.h>
+#import <AVFoundation/AVFoundation.h>
 
 @implementation AppDelegate
 
@@ -36,6 +37,17 @@
 
 - (id)init
 {
+
+    
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    BOOL ok;
+    NSError *setCategoryError = nil;
+    ok = [audioSession setCategory:AVAudioSessionCategoryPlayback
+                             error:&setCategoryError];
+    if (!ok) {
+        NSLog(@"%s setCategoryError=%@", __PRETTY_FUNCTION__, setCategoryError);
+    }
+
     /** If you need to do any extra app-specific initialization, you can do it here
      *  -jm
      **/

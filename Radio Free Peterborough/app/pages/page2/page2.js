@@ -51,6 +51,7 @@ export class Page2 {
 				this.items = data[0];
 				this.firstInit = true; 
 			}
+					console.log("list initialized with " + this.items.length + " artists ");
 			
 			// wait for the two lists to synch up 
 			while( document.items_raw.count != document.nid_list.count ) { 1; } 
@@ -64,8 +65,11 @@ export class Page2 {
 						} );
 					this.nav.present( alert );
 			    }
+	
 			
 			);
+			
+			
 	}
 	
 	onSearchCancel($event) { // reset the list
