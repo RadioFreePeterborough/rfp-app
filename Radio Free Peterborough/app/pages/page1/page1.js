@@ -94,7 +94,7 @@ export class Page1 {
 		player.setAttribute( 'src', document.streamSource  );	
 		button.innerHTML = click_to_play;
 		document.playStatus = false;
-		document.getElementById( 'track' ).innerHTML = 'Click play to start stream';
+		document.getElementById( 'track' ).innerHTML = 'Click play to start random stream';
 		document.getElementById( 'artist' ).innerHTML = '';
 		
 	}
@@ -110,7 +110,7 @@ export class Page1 {
 	  player.pause();
 	  player.setAttribute( 'src', document.streamSource  );	
 	  button.innerHTML = click_to_play;
-	  document.getElementById( 'track' ).innerHTML = 'Click play to start stream';
+	  document.getElementById( 'track' ).innerHTML = 'Click play to start random stream';
 	  document.getElementById( 'artist' ).innerHTML = '';
 	  document.playStatus = false;
 	  
