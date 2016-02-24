@@ -42,14 +42,19 @@ export class Page2 {
 	//	window.localStorage['artists' ] = window.localStorage[ 'artist_nids'] = [];
 							
 		var stored_artists = JSON.parse( window.localStorage['artists' ] || '{}');
-		var artist_nids    = JSON.parse( window.localStorage[ 'artist_nids'] || '{}' );
-		
-		if( stored_artists.length > 0 ) { // we have stored artists - no need to pull from the web. 
+		var artist_nids    = JSON.parse( window.localStorage[ 'artist_nids'] || '{}' );	
+		var load_count     = window.localStorage['artists_load_count'] || 0;
+
+		// We force a re-load of artists if we've already loaded the artist list 40 times
+		if( stored_artists.length > 0 && load_count < 40  ) { // we have stored artists - no need to pull from the web. 
 			
 			document.items_raw = stored_artists;
 			document.nid_list = artist_nids;
 			this.items= document.items_raw;
 			this.firstInit = true;
+			
+			++load_count;
+			window.localStorage['artists_load_count'] = load_count;
 			return; 
 		}
 		
@@ -59,16 +64,16 @@ export class Page2 {
 	    
 				document.items_raw = data[0];
 				document.nid_list  = data[1];
-						
+							
 				if( this.firstInit == false ) {
 				
+					window.localStorage['artists_load_count']  = 0;
 					this.items = data[0];
 					window.localStorage['artists'] 		= JSON.stringify( this.items );
 					window.localStorage['artist_nids'] 	= JSON.stringify( data[1] );
-					
-					console.log("WROTE " + data[1].length + " records to nids array");
-					
+						
 					this.firstInit = true; 
+					
 				}
 	   		},
 			err => {
@@ -131,8 +136,6 @@ onRandomArtistClick( $event ) {
 	
 	var random = document.items_raw[Math.floor(Math.random()* document.items_raw.length)];
 	this.openModal( random );
-//	console.log( "SHOW A RANDOM ARTIST: " + random );
-	
 }
 
 

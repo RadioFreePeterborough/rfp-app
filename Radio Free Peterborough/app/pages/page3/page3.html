@@ -1,23 +1,49 @@
 
 <ion-navbar *navbar>
   <ion-title>
-   RFP Stats
+   About
   </ion-title>
 </ion-navbar>
 <ion-content class="page3">
 
-<ion-card>
+<ion-card class="about">
 
 <ion-card-header>
-Statistics, facts and figures about the Radio Free Peterborough Project
+<h1>About the Radio Free Peterborough Project</h1>
 </ion-card-header>
 <ion-card-content>
-<ul>
-<li>Artists: {{artists}}</li>
-<li>Recordings: {{recordings}}</li>
-<li>Tracks: {{tracks}}</li>
-<li>FM Broadcast Hours: {{hours}}</li>
+<p>
+	Radio Free Peterborough was founded in the summer of 2004 as the answer to the question "I wonder how much Peterborough music you could get together in 
+	one place?"
+</p>
+<p>
+	In partnership with Trent Radio, the Radio Free Peterborough / Local Content Archive has grown quite a lot from our humble beginnings!  We run on 100% volunteer power with an operating budget of $0, using 100% Open Source Software.  We did it - so can you! 
+</p>
+<p>
+	Listen to Radio Free Peterborough with this app, online via our website at 
+	<a href="http://www.radiofreepeterborough.ca">http://radiofreepeterborough.ca</a> 
+	or all night every night on Trent Radio 92.7 FM in Peterborough and surrounding area
+</p>
+<hr>
+<h1>Here are some facts and figures:</h1>
+
+<ul class="facts">
+<li><strong>Founders:</strong> Steve McNabb and Brian Sanderson</li>
+<li><strong>Location:</strong> Peterborough, Ontario Canada</li>
+<li><strong>Founded:</strong> July 2004</li>
+<li><strong>Total Artists:</strong> {{artists}}</li>
+<li><strong>Total Recordings:</strong> {{recordings}}</li>
+<li><strong>Total Tracks:</strong> {{tracks}}</li>
+<li><strong>Total FM Broadcast Hours:</strong> {{hours}}</li>
 </ul>
+
+
+<p>Do you have a Peterborough recording that you don't see in this archive?  
+	Please <a href="mailto:steve@radiofreepeterborough.ca?subject=I have a recording for Radio Free Peterborough">let us know about it</a> so we can add it to our archives!
+</p>
 </ion-card-content>
+
+
 </ion-card>
+
 </ion-content>

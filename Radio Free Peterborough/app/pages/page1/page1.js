@@ -65,15 +65,18 @@ export class Page1 {
 	var player = document.getElementById("rfp-hidden-player");
 	
 	// Set up an error handler for offline
+	
+	/*
 	player.addEventListener('error', function failed(e) {
 				   
 			let alert = Alert.create({  
 					title: 'Error:  Offline',
-				      subTitle: 'I cannot seem to get to the Internet - are you offline?',
+				      subTitle: 'I cannot seem to get the stream data - either you are not connected to the Internet, or the stream server is broken.  Please try again in a moment..',
 				      buttons: ['Ok']
 				} );
 			document.nav.present( alert );
 		});		
+		*/
 	
 	var button   = document.getElementById("playbutton");
 	var click_to_play = '<img src="play.png" width="70px;" height="70px;">';
@@ -113,12 +116,7 @@ export class Page1 {
 	  document.getElementById( 'track' ).innerHTML = 'Click play to start random stream';
 	  document.getElementById( 'artist' ).innerHTML = '';
 	  document.playStatus = false;
-	  
-	  
-	  //console.log( "HERE COMES PAGE 1");
-  }
-   
-   
+    } 
   }
   
  

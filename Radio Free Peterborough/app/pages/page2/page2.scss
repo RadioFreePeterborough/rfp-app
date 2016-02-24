@@ -24,10 +24,20 @@
 
 IMG.album-cover { width: 100%; height: auto;  }
 
-H2#recording-name { background: #fff; font-size: 0.85em; }
+H2#recording-name { background: none; font-size: 0.85em; }
 
 
-.artist-modal, .recording-modal { background: #fff;  }
+/* .artist-modal, .recording-modal { background: #fff;  } */
+
+.artist-modal .item { margin-left: 0; }
+
+.artist-modal, .recording-modal, .artist-modal P, .recording-modal P  { background: #fff;  color: #333;  } 
+.artist-modal A, .artist-modal A:visited , .recording-modal A, .recording-modal A:visited { color: #333; }
+
+
+.recording-modal P, DIV#correction { padding-left: 16px; }
+
+
 
 .album-art-thumbnail { 
 	width: 60px; height: 60px;
@@ -51,7 +61,7 @@ H2#recording-name { background: #fff; font-size: 0.85em; }
 }
 
 /* For the recording 'now playing' track info */
-.recording-year-of-release { font-size: 0.7em; margin-top: 5px;  }
+.recording-year-of-release { font-size: 0.7em; margin-top: 5px; background: none; }
 
 #track-details { margin-left: 10px; }
 
