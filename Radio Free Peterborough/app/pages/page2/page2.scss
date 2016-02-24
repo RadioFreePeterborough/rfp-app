@@ -4,6 +4,40 @@
 	background: #FFF;
 }
 
+.page2 ion-list { margin: 0; }
+.page2 .item { padding: 0; } 
+
+.artist, .recording { margin: 0; } 
+
+.artist .item-inner, .recording .item-inner, .track .item-inner  { 
+
+  margin: 0;
+  padding-left: 10px;
+
+background: -moz-linear-gradient(top,  rgba(125,185,232,0) 0%, rgba(20,1,1,0.16) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(125,185,232,0) 0%,rgba(20,1,1,0.16) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(125,185,232,0) 0%,rgba(20,1,1,0.16) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007db9e8', endColorstr='#29140101',GradientType=0 ); /* IE6-9 */
+
+
+  border-bottom: solid thin #222; 
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 IMG.album-cover { width: 100%; height: auto;  }
 
 H2#recording-name { background: #fff; font-size: 0.85em; }
@@ -40,9 +74,15 @@ H2#recording-name { background: #fff; font-size: 0.85em; }
 #tracks .item { padding-left: 0;  }
 #tracks .item .item-inner ion-label { margin-left: 10px ; }
 
-.track-now-playing {
+.track-now-playing { 
 
-	background: orange;
-	
+  background: orange !important;
+  margin-left: 0;
+  padding-left: 20px;
+  font-size: 1.5em;
+  font-weight: bold;
+ }
 
-}
+.track-now-playing ion-label { margin-left: 20px; } 
+
+

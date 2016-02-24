@@ -11,11 +11,12 @@
 	<div id="recordings">
 		
 		<ion-list>
-		  <ion-item *ngFor="#recording of recordings; #i = index"  (click)="onRecordingClick($event)" >
+		  <ion-item *ngFor="#recording of recordings; #i = index"  (click)="onRecordingClick($event)" class="recording" >
 		   <ion-thumbnail item-left>
 			<img src="{{album_art[i]}}" class="album-art-thumbnail"  />
+			<br/><div class="year-of-release">{{years_of_release[i]}}</div>
 			</ion-thumbnail> {{recording}}
-				<br/><div class="year-of-release">{{years_of_release[i]}}</div>
+				
 			
 		  </ion-item>
 		</ion-list>

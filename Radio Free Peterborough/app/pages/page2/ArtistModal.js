@@ -63,8 +63,10 @@ export class ArtistModal {
 			  var chunks = recording.split( '<br>' );
 			  recording = chunks[0].trim(); 
 		}
+		
+		if( recording.indexOf( 'year-of-release') > 0 ) { return; } // ignore clicks on the year...
 				
-		if( recording != '' && recording != undefined ) {
+		if( recording != '' && recording != undefined  && $event.target.className != 'year-of-release') {
 			
 			var index = null;
 			for(  var x =0;  x < this.recordings.length; ++x ) {
