@@ -14,6 +14,8 @@ export class ArtistModal {
 		this.nid  = navParams.get( 'nid');
 		this.bio = 'Loading artist details...';
 		this.recordings = [];
+		this.album_art = [];
+		this.years_of_release = [];
 		
 		if( this.nid != undefined ) {
 		
@@ -24,15 +26,19 @@ export class ArtistModal {
 				this.bio = data.biography;		
 				this.recordings 	= data.recordings;
 				this.recording_nids = data.recording_nids;
+				this.album_art = data.album_art;
+				this.years_of_release = data.recording_release_years;
 			},
 			err => {
-			        console.log("Oops!");
+			        //console.log("Oops!");
+					/*
 					let alert = Alert.create({  
 							title: 'Error:  Offline',
 						      subTitle: 'I cannot seem to get to the Internet - are you offline?',
 						      buttons: ['Ok']
 						} );
 					this.nav.present( alert );
+					*/
 			    }			
 	  });
 	}
@@ -40,21 +46,27 @@ export class ArtistModal {
 	onRecordingClick( $event ) {
 		
 		var recording;
+			
 		if( $event.target.innerHTML.indexOf( 'ion-label') > 0  ) {
 			
 			var chunks = $event.target.innerHTML.split( '>');
 			chunks = chunks[2].split( '<');
 			recording = chunks[0].trim();
 		}
+
 		else {
 			recording = $event.target.innerHTML.trim();
+		}
+			
+		if( recording.indexOf( '<br>' ) > 0 ) {
+		  
+			  var chunks = recording.split( '<br>' );
+			  recording = chunks[0].trim(); 
 		}
 				
 		if( recording != '' && recording != undefined ) {
 			
 			var index = null;
-			
-			// find the index of this recording - we don't have many per artist so iteration is fine here
 			for(  var x =0;  x < this.recordings.length; ++x ) {
 										
 				if( recording.localeCompare( this.recordings[x].trim()) == 0) { 

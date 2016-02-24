@@ -8,7 +8,17 @@ IMG.album-cover { width: 100%; height: auto;  }
 
 H2#recording-name { background: #fff; font-size: 0.85em; }
 
+
 .artist-modal, .recording-modal { background: #fff;  }
+
+.album-art-thumbnail { 
+	width: 60px; height: 60px;
+	margin-right: 10px; 
+	z-index: -20; 
+}
+
+#recordings .item-inner ion-label { vertical-align: top; }
+.year-of-release { font-size: 0.6em; }
 
 #recording-playbutton { min-width: 50px !important; min-height: 50px !important; }
 #recording-playbutton IMG {  width: 50px !important;  height: 50px !important; background: none;  } 
@@ -26,3 +36,13 @@ H2#recording-name { background: #fff; font-size: 0.85em; }
 
 
 #rfp-player { text-align: center; } 
+
+#tracks .item { padding-left: 0;  }
+#tracks .item .item-inner ion-label { margin-left: 10px ; }
+
+.track-now-playing {
+
+	background: orange;
+	
+
+}

@@ -3,6 +3,15 @@
    Artists
   </ion-title>
 
+<div class="text-right col">
+<ion-buttons start >
+    <button class="button-light" (click)="onRandomArtistClick($event)"  >
+	Random
+      <ion-icon name="color-wand"></ion-icon>
+    </button>
+  </ion-buttons>
+</div>
+
 </ion-navbar>
 <ion-searchbar [(ngModel)]="searchQuery" 
 (input)="getItems($event)"  

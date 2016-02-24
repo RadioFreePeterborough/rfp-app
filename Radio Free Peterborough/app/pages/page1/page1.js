@@ -99,5 +99,27 @@ export class Page1 {
 		
 	}
    }
+   
+    onPageWillEnter( $event ) {
+	  
+	  var button   = document.getElementById("playbutton");
+	  var click_to_play = '<img src="play.png" width="70px;" height="70px;">';
+	  var click_to_stop = '<img src="stop.png" width="70px;" height="70px;">';
+	  var player = document.getElementById("rfp-hidden-player");
+	  
+	  player.pause();
+	  player.setAttribute( 'src', document.streamSource  );	
+	  button.innerHTML = click_to_play;
+	  document.getElementById( 'track' ).innerHTML = 'Click play to start stream';
+	  document.getElementById( 'artist' ).innerHTML = '';
+	  document.playStatus = false;
+	  
+	  
+	  //console.log( "HERE COMES PAGE 1");
   }
+   
+   
+  }
+  
+ 
 }

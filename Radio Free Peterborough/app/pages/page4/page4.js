@@ -7,5 +7,7 @@ import {Page} from 'ionic/ionic';
 export class Page4 {
   constructor() {
 
+	
+	
   }
 }

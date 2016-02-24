@@ -29,26 +29,45 @@ export class Page2 {
 	this.firstInit = false;
 	this.items = [ 'Loading artist data....' ]; 
 	this.initializeItems();
-
   }
 
 	openModal( thisArtist ) {
-	
+		
 		this.nav.push( ArtistModal, { name:  thisArtist, nid: document.nid_list[ thisArtist ] } );		
 	}
 
 	initializeItems() {
-
+	
+	// Uncomment to blast local storage...			
+	//	window.localStorage['artists' ] = window.localStorage[ 'artist_nids'] = [];
+							
+		var stored_artists = JSON.parse( window.localStorage['artists' ] || '{}');
+		var artist_nids    = JSON.parse( window.localStorage[ 'artist_nids'] || '{}' );
+		
+		if( stored_artists.length > 0 ) { // we have stored artists - no need to pull from the web. 
+			
+			document.items_raw = stored_artists;
+			document.nid_list = artist_nids;
+			this.items= document.items_raw;
+			this.firstInit = true;
+			return; 
+		}
+		
 		document.http.get( document.searchURL ).map(res => res.json()).subscribe(
 			
 			data => {
 	    
 				document.items_raw = data[0];
 				document.nid_list  = data[1];
-			
+						
 				if( this.firstInit == false ) {
 				
 					this.items = data[0];
+					window.localStorage['artists'] 		= JSON.stringify( this.items );
+					window.localStorage['artist_nids'] 	= JSON.stringify( data[1] );
+					
+					console.log("WROTE " + data[1].length + " records to nids array");
+					
 					this.firstInit = true; 
 				}
 	   		},
@@ -95,23 +114,25 @@ export class Page2 {
 	if( isNaN( q )) {  // searching for text
 		
 	    this.items = items_raw.filter((v) => {
-	      if (v.toLowerCase().indexOf(q.toLowerCase()) > -1) {
-		
-	        return true;
-	      }
+	      if (v.toLowerCase().indexOf(q.toLowerCase()) > -1) { return true; }
 	      return false;
 	    })
 	}
 	else { // searching for a number 
 		
 		this.items = items_raw.filter((v) => {
-	      if (v.indexOf(q) > -1) {
-
-	        return true;
-	      }
+	      if (v.indexOf(q) > -1) { return true; }
 	      return false;
 	    })	
 	}
+}
+
+onRandomArtistClick( $event ) {
+	
+	var random = document.items_raw[Math.floor(Math.random()* document.items_raw.length)];
+	this.openModal( random );
+//	console.log( "SHOW A RANDOM ARTIST: " + random );
+	
 }
 
 
