@@ -7,11 +7,10 @@
     </feature>
     <allow-intent href="market:*" />
     <name>Radio Free Peterborough</name>
-    <description>The Radio Free Peterborough Project</description>
-    <author email="steve@radiofreepeterborough.ca" href="http://ionicframework.com/">Steve McNabb</author>
+    <description>Radio Free Peterborough Project</description>
+    <author email="steve@radiofreepeterborough.ca" href="http://radiofreepeterborough.ca">Radio Free Peterborough Team</author>
     <content src="index.html" />
     <access origin="*" />
-    <access launch-external="yes" origin="mailto:*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />

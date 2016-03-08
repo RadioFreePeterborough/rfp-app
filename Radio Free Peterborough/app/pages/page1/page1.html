@@ -3,19 +3,16 @@
 </ion-navbar>
 
 <ion-content padding class="page1">
-<p>Welcome to the Radio Free Peterborough App.  This page plays the main (randomized) stream for your enjoyment</p>
-
 	<div id="player-holder">
 	<audio controls id="rfp-hidden-player">
 	  <source src="http://trentradio.ca:8800/rfp" type="audio/mp3">
-	Your browser does not support the audio element.
+		Your browser does not support the audio element.
 	</audio>
 	</div>
 	<button class="button button-full button-light" id="playbutton" (click)="playerclick()">
 			<img src="play.png" width="70px;" height="70px;">
 	</button>
 	
-
 	<div id="metadata-wrapper">
 	<div id="track">Click play to start randomized stream</div>
 	<div id="artist"></div>
@@ -23,19 +20,13 @@
 	
 	TODO
 	<ul>
-		<li>Fix the track listings for "various" recordings - like JP Hovercraft - Eldorado - add a 'Group by' clause to the server-side script</li>
-		<li>Add a logging -> stats gathering DB for all ionic_* scripts on RFP</li>
-		<li>todo - reload artist cache every 25 loads</li>
-		<li>todo - style bio</li>
-		<li>add a stats page</li>
-		<li>populate and style about us page</li>
-		
-	
+		<li>Fix the artist load / display for sheesham lotus and son (parsing is weird on '&' )</li>
+		<li>todo - style bio</li>	
 	</ul>
 	
 	
-<p>Radio Free Peterborough is here to serve you.  <a href="mailto:steve@radiofreepeterborough.ca?subject=Radio Free Peterborough Feedback">Please contact us</a> if you have any questions or comments.
-	
-
-	
+<p>Radio Free Peterborough is here to serve you.  
+	<a href="mailto:steve@radiofreepeterborough.ca?subject=Radio Free Peterborough Feedback">Please contact us</a>
+	if you have any questions or comments.</p>
+		
 </ion-content>

@@ -1,26 +1,34 @@
 <ion-navbar *navbar>
-  <ion-title>Listen to Peterborough</ion-title>
+  <ion-title>Listen</ion-title>
 </ion-navbar>
 
 <ion-content padding class="page1">
-<p>Welcome to the Radio Free Peterborough App.  This page plays the main (randomized) stream for your enjoyment</p>
-
 	<div id="player-holder">
 	<audio controls id="rfp-hidden-player">
 	  <source src="http://trentradio.ca:8800/rfp" type="audio/mp3">
-	Your browser does not support the audio element.
+		Your browser does not support the audio element.
 	</audio>
 	</div>
 	<button class="button button-full button-light" id="playbutton" (click)="playerclick()">
-			<img src="play.png" width="150px;" height="150px;">
+			<img src="play.png" width="70px;" height="70px;">
 	</button>
 	
 	<div id="metadata-wrapper">
-	<div id="track">Click play to start stream</div>
+	<div id="track">Click play to start randomized stream</div>
 	<div id="artist"></div>
 	</div>
 	
-<p>Radio Free Peterborough is here to serve you.  <a href="mailto:steve@radiofreepeterborough.ca?subject=Radio Free Peterborough Feedback">Please contact us</a> if you have any questions or comments.
-
+	TODO
+	<ul>
+		<li>Fix about us stats hours on server side - should be 81k not 71k</li>
+		<li>Add a logging -> stats gathering DB for all ionic_* scripts on RFP</li>
+		<li>Fix the artist load / display for sheesham lotus and son (parsing is weird on '&' )</li>
+		<li>todo - style bio</li>	
+	</ul>
 	
+	
+<p>Radio Free Peterborough is here to serve you.  
+	<a href="mailto:steve@radiofreepeterborough.ca?subject=Radio Free Peterborough Feedback">Please contact us</a>
+	if you have any questions or comments.</p>
+		
 </ion-content>

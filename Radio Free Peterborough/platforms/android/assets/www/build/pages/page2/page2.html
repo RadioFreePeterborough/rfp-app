@@ -1,22 +1,27 @@
-
 <ion-navbar *navbar>
   <ion-title>
-   Peterborough Artists
+   Artists
   </ion-title>
+
+<div class="text-right col">
+<ion-buttons start >
+    <button class="button-light" (click)="onRandomArtistClick($event)"  >
+	Random
+      <ion-icon name="color-wand"></ion-icon>
+    </button>
+  </ion-buttons>
+</div>
+
 </ion-navbar>
-
-<ion-content class="page2">
-
-
 <ion-searchbar [(ngModel)]="searchQuery" 
 (input)="getItems($event)"  
 (cancel)="onSearchCancel($event)"></ion-searchbar>
-<div id="search-status"></div>
+<ion-content class="page2">
 
-<ion-list>
-  <ion-item *ngFor="#item of items" (click)="onArtistClick($event)">
-    {{ item }} 
-  </ion-item>
-</ion-list>
+	<ion-list>
+	  <ion-item *ngFor="#item of items" (click)="onArtistClick($event)" class="artist">
+	    {{ item }} 
+	  </ion-item>
+	</ion-list>
 
 </ion-content>

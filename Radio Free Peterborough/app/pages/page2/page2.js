@@ -3,10 +3,8 @@ import {Http} from 'angular2/http';
 import {Modal, NavController, NavParams} from 'ionic/ionic';
 import {NgFor} from 'angular2/common';
 import {Component} from 'angular2/core';
-
 import {ControlGroup, FormBuilder, Validators} from 'angular2/common';
 import {ArtistModal} from './ArtistModal';
-
 import 'rxjs/add/operator/map';
 
 
@@ -33,13 +31,17 @@ export class Page2 {
 
 	openModal( thisArtist ) {
 		
+		// A bit of a hack to get the html entites decoded so they don't break lookup
+		var txt = document.createElement('textarea');
+		txt.innerHTML = thisArtist;
+		thisArtist = txt.value;
 		this.nav.push( ArtistModal, { name:  thisArtist, nid: document.nid_list[ thisArtist ] } );		
 	}
 
 	initializeItems() {
 	
-	// Uncomment to blast local storage...			
-	//	window.localStorage['artists' ] = window.localStorage[ 'artist_nids'] = [];
+	   // Uncomment to blast local storage...			
+	   //	window.localStorage['artists' ] = window.localStorage[ 'artist_nids'] = [];
 							
 		var stored_artists = JSON.parse( window.localStorage['artists' ] || '{}');
 		var artist_nids    = JSON.parse( window.localStorage[ 'artist_nids'] || '{}' );	
@@ -72,8 +74,7 @@ export class Page2 {
 					window.localStorage['artists'] 		= JSON.stringify( this.items );
 					window.localStorage['artist_nids'] 	= JSON.stringify( data[1] );
 						
-					this.firstInit = true; 
-					
+					this.firstInit = true; 	
 				}
 	   		},
 			err => {

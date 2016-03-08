@@ -12,9 +12,9 @@ export class ArtistModal {
 		this.params = navParams;
 		this.name = navParams.get('name');
 		this.nid  = navParams.get( 'nid');
-		this.bio = 'Loading artist details...';
+		this.bio  = 'Loading artist details...';
 		this.recordings = [];
-		this.album_art = [];
+		this.album_art  = [];
 		this.years_of_release = [];
 		
 		if( this.nid != undefined ) {
@@ -31,14 +31,6 @@ export class ArtistModal {
 			},
 			err => {
 			        //console.log("Oops!");
-					/*
-					let alert = Alert.create({  
-							title: 'Error:  Offline',
-						      subTitle: 'I cannot seem to get to the Internet - are you offline?',
-						      buttons: ['Ok']
-						} );
-					this.nav.present( alert );
-					*/
 			    }			
 	  });
 	}
@@ -78,7 +70,7 @@ export class ArtistModal {
 			
 			this.nav.push( RecordingModal, { 
 				name:  recording, 
-				nid: this.recording_nids[ index ] });
+				nid:   this.recording_nids[ index ] });
 		}
 	}
 }
