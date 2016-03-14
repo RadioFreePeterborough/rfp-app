@@ -88,7 +88,7 @@ export class Page1 {
    }
    
     onPageWillEnter( $event ) {
-	  
+	/*  
 	  var button   = document.getElementById("playbutton");
 	  var click_to_play = '<img src="play.png" width="70px;" height="70px;">';
 	  var click_to_stop = '<img src="stop.png" width="70px;" height="70px;">';
@@ -100,6 +100,7 @@ export class Page1 {
 	  document.getElementById( 'track' ).innerHTML = 'Click play to start random stream';
 	  document.getElementById( 'artist' ).innerHTML = '';
 	  document.playStatus = false;
+	*/
     } 
   }
 }

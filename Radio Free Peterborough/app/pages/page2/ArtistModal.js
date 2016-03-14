@@ -38,8 +38,17 @@ export class ArtistModal {
 	onRecordingClick( $event ) {
 		
 		var recording;
+
+		if( $event.target.className == 'year-of-release' ) { return; } 	
+	
+		if( $event.target.innerHTML == '' ) {
 			
-		if( $event.target.innerHTML.indexOf( 'ion-label') > 0  ) {
+			var chunks = $event.target.parentNode.parentNode.innerHTML.split( '>');
+			var working_copy = chunks[9].split( '<' )[0].trim();
+			recording = chunks[9].split( '<' )[0].trim(); 
+		}
+	
+		else if( $event.target.innerHTML.indexOf( 'ion-label') > 0  && recording == ''  ) {
 			
 			var chunks = $event.target.innerHTML.split( '>');
 			chunks = chunks[2].split( '<');
@@ -55,10 +64,12 @@ export class ArtistModal {
 			  var chunks = recording.split( '<br>' );
 			  recording = chunks[0].trim(); 
 		}
-		
+	
+
+	
 		if( recording.indexOf( 'year-of-release') > 0 ) { return; } // ignore clicks on the year...
 				
-		if( recording != '' && recording != undefined  && $event.target.className != 'year-of-release') {
+		if( recording != '' && recording != undefined ) {
 			
 			var index = null;
 			for(  var x =0;  x < this.recordings.length; ++x ) {
@@ -67,7 +78,8 @@ export class ArtistModal {
 					index = x; 
 				}
 			}
-			
+		
+	
 			this.nav.push( RecordingModal, { 
 				name:  recording, 
 				nid:   this.recording_nids[ index ] });

@@ -61833,16 +61833,19 @@
 	        }
 	    };
 	    Page1.prototype.onPageWillEnter = function ($event) {
-	        var button = document.getElementById("playbutton");
-	        var click_to_play = '<img src="play.png" width="70px;" height="70px;">';
-	        var click_to_stop = '<img src="stop.png" width="70px;" height="70px;">';
-	        var player = document.getElementById("rfp-hidden-player");
-	        player.pause();
-	        player.setAttribute('src', document.streamSource);
-	        button.innerHTML = click_to_play;
-	        document.getElementById('track').innerHTML = 'Click play to start random stream';
-	        document.getElementById('artist').innerHTML = '';
-	        document.playStatus = false;
+	        /*
+	          var button   = document.getElementById("playbutton");
+	          var click_to_play = '<img src="play.png" width="70px;" height="70px;">';
+	          var click_to_stop = '<img src="stop.png" width="70px;" height="70px;">';
+	          var player = document.getElementById("rfp-hidden-player");
+	          
+	          player.pause();
+	          player.setAttribute( 'src', document.streamSource  );
+	          button.innerHTML = click_to_play;
+	          document.getElementById( 'track' ).innerHTML = 'Click play to start random stream';
+	          document.getElementById( 'artist' ).innerHTML = '';
+	          document.playStatus = false;
+	        */
 	    };
 	    Page1 = __decorate([
 	        ionic_1.Page({
@@ -61888,6 +61891,10 @@
 	        this.initializeItems();
 	    }
 	    Page2.prototype.openModal = function (thisArtist) {
+	        // A bit of a hack to get the html entites decoded so they don't break lookup
+	        var txt = document.createElement('textarea');
+	        txt.innerHTML = thisArtist;
+	        thisArtist = txt.value;
 	        this.nav.push(ArtistModal_1.ArtistModal, { name: thisArtist, nid: document.nid_list[thisArtist] });
 	    };
 	    Page2.prototype.initializeItems = function () {
@@ -62024,7 +62031,15 @@
 	    }
 	    ArtistModal.prototype.onRecordingClick = function ($event) {
 	        var recording;
-	        if ($event.target.innerHTML.indexOf('ion-label') > 0) {
+	        if ($event.target.className == 'year-of-release') {
+	            return;
+	        }
+	        if ($event.target.innerHTML == '') {
+	            var chunks = $event.target.parentNode.parentNode.innerHTML.split('>');
+	            var working_copy = chunks[9].split('<')[0].trim();
+	            recording = chunks[9].split('<')[0].trim();
+	        }
+	        else if ($event.target.innerHTML.indexOf('ion-label') > 0 && recording == '') {
 	            var chunks = $event.target.innerHTML.split('>');
 	            chunks = chunks[2].split('<');
 	            recording = chunks[0].trim();
@@ -62039,7 +62054,7 @@
 	        if (recording.indexOf('year-of-release') > 0) {
 	            return;
 	        } // ignore clicks on the year...
-	        if (recording != '' && recording != undefined && $event.target.className != 'year-of-release') {
+	        if (recording != '' && recording != undefined) {
 	            var index = null;
 	            for (var x = 0; x < this.recordings.length; ++x) {
 	                if (recording.localeCompare(this.recordings[x].trim()) == 0) {

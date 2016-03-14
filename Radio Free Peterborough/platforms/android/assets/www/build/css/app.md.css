@@ -8724,6 +8724,16 @@ a:hover {
   color: red;
   text-align: center; }
 
+.rfp-contact-us {
+  text-align: center;
+  margin-top: 50px;
+  border: solid thin #ccc;
+  padding: 20px; }
+
+.rfp-contact-us A, .rfp-contact-us A:visited {
+  color: #000;
+  font-weight: bold; }
+
 .page2, #artistmodal, #recordingmodal {
   text-align: center;
   background: #FFF; }
@@ -8845,3 +8855,7 @@ H2#recording-name {
 
 .about P {
   margin-bottom: 20px; }
+
+.page3 A, .page3 A:visited {
+  color: #000;
+  font-weight: bold; }

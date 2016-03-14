@@ -18,4 +18,17 @@
 a:hover { color: orange; cursor: pointer; }
 
 #artist { font-size: 1.2em; color: red; text-align: center; }
-#track  { font-size: 2.5em; color: red; text-align: center;  }
+#track  { font-size: 2.5em; color: red; text-align: center; }
+
+
+.rfp-contact-us { 
+
+	text-align: center; 
+	margin-top: 50px;
+	border: solid thin #ccc;
+	padding: 20px;
+}
+
+
+
+.rfp-contact-us A, .rfp-contact-us A:visited { color: #000; font-weight: bold; } 
